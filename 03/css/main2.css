@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+/* 
+  1. 영어랑 한글 더 가까이
+  2. 이름 맨위처럼 키우기
+  3. SVG 애니메이션 할 수 있으면 넣기 
+  4. git icon 변경
+
+  .contactTextBoxBottom {gap : 5rem 2rem;}
+*/
+
 @font-face {
     font-family: 'TWKEverett';
     src: url('../font/TWKEverett/TWKEverett-Regular.otf') format('woff2'),
@@ -308,7 +317,7 @@ pointer-events: none;
   position: relative; 
   margin-top: 1800px; 
   opacity: 1;
-  
+  z-index: 20;
 }
 
 .moreBtnarea{
@@ -316,6 +325,8 @@ pointer-events: none;
   top: 0;
   left: 0;
   opacity: 0;
+  z-index: 30;
+  pointer-events: auto;
   /* right: 1vw; */
   /* bottom: 10vh; */
 }
@@ -343,7 +354,7 @@ pointer-events: none;
   width: 50px;
   height: 40px;
   transition: all .3s linear;
-  fill: #fffb11;
+  fill: #008cff;
   position: relative;
   z-index: 2;
 }
@@ -372,7 +383,8 @@ pointer-events: none;
   }
 
 
-#scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 39vh; left: 27vw;}
+#scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 52vh;
+  left: 7vw;}
 #scroll-section-2 .quietplaceGsapContainer {
   position: absolute;
   top: 0;
@@ -733,8 +745,9 @@ pointer-events: none;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index:10;
+  z-index:999;
   opacity: 0;
+  pointer-events: none;
 }
 /* #scroll-section-0{pointer-events: none;}
 #scroll-section-1{pointer-events: none;}

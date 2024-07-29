@@ -1,5 +1,5 @@
 
-const canvas = document.getElementsByTagName('canvas')[0];
+const canvas = document.getElementsByClassName('mouseCanvas')[0];
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
@@ -615,7 +615,7 @@ function resizeCanvas() {
   }
 }
 
-canvas.addEventListener('mousemove', e => {
+document.addEventListener('mousemove', e => {
   pointers[0].moved = pointers[0].down;
   pointers[0].dx = (e.offsetX - pointers[0].x) * 10.0;
   pointers[0].dy = (e.offsetY - pointers[0].y) * 10.0;
@@ -627,7 +627,7 @@ const colors = [
   [0.0, 0.0, 0.029],
 ];
 
-canvas.addEventListener('mousemove', () => {
+document.addEventListener('mousemove', () => {
   pointers[0].down = true;
 //   마우스 움직일때 색상값들
 
