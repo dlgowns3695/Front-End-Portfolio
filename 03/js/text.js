@@ -79,7 +79,7 @@ gsap.fromTo(
     scrollTrigger: {
         trigger: ".heajunLogo",
         start: "top 50% ", // 시작 지점
-        markers:true,
+        // markers:true,
         onEnter: () => gsap.to(".heajunLogo", { opacity: 1, duration: 0.5 }),
         // onLeave: () => gsap.to(".contactTextBoxMiddleLogo", { opacity: 0.3, duration: 0.5 }),
         onEnterBack: () => gsap.to(".heajunLogo", { opacity: 1, duration: 0.5 }),

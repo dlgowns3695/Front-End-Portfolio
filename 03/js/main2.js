@@ -1596,7 +1596,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: ".container",
       start: "11% top", // 시작 지점
 
-      markers: true,
+      // markers: true,
       onEnter: () => gsap.to(".mouseCanvas", { opacity: 1, duration: 0.5 }),
       onLeave: () => gsap.to(".mouseCanvas", { opacity: 0, duration: 0.5 }),
       onEnterBack: () => gsap.to(".mouseCanvas", { opacity: 1, duration: 0.5 }),
