@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
     values: {
       videoImageCount: 297,
       imageSequence: [0, 296],
-      canvas_opacity_in: [0, .3, { start: 0.1, end: 0.5 }],
+      canvas_opacity_in: [0, .3, { start: 0.05, end: 0.5 }],
       canvas_opacity_out: [.3, 0, { start: 0.85, end: 0.9 }],
     },
     
@@ -1574,7 +1574,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollTrigger: {
       trigger: ".section-5-dim",
       start: "top top", // 시작 지점
-      end: "+=800px", // 끝 지점
+      end: "+=500px", // 끝 지점
       scrub: true, // 스크롤 양에 따라 애니메이션 조절
       // markers: true,
     }
