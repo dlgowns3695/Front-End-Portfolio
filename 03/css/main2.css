@@ -840,6 +840,7 @@ pointer-events: none;
 
 
  @media (max-width:768px){
+  #scroll-section-0 .bg{top: 0vh;}
   #scroll-section-0 h1{font-size: 2.5rem;}
   #scroll-section-0 .scolldimPc{ display: none;}
   #scroll-section-0 .scolldimMobile{display: block;}
@@ -873,7 +874,7 @@ pointer-events: none;
   #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 50vh; left: 5vw;}
   #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:50vh; left: 72vw;}
 
-  #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%;}
+  #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
 
   #scroll-section-2 .quietplaceGsapContainer{
     width: 100vw;
@@ -980,14 +981,17 @@ pointer-events: none;
   .contactTextBoxMiddlePC{display: none;}
   .contactTextBoxMiddleMobile{display: block;}
 
-  .heajunLogo{top: 55vh;}
+  .heajunLogo{top: 50vh;}
+  .contactTextBoxMiddle{font-size: .9rem;}
+  .contactTextBoxMiddleMobileMarginBottom{margin-bottom: 3vh;}
+  .contactTextBoxBottom{gap: .5rem; font-size: 0.75rem; margin-top: -10vh;}
   .contactTextBoxBottom .iconBox01,
   .contactTextBoxBottom .iconBox02,
   .contactTextBoxBottom .iconBox03,
   .contactTextBoxBottom .iconBox04,
   .contactTextBoxBottom .iconBox05,
   .contactTextBoxBottom .iconBox06{flex: 0 1 40%;}
-  .contactTextBoxBottom{gap: 1rem; font-size: 0.75rem;}
+
 
 
 
