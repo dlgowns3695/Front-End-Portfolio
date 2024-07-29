@@ -67,7 +67,7 @@ gsap.fromTo(
     scrollTrigger: {
         trigger: ".contactTextBoxMiddle",
         start: "top 70% ", // 시작 지점
-        // markers:true,
+        markers:true,
         onEnter: () => gsap.to(".contactTextBoxMiddle", { opacity: 1, duration: 0.5 }),
         onLeave: () => gsap.to(".contactTextBoxMiddle", { opacity: 0.3, duration: 0.5 }),
         onEnterBack: () => gsap.to(".contactTextBoxMiddle", { opacity: 1, duration: 0.5 }),
