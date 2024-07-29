@@ -1,0 +1,999 @@
+@charset 'utf-8';
+
+@font-face {
+    font-family: 'TWKEverett';
+    src: url('../font/TWKEverett/TWKEverett-Regular.otf') format('woff2'),
+        url('../font/TWKEverett/TWKEverett-Bold.otf')
+    ;
+  
+  }
+  /* url('/font/GesturaDisplay/GesturaDisplayTRIAL-Bold-BF64b75504296e4.woff') format('woff2'), */
+  @font-face {
+    font-family: 'GesturaDisplay';
+    src: 
+         url('../font/GesturaDisplay/GesturaTextTRIAL-Regular-BF64b755042cf0f.woff') format('woff2')
+         ;
+  }
+
+
+html {font-family: "Noto Sans KR", sans-serif;font-size: 1rem;line-height: 1.3;}
+
+body {letter-spacing: -0.05em; background: #141414; overflow-x:hidden;}
+a {color: rgb(235, 235, 235);text-decoration: none;}
+body.before-load {overflow: hidden;}
+.container {position: relative; overflow: hidden;}
+/* .bubble {
+  position: absolute;
+  z-index: 999999999999; 
+} */
+
+.en1 {font-family: 'TWKEverett';font-weight: normal;}
+.en2 {font-family: 'GesturaDisplay';font-weight: normal;}
+/* !important; */
+.point {color: #324eef }
+/* !important; */
+.light-point {color: #008cff;font-size:1.1em;}
+.kr {letter-spacing: -0.03rem;}
+
+.scroll-section {
+  position: relative;
+  padding-top: 50vh;
+  /* border: 3px solid red; */
+  box-sizing: border-box;
+}
+/* 내용물을 채워야 공간이 늘어남 */
+
+#scroll-section-0 .fill {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4000px;
+    /* height: 100vh; */
+    pointer-events: none;
+    background: linear-gradient(180deg,#f8faff 0,#d6d8e3 100%);
+}
+    
+#scroll-section-0 .bg {
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    will-change: transform; 
+    pointer-events: none;
+}
+#scroll-section-0 .bg img{
+  position: absolute;
+  top: 2vh;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* object-fit: cover; */
+}
+
+.containerh1{
+  top: -20vh;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+#scroll-section-0 h1 {font-size: 6rem;}
+
+.main-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 35vh;
+    margin: 5px 0;
+    height: 3em;
+    width: 97.8rem;
+    font-size: 3rem;
+    opacity: 0;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.main-message .kr {
+    font-size:0.9rem;
+    line-height: 1.5;
+    margin-top:2rem;
+}
+
+.main-message small {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+} 
+
+
+.description {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+.description strong {
+  float: left;
+  margin-right: 0.2em;
+  font-size: 3rem;
+  color: rgb(29, 29, 31);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12rem;
+  font-size:2rem;
+  color: white;
+  background: #222;
+  border-top:4px solid #444;
+}
+/* 기본상태 */
+.sticky-elem {
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+/* js에서 쇼 addClass해서 block만듬 --> 벗어나면 다시 기본상태로 */
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem,
+#show-scene-4 #scroll-section-4 .sticky-elem,
+/* #show-scene-5 #scroll-section-5 .sticky-elem, */
+#show-scene-5 #scroll-section-5 .sticky-elem {
+  
+  display: block;
+  will-change: transform, opacity;
+}
+.scroll-effect-end .sticky-elem {
+  /* !important; */
+  /* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
+  display: none 
+}
+.sticky-elem-canvas {top: 0;height: 100%; }
+.sticky-elem-canvas canvas {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* 여기 캔버스는 뒷배경 canvas임 #scroll-section-0 .canvas */
+#scroll-section-0 .canvas {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#scroll-section-0 .scolldimPc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scroll-section-0 .scolldimMobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.mobileContinuing{display: none;}
+.mobileMyIntroduction{display: none;}
+
+
+  /* !important; */
+.logodisplayFlexContaner {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  /* top: 0px; */
+  left: 0;
+  bottom: 330px;
+  right: 0;
+  z-index: 999;
+
+  pointer-events: none;
+}
+#scroll-section-0 .logoPosContainer {
+  display: flex  ;
+  align-items: center;
+  justify-content: center;
+
+  top: 45vh;
+  margin: 5px 0;
+  height: 3em;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  width: 80%;
+  /* transition: opacity 1s; */
+  will-change: transform, opacity;
+  opacity: 0;
+  z-index: 3;
+
+  
+}
+  
+#scroll-section-0 .logoPosContainer .Pos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:4rem;
+}
+
+#scroll-section-0 .logoPosContainer .Pos img {width: 120px;cursor:auto;}
+
+
+#scroll-section-1 {
+  
+  padding: 0;
+  position: relative;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: -1; */
+}
+
+#scroll-section-1 .textfill{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: black;
+  pointer-events: none;
+} 
+
+#scroll-section-1 .textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  width: 100%;
+  font-size: 5rem;
+  /* z-index: -1; */
+  pointer-events: none;
+
+}
+
+.textBox > p {
+background: linear-gradient(
+to right,
+rgb(255, 255, 255) 50%,
+rgb(37, 37, 37) 50%
+);
+background-size: 200% 100%;
+background-position-x: 100%;
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+pointer-events: none;
+}
+
+/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
+#scroll-section-2{
+  position: relative; 
+  margin-top: 1800px; 
+  opacity: 1;
+  
+}
+
+.moreBtnarea{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* right: 1vw; */
+  /* bottom: 10vh; */
+}
+.moreBtn {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moreBtnarea .moreArr {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  transition: all .3s linear;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moreBtnarea .moreArr svg {
+  width: 50px;
+  height: 40px;
+  transition: all .3s linear;
+  fill: #fffb11;
+  position: relative;
+  z-index: 2;
+}
+.moreBtnarea .moreTxt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .3s linear;
+  z-index: 2;
+  animation: moreRotate 6s linear infinite;
+  fill: #ffffff;
+}
+.buttonDiv{
+  width: 100vw;
+  /* background: aliceblue; */
+  position: absolute;
+  top: 200vh;
+  height: 100vh;
+  left: 0;
+}
+@keyframes moreRotate {
+    0% {transform: rotate(0);}   
+      100% {transform: rotate(360deg);}   
+  }
+
+
+#scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 39vh; left: 27vw;}
+#scroll-section-2 .quietplaceGsapContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+}
+#scroll-section-2 .quietplaceGsapContainer .languageContainer{
+  position: relative; top: 20vh; left: 8vw; 
+  display: flex;
+  align-items: center;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageContainer .languageIcon{
+  display: flex; justify-content: space-between; gap:1.5rem;
+  opacity: 0;
+  transform: scale(0);
+  color: #fff; 
+}
+
+#scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 35px}
+#scroll-section-2 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
+#scroll-section-2 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
+#scroll-section-2 .quietplaceGsapContainer .languageDec{
+  position: relative;top:25vh; left:8vw; font-size: 1.5rem; color: #fff;
+  line-height: 1.5;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageDec p{
+  font-size: 0.9rem;
+  opacity: 0;
+  /* line-height: 1.5; */
+}
+
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p1{
+  position: absolute;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p2{
+  position: absolute;
+}
+
+.quietplaceGsapContainer .quietplaceH1 {
+  position: relative;
+  top: 55vh;
+  left: 70vw;
+  font-size: 3rem;
+  opacity: 0;
+  color:#fff;
+}
+
+.quietplaceGsapContainer .quietplaceH1 .moreBtnarea {
+  right: -2vw;
+}
+
+#scroll-section-2 .quietplaceGsapContainer .quietplaceDec{
+  position: relative; 
+  top: 5vh;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.section-2dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background: url('../images/background.jpg');
+  opacity: 0.1;
+  pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
+  background-attachment: fixed;
+  /* z-index: -1; */
+}
+.section-2blackdim{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 1;
+  /* z-index: -1; */
+}
+
+
+.section-2lines {
+  position:-webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 500vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: -100vh;  */
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+
+.section-2line {
+  position: absolute;
+  width: 232rem;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(-33deg) translateZ(0)
+  
+}
+
+.section-2line.section-2style1 {top: 13vh;}
+.section-2line.section-2style2 {top: 93vh;}
+
+/* 섹션 콰이어트랑 이케아 공통부분 아이콘 */
+.languageIcon ul {display:flex;align-items: center;}
+.languageIcon img, .languageIcon svg {width:66px;height:66px;}
+
+/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
+#scroll-section-3{position: relative;opacity: 1;}
+
+#scroll-section-3 .ikeaGsapContainer .moreBtnarea{top: 39vh; left: 60vw;}
+#scroll-section-3 .ikeaGsapContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
+  /* 기존 left 8vw */
+  position: relative; top: 20vh; left: 70vw; 
+  display: flex;
+  align-items: center;
+}
+#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer .languageIcon{
+  display: flex; justify-content: space-between; gap:1.5rem;
+  opacity: 0;
+  transform: scale(0);
+  color: #fff;  
+}
+
+#scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 35px}
+#scroll-section-3 .ikeaLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
+#scroll-section-3 .ikeaLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
+#scroll-section-3 .ikeaGsapContainer .languageDec{
+  /* 기존 left 8vw */
+  position: relative;top:25vh; left:70vw; font-size: 1.5rem; color: #fff;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec p{
+  font-size: 0.9rem;
+  opacity: 0; 
+  line-height: 1.5;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec .p1{
+  position: absolute;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec .p2{
+  position: absolute;
+}
+
+.ikeaGsapContainer .ikeaH1 {
+  /* 기존 left 70vw */
+  position: relative;
+  top: 55vh;
+  left: 8vw;
+  font-size: 3rem;
+  opacity: 0;
+  color:#fff;
+
+}
+#scroll-section-3 .ikeaGsapContainer .ikeaDec{
+  position: relative; 
+  top: 5vh;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.section-3lines {
+  position:-webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 500vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px; 
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.section-3line {
+  position: absolute;
+  width: 232rem;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(31deg) translateZ(0)
+}
+
+.section-3line.section-3style1 {top: 13vh}
+.section-3line.section-3style2 {top: 93vh}
+
+.section-3dim {
+  position: absolute;
+  top: 0;
+  left: -0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/background.jpg');
+  opacity: 0.1;
+  pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
+  background-attachment: fixed;
+}
+.section-3blackdim{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #141414;
+  opacity: 0;
+}
+
+#scroll-section-4 {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  
+}
+.textFlex{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.section-4-dim{
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: black; */
+  opacity: 0;
+  width: 100%;
+  /* height: 150vh; */
+ 
+}
+.strongText{  
+  
+  font-size: 8vw;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  z-index: 999;
+}
+
+#scroll-section-4 .sticky-message {position:relative;}
+
+
+#scroll-section-5{
+  /* border: 3px solid red; */
+  position: relative;
+  /* background-color: black; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.section-5-dim{
+  position: absolute; top: 0;
+  left: 0; right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0;
+  z-index: -1;
+}
+.section6DivContanier{
+  text-align: center;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: -0.025rem;
+}
+
+.contactTextBoxTop{
+  position: relative;
+  top: -70vh;
+  opacity: .3;
+  font-size: 1.8rem;
+}
+.contactTextBoxTop span{font-size: 2.5rem;}
+.contactTextBoxMiddle{
+  position: relative;
+  top: -20vh;
+  opacity: .3;
+  font-size: .9rem;
+  
+
+}
+.contactTextBoxMiddle span{font-size: 1.3rem;}
+.contactTextBoxMiddleLogo{}
+.heajunLogo{
+  opacity: .3;
+  position: relative;
+  top: 45vh;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.heajunLogo span{font-size: 2.5rem;}
+.contactTextBoxBottom {
+  position: relative;
+  top: 55vh;
+  display: flex;
+  flex-wrap: wrap; /* 아이템들이 여러 줄로 배치될 수 있도록 함 */
+  justify-content: space-between; /* 간격 */
+  align-items: center;
+  padding: 40px; /* 아이템 주위에 약간의 여백을 추가 */
+  gap: 2rem;
+}
+
+.contactTextBoxBottom svg, .contactTextBoxBottom img {
+  width: 80px; /* 아이콘 크기 조정 */
+  height: 80px; /* 아이콘 크기 조정 */
+  /* margin-bottom: 10px;  */
+  /* 아이콘과 텍스트 간의 간격 */
+}
+
+.contactTextBoxBottom .iconBox01,
+.contactTextBoxBottom .iconBox02,
+.contactTextBoxBottom .iconBox03,
+.contactTextBoxBottom .iconBox04,
+.contactTextBoxBottom .iconBox05,
+.contactTextBoxBottom .iconBox06 {
+  gap: 2rem;
+  display: flex;
+  flex: 0 1 30%;
+  /* text-align: center; */
+  /* margin-top: 15vh; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mouseChk{position: absolute;
+  height: 80px;
+  width: 80px;
+}
+.email-icons svg {
+  transition: opacity 0.5s ease;
+}
+
+.e-mail02 {
+  display: none;
+}
+.mouseCanvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index:10;
+  opacity: 0;
+}
+/* #scroll-section-0{pointer-events: none;}
+#scroll-section-1{pointer-events: none;}
+#scroll-section-2{pointer-events: none;}
+#scroll-section-3{pointer-events: none;}
+#scroll-section-4{pointer-events: none;}
+#scroll-section-5{pointer-events: none;} */
+/* .moreBtnarea{z-index: 999;} */
+/* .moreBtnarea .moreTxt{pointer-events:all; z-index: 9999;} */
+
+.contactTextBoxMiddleMobile{display: none;}
+/* 
+#scroll-section-2 .quietplaceGsapContainer .moreBtnarea .moreTxt{z-index: 99999; pointer-events: all;} */
+
+/* .sticky-elem-canvas>canvas{pointer-events: none;} */
+
+
+
+@media (max-width:1600px){
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 33px}
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 33px}
+  .languageIcon img, .languageIcon svg{width: 62px; height: 62px;}
+}
+
+@media (max-width:1450px){
+  .moreBtn{width: 150px; height: 150px;}
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 30px}
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 30px}
+  .languageIcon img, .languageIcon svg{width: 55px; height: 55px;}
+
+  .quietplaceGsapContainer .quietplaceH1{font-size: 2.3rem;top:60vh; left: 65vw;}
+  .ikeaGsapContainer .ikeaH1{top: 55vh; font-size: 2.3rem;}
+}
+
+@media (max-width:1350px){
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 25px}
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 25px}
+  .languageIcon img, .languageIcon svg{width: 50px; height: 50px;}
+ 
+}
+
+ @media (max-width:1200px){
+
+  #scroll-section-0 h1{font-size: 5rem;}
+
+  .main-message{font-size: 2.5rem;}
+  #scroll-section-1 .textBox{font-size: 4rem;}
+
+
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 20px}
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 20vh;}
+  #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 25vh;}
+  .languageIcon img, .languageIcon svg{width: 47px; height: 47px;}
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
+    font-size: 2rem;
+    left: 62vw;
+  }
+
+  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{left: 66vw; top: 20vh;}
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px}
+  #scroll-section-3 .ikeaGsapContainer .languageDec{top: 25vh; left: 66vw;}
+  #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
+  .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
+}  
+
+
+ @media (max-width:1024px){
+  #scroll-section-0 .bg {top: 5vh;}
+  #scroll-section-0 h1{font-size: 4.5rem;}
+  #scroll-section-0 .sticky-elem-canvas canvas{height: 100%;}
+
+  .main-message{font-size: 3rem;}
+  .pcContinuing{display: block;}
+  
+  .pcMyIntroduction{display: block;}
+  
+  #scroll-section-1 .textBox{font-size: 5rem;}
+  .languageIcon img, .languageIcon svg{width: 45px; height: 45px;}
+  #scroll-section-2 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 15vh;}
+  #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
+  
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 20px;}
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
+    top: 68vh;
+    left: 55vw;
+  }
+
+
+  #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px;}
+  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
+    top: 15vh;
+    left: 60vw;
+  }
+  #scroll-section-3 .ikeaGsapContainer .languageDec{top: 20vh; left: 60vw;}
+  .ikeaGsapContainer .ikeaH1{top: 68vh;}
+
+  .contactTextBoxMiddle{font-size: 1.3rem;}
+  .contactTextBoxBottom{gap:2rem; top: 60vh;}
+}  
+
+
+
+ @media (max-width:768px){
+  #scroll-section-0 h1{font-size: 2.5rem;}
+  #scroll-section-0 .scolldimPc{ display: none;}
+  #scroll-section-0 .scolldimMobile{display: block;}
+
+  .main-message{font-size: 2rem;}
+  .main-message .kr{font-size: .8rem;}
+  #scroll-section-1 .textBox{font-size: 2.5rem;}
+
+  .pcContinuing{display: none;}
+  .pcMyIntroduction{display: none;}
+
+  .mobileContinuing{display: block;}
+  .mobileMyIntroduction{display: block;}
+
+
+  .logodisplayFlexContaner{bottom: 130px;}
+
+  .moreBtn {width: 85px;height: 85px;}
+  .moreBtnarea .moreArr svg{width: 30px;height: 40px;}
+  #scroll-section-0 .logoPosContainer .Pos {
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+  }
+    #scroll-section-0 .logoPosContainer .Pos>div {
+      flex: 1 1 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 50vh; left: 5vw;}
+  #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:50vh; left: 72vw;}
+
+  #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%;}
+
+  #scroll-section-2 .quietplaceGsapContainer{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24vh;left: 0;
+  }
+  
+  #scroll-section-2 .quietplaceGsapContainer .languageDec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    top: 76vh;
+    left: 0;
+    text-align: center;
+  }
+
+  .languageIcon img, .languageIcon svg {width:45px;height:45px;}
+
+  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 18px}
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
+    text-align: center;
+    top: -3vh;
+    left: 0vw;
+    font-size: 2.3rem;
+    line-height: 1.1;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1 .moreBtnarea {
+    right: 50vw;
+    bottom: -45vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceDec{
+    display: none;
+    top: 50vh;
+    font-size: 0.8rem;
+  }
+
+  #scroll-section-3 .ikeaGsapContainer .languageDec p{
+    font-size: 0.9rem;
+  }
+   #scroll-section-3 .ikeaGsapContainer{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24vh;left: 0;
+  }
+
+  #scroll-section-3 .sticky-elem-canvas canvas{top: 55%;}
+
+  #scroll-section-3 .ikeaGsapContainer .languageDec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    top: 76vh;
+    left: 0;
+    text-align: center;
+  }
+
+  #scroll-section-3 .ikeaLanguageContainer .leftBracket img{width: 18px}
+  #scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 18px}
+  
+  .ikeaGsapContainer .ikeaH1{
+    text-align: center;
+    top: -3vh;
+    left: 0;
+    font-size: 2.3rem;
+    line-height: 1.1;
+  }
+   .ikeaGsapContainer .ikeaH1 .moreBtnarea {
+    right: -25vw;
+    bottom: -45vh;
+  }
+
+
+  #scroll-section-3 .ikeaGsapContainer .ikeaDec{
+    display: none;
+    top: 50vh;
+    font-size: 0.8rem;
+  }
+
+  .contactTextBoxTop{font-size: 1rem;}
+  .contactTextBoxTop span{font-size: 2rem;}
+
+  .contactTextBoxMiddlePC{display: none;}
+  .contactTextBoxMiddleMobile{display: block;}
+
+  .heajunLogo{top: 55vh;}
+  .contactTextBoxBottom .iconBox01,
+  .contactTextBoxBottom .iconBox02,
+  .contactTextBoxBottom .iconBox03,
+  .contactTextBoxBottom .iconBox04,
+  .contactTextBoxBottom .iconBox05,
+  .contactTextBoxBottom .iconBox06{flex: 0 1 40%;}
+  .contactTextBoxBottom{gap: 1rem; font-size: 0.75rem;}
+
+
+
+
+
+
+
+
+}  

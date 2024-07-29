@@ -1,0 +1,128 @@
+
+.loading{
+    background-color: #0a0a0a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 1;
+
+    pointer-events: none;
+    
+}
+.loading .backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    pointer-events: none;
+}
+.loading .loading-fill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    will-change: transform;
+    background: #0a0a0a;
+    pointer-events: none;
+}
+
+
+.loading-box{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.loading-figure{
+    display: inline-grid;
+    align-items: center;
+
+    grid-auto-flow: column;
+    gap: 1.5rem;
+}
+.loading-figure .loading-leftBracket,
+.loading-figure .loading-rightBracket{width: 35px;}
+.loading-icon{position: relative;  width: 66px; height: 66px;}
+.loading-icons{
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+}
+
+.loading-icons:nth-of-type(1){display: none;}
+.loading-icons:nth-of-type(2){display: none;}
+.loading-icons:nth-of-type(3){display: none;}
+.loading-icons:nth-of-type(4){display: none;}
+.loading-icons:nth-of-type(5){display: none;}
+.loading-icons:nth-of-type(6){display: none;}
+.loading-icons:nth-of-type(7){display: none;}
+.loading-icons:nth-of-type(8){display: none;}
+.loading-icons:nth-of-type(9){display: none;}
+.loading-icons:nth-of-type(9){display: none;}
+
+.loading-logo img{width: 100px;}
+.loading-logo{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 2rem;
+}
+
+.loading-percent {
+    position: absolute;
+    /* left: 80vw; */
+    right: 5vw;
+    bottom: 7rem;
+    z-index: 1;
+    will-change: transform;
+    opacity: 1;
+    font-size: 6.5rem;
+    line-height: 100%;
+    letter-spacing: -.03em;
+    text-align: right;
+    transition: opacity .2s;
+}
+/* 
+@media (min-width: 768px) {
+    .loading-percent {
+        left:auto;
+        right: 7rem;
+        bottom: 7rem;
+        font-size: 10rem
+    }
+} */
+
+/* .loading-percent:after {
+    content: "%"
+} */
+
+.loading-percent.-visible {
+    opacity: 1
+}
+/* .loading-logo>p{font-family: 'TWKEverett';font-weight: normal;} */
+.loading-logo>p>span{font-size: 2.5rem; color: #008cff; letter-spacing: -0.03rem;}
+
+
+
+@media (max-width:768px){
+    .loading-percent{font-size: 3.5rem; }
+
+    .loading-figure .loading-leftBracket,
+    .loading-figure .loading-rightBracket{width: 25px;}
+    .loading-icon{position: relative;  width: 55px; height: 55px;}
+
+    .loading-logo{
+        font-size: 1.5rem;
+    }
+    .loading-logo>p>span{font-size: 2rem;}
+  }  
