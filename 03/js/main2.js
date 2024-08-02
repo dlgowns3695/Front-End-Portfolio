@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas: document.querySelector("#video-canvas-1"),
         context: document.querySelector("#video-canvas-1").getContext("2d"),
         videoImages: [],
+        
+        canvas2: document.querySelector("#video-canvas-1-1"),
+        context2: document.querySelector("#video-canvas-1-1").getContext("2d"),
+        videoImages2: [],
+
+        canvas3: document.querySelector("#video-canvas-1-2"),
+        context3: document.querySelector("#video-canvas-1-2").getContext("2d"),
+        videoImages3: [],
       },
       values: {
           videoImageCount: 206,
@@ -183,7 +191,16 @@ document.addEventListener('DOMContentLoaded', function() {
         pinC_opacity_in: [0, 1, { start: 0.72, end: 0.77 }],
         pinB_opacity_out: [1, 0, { start: 0.58, end: 0.63 }],
         pinC_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
+        
       },
+      values2: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      },
+      values3: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      }
     },
     {
       // 3 이케아 예정
@@ -210,6 +227,14 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas: document.querySelector("#video-canvas-2"),
         context: document.querySelector("#video-canvas-2").getContext("2d"),
         videoImages: [],
+
+        canvas2: document.querySelector("#video-canvas-2-1"),
+        context2: document.querySelector("#video-canvas-2-1").getContext("2d"),
+        videoImages2: [],
+
+        canvas3: document.querySelector("#video-canvas-2-2"),
+        context3: document.querySelector("#video-canvas-2-2").getContext("2d"),
+        videoImages3: [],
       },
       values: {
         videoImageCount: 204,
@@ -266,6 +291,14 @@ document.addEventListener('DOMContentLoaded', function() {
         link_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
 
       },
+      values2: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      },
+      values3: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      }
 
     },
     {
@@ -451,14 +484,14 @@ document.addEventListener('DOMContentLoaded', function() {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
         imgElem4.src = `video/mobile/Bubble/Bubble(${result}).png`;
-        sceneInfo[5].objs.videoImages.push(imgElem4);
+        sceneInfo[5].objs.videoImages2.push(imgElem4);
       }
 
     }
 
     else {
       // refreshPageIfNeeded();
-      console.log('setCanvasImages 함수 PC버전 이미지 푸쉬완료');
+      // console.log('setCanvasImages 함수 PC버전 이미지 푸쉬완료');
 
       // Scene 0 이미지 로드
       let imgElem;
@@ -480,6 +513,23 @@ document.addEventListener('DOMContentLoaded', function() {
         sceneInfo[2].objs.videoImages.push(imgElem2);
       }
 
+      // 콰플 우상단
+      let imgElem21;
+      for (let i = 0; i < sceneInfo[2].values2.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem21 = new Image();
+        imgElem21.src = `video/006/Bubble(${result}).png`;
+        sceneInfo[2].objs.videoImages2.push(imgElem21);
+      }
+      // 콰플 좌하단
+      let imgElem22;
+      for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem22 = new Image();
+        imgElem22.src = `video/006/Bubble(${result}).png`;
+        sceneInfo[2].objs.videoImages3.push(imgElem22);
+      }
+
 
       // 이케아 피씨
       let imgElem3;
@@ -489,6 +539,26 @@ document.addEventListener('DOMContentLoaded', function() {
         imgElem3.src = `video/005/IKEA(${result}).png`;
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
+
+      // 이케아 우상단
+      let imgElem31;
+      for (let i = 0; i < sceneInfo[3].values2.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem31 = new Image();
+        imgElem31.src = `video/006/Bubble(${result}).png`;
+        sceneInfo[3].objs.videoImages2.push(imgElem31);
+      }
+      // 이케아 좌하단
+      let imgElem32;
+      for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem32 = new Image();
+        imgElem32.src = `video/006/Bubble(${result}).png`;
+        sceneInfo[3].objs.videoImages3.push(imgElem32);
+      }
+
+
+
 
       // 콘택트 예정
       let imgElem4;
@@ -628,8 +698,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // 아래 위치값 css에서 처리했음 (캔버스) 
       sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
       sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
+      sceneInfo[2].objs.canvas2.style.transform = `translate3d(-66%, -78%, 0) scale(.2)`;
+      sceneInfo[2].objs.canvas3.style.transform = `translate3d(-11%, -24%, 0) scale(.2)`;
       // sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-      sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
+      sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
+      sceneInfo[3].objs.canvas2.style.transform = `translate3d(-32%, -78%, 0) scale(.2)`;
+      sceneInfo[3].objs.canvas3.style.transform = `translate3d(-75%, -35%, 0) scale(.2)`; 
       sceneInfo[5].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
   }
   setLayout();
@@ -674,6 +748,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function playAnimation() {
     const objs = sceneInfo[currentScene].objs;
     const values = sceneInfo[currentScene].values;
+    const values2 = sceneInfo[2].values2;
+    const values3 = sceneInfo[3].values2;
     const currentYoffset = yOffset - prevScrollHeight;
     //yOffset - prevScrollHeight : 현재 스크롤된 양 - 이미 지나간 섹션들의 합 : 현재씬에서 얼마나 스크롤 했는지 나옴
     const scrollHeight = sceneInfo[currentScene].scrollHeight;
@@ -789,13 +865,26 @@ document.addEventListener('DOMContentLoaded', function() {
         let sequence2 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
+        let sequence22 = Math.round(
+          calcValues(values2.imageSequence, currentYoffset)
+        );
+        // values3이랑 values2 같아서 3안씀
+        let sequence23 = Math.round(
+          calcValues(values2.imageSequence, currentYoffset)
+        );
         // console.log(sequence2 + ' 시원스2 ');
       
-      //  console.log('sequence2 >>> '+sequence2);
+      //  console.log('sequence2 >>> '+sequence22);
       // 캔버스초기화,, 잔상효과 없애기 위함
       objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
       //  objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
       objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
+
+      objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
+      objs.context2.drawImage(objs.videoImages2[sequence22], 0, 0);
+
+      objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
+      objs.context3.drawImage(objs.videoImages3[sequence23], 0, 0);
 
       // console.log(scrollRatio+' < < 씬2의 scrollRatio')
         if (scrollRatio <= 0.35) {
@@ -999,12 +1088,21 @@ document.addEventListener('DOMContentLoaded', function() {
         let sequence3 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
+
+        let sequence32 = Math.round(
+          calcValues(values3.imageSequence, currentYoffset)
+        );
       
       console.log('sequence3 >>> '+sequence3);
       // 캔버스초기화,, 잔상효과 없애기 위함
       objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
-      //  objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
       objs.context.drawImage(objs.videoImages[sequence3], 0, 0);
+
+      objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
+      objs.context2.drawImage(objs.videoImages2[sequence32], 0, 0);
+
+      objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
+      objs.context3.drawImage(objs.videoImages3[sequence32], 0, 0);
 
       // console.log(scrollRatio+' < < 씬2의 scrollRatio')
       if (scrollRatio <= 0.35) {
@@ -1579,18 +1677,73 @@ document.addEventListener('DOMContentLoaded', function() {
       // markers: true,
     }
   });
+  
+  gsap.to(sceneInfo[2].objs.canvas2, {
+    opacity: 1,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: "#scroll-section-2",
+      start: "top top", // 시작 지점
+      end: "95% bottom", // 끝 지점
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      markers: true,
+    
+      onLeave: () => gsap.to(sceneInfo[2].objs.canvas2, { opacity: 0, duration: 0.3 }),
+      onEnterBack: () => gsap.to(sceneInfo[2].objs.canvas2, { opacity: 1, duration: .3 }),
+      // 
+    }
+  });
+  
+  gsap.to(sceneInfo[2].objs.canvas3, {
+    opacity: 1,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: "#scroll-section-2",
+      start: "top top", // 시작 지점
+      end: "95% bottom", // 끝 지점
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      markers: true,
+     
+      onLeave: () => gsap.to(sceneInfo[2].objs.canvas3, { opacity: 0, duration: 0.3 },console.log("onLeave")),
+      onEnterBack: () => gsap.to(sceneInfo[2].objs.canvas3, { opacity: 1, duration: 0.3 },console.log("onEnterBack")),
+      
+    }
+  });
 
-  // gsap.to(".mouseCanvas", {
-  //   opacity: 1,
-  //   duration: 0.5,
-  //   scrollTrigger: {
-  //     trigger: ".container",
-  //     start: "11% top", // 시작 지점
-  //     // end: "+=800px", // 끝 지점
-  //     // scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     // markers: true,
-  //   }
-  // });
+
+
+  gsap.to(sceneInfo[3].objs.canvas2, {
+    opacity: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: "#scroll-section-3",
+      start: "top top", // 시작 지점
+      end: "95% bottom", // 끝 지점
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      markers: true,
+      
+      onLeave: () => gsap.to(sceneInfo[3].objs.canvas2, { opacity: 0, duration: 0.3 }),
+      onEnterBack: () => gsap.to(sceneInfo[3].objs.canvas2, { opacity: 1, duration: 0.3 }),
+      
+    }
+  });
+  
+  gsap.to(sceneInfo[3].objs.canvas3, {
+    opacity: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: "#scroll-section-3",
+      start: "top top", // 시작 지점
+      end: "95% bottom", // 끝 지점
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      markers: true,
+      
+      onLeave: () => gsap.to(sceneInfo[3].objs.canvas3, { opacity: 0, duration: 0.3 },console.log("onLeave")),
+      onEnterBack: () => gsap.to(sceneInfo[3].objs.canvas3, { opacity: 1, duration: 0.3 },console.log("onEnterBack")),
+      
+    }
+  });
+
   gsap.to(".mouseCanvas", {
     scrollTrigger: {
       trigger: ".container",
@@ -1605,27 +1758,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  let animation = lottie.loadAnimation({
+      container: document.getElementById('lottie'), // 애니메이션을 표시할 컨테이너
+      renderer: 'svg', // 렌더러 형식: 'svg', 'canvas', 'html'
+      loop: true, // 애니메이션 반복 여부
+      autoplay: true, // 자동 재생 여부
+      path: 'images/EmailAni.json' // JSON 파일 경로
+  });
+
+
   const email01 = document.querySelector(".e-mail01");
   const email02 = document.querySelector(".e-mail02");
   const mousechk = document.querySelector(".mouseChk");
-  const moreBtnChk = document.querySelector(".moreBtnarea");
+  animation.play();
 
   mousechk.addEventListener("mouseenter", function(){
     email01.style.display = 'none';
-    email02.style.display = 'block';
-    console.log('email01 호버')
-  });
-  
-  mousechk.addEventListener("mouseleave", function(){
+    // email02.style.display = 'none'; // 이메일 SVG 숨김
+    document.getElementById('lottie').style.display = 'block'; // Lottie 애니메이션 보이기
+    animation.play(); // Lottie 애니메이션 재생
+    // console.log('email01 호버');
+});
+
+mousechk.addEventListener("mouseleave", function(){
     email01.style.display = 'block';
-    email02.style.display = 'none';
-    console.log('email01 빠져나옴')
-  });
+    // email02.style.display = 'none'; // 이메일 SVG 숨김
+    document.getElementById('lottie').style.display = 'none'; // Lottie 애니메이션 숨기기
+    animation.stop(); // Lottie 애니메이션 멈춤
+    // console.log('email01 빠져나옴');
+});
 
-  moreBtnChk.addEventListener("mouseenter", function(){
-
-    console.log('링크 호버')
-  });
 
 
   window.addEventListener("resize", setLayout);
