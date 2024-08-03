@@ -515,12 +515,25 @@ pointer-events: none;
   bottom: 0;
   right: 0;
 }
+.SortingRight{
+  
+
+    left: 70vw;
+    width: 335px;
+    height: 100%;
+
+    position: absolute;
+    top: 15vh;
+
+
+}
 #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
-  /* 기존 left 8vw */
-  position: relative; top: 20vh; left: 73vw; 
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer .languageIcon{
   display: flex; justify-content: space-between; gap:1.5rem;
@@ -533,12 +546,19 @@ pointer-events: none;
 #scroll-section-3 .ikeaLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
 #scroll-section-3 .ikeaLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
 #scroll-section-3 .ikeaGsapContainer .languageDec{
-  
-  position: relative;top:25vh; left:70vw; font-size: 1.5rem; color: #fff;
+  height: 100%;
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    top: 145px;
+    left: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    
 }
 #scroll-section-3 .ikeaGsapContainer .languageDec p{
-  width: 400px;
-  text-align: right;
+
+  
   font-size: 0.9rem;
   opacity: 0; 
   line-height: 1.5;
@@ -547,10 +567,12 @@ pointer-events: none;
   position: absolute;
 }
 #scroll-section-3 .ikeaGsapContainer .languageDec .p2{
+  top: 0;
+  right: 0;
   position: absolute;
 }
 #scroll-section-3 .ikeaGsapContainer .moreBtnarea{
-  position: absolute; top: 13vh; left: 11vw;}
+  position: absolute; top: 24vh; left: 0vw;}
 .ikeaGsapContainer .ikeaH1 {
   /* 기존 left 70vw */
   position: relative;
@@ -817,9 +839,8 @@ pointer-events: none;
     left: 62vw;
   }
 
-  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{left: 66vw; top: 20vh;}
+  .SortingRight{left: 65vw;}
   #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px}
-  #scroll-section-3 .ikeaGsapContainer .languageDec{top: 25vh; left: 66vw;}
   #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
   .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
 }  
@@ -847,16 +868,13 @@ pointer-events: none;
     left: 55vw;
   }
 
-
+  .SortingRight{left: 60vw;}
   #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
   #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px;}
-  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
-    top: 15vh;
-    left: 60vw;
-  }
-  #scroll-section-3 .ikeaGsapContainer .languageDec{top: 20vh; left: 60vw;}
+
   .ikeaGsapContainer .ikeaH1{top: 68vh;}
 
+  .iconBox04 .email-icons>svg{display: none;}
   .contactTextBoxMiddle{font-size: 1.3rem;}
   .contactTextBoxBottom{gap:2rem; top: 60vh;}
 }  
@@ -895,6 +913,7 @@ pointer-events: none;
       justify-content: center;
       align-items: center;
   }
+
   #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 50vh; left: 5vw;}
   #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:50vh; left: 72vw;}
 
@@ -965,7 +984,7 @@ pointer-events: none;
   }
 
   #scroll-section-3 .sticky-elem-canvas canvas{top: 55%;}
-
+  #scroll-section-3 .ikeaGsapContainer .languageDec .p2{right: auto;}
   #scroll-section-3 .ikeaGsapContainer .languageDec{
     display: flex;
     justify-content: center;
@@ -976,13 +995,13 @@ pointer-events: none;
     left: 0;
     text-align: center;
   }
-
+  .SortingRight{position: static; left: auto;}
   #scroll-section-3 .ikeaLanguageContainer .leftBracket img{width: 18px}
   #scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 18px}
   
   .ikeaGsapContainer .ikeaH1{
     text-align: center;
-    top: -3vh;
+    top: 7vh;
     left: 0;
     font-size: 2.3rem;
     line-height: 1.1;
@@ -999,15 +1018,17 @@ pointer-events: none;
     font-size: 0.8rem;
   }
 
-  .contactTextBoxTop{font-size: 1rem;}
-  .contactTextBoxTop span{font-size: 2rem;}
+  .contactTextBoxTop{font-size: .9rem;}
+  .contactTextBoxTop span{font-size: 1.3rem;}
 
   .contactTextBoxMiddlePC{display: none;}
   .contactTextBoxMiddleMobile{display: block;}
 
-  .heajunLogo{top: 50vh;}
+  .heajunLogo{top: 50vh; font-size: 2rem;}
+  .heajunLogo span{font-size: 2.5rem;}
   .contactTextBoxMiddle{font-size: .9rem;}
   .contactTextBoxMiddleMobileMarginBottom{margin-bottom: 3vh;}
+ 
   .contactTextBoxBottom{gap: .5rem; font-size: 0.75rem; margin-top: -10vh;}
   .contactTextBoxBottom .iconBox01,
   .contactTextBoxBottom .iconBox02,

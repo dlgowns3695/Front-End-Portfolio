@@ -459,6 +459,22 @@ document.addEventListener('DOMContentLoaded', function() {
         
       }
 
+      // 콰플 우상단
+      let imgElemMobile21;
+      for (let i = 0; i < sceneInfo[2].values2.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElemMobile21 = new Image();
+        imgElemMobile21.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        sceneInfo[2].objs.videoImages2.push(imgElemMobile21);
+      }
+      // 콰플 좌하단
+      let imgElemMobile22;
+      for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElemMobile22 = new Image();
+        imgElemMobile22.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        sceneInfo[2].objs.videoImages3.push(imgElemMobile22);
+      }
 
       // 콰이어트플레이스 모바일
       let imgElem2;
@@ -467,6 +483,22 @@ document.addEventListener('DOMContentLoaded', function() {
         imgElem2 = new Image();
         imgElem2.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`;
         sceneInfo[2].objs.videoImages.push(imgElem2);
+      }
+      // 이케아 우상단
+      let imgElemMobile31;
+      for (let i = 0; i < sceneInfo[3].values2.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElemMobile31 = new Image();
+        imgElemMobile31.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        sceneInfo[3].objs.videoImages2.push(imgElemMobile31);
+      }
+      // 이케아 좌하단
+      let imgElemMobile32;
+      for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElemMobile32 = new Image();
+        imgElemMobile32.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        sceneInfo[3].objs.videoImages3.push(imgElemMobile32);
       }
 
       // 이케아 모바일
@@ -484,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
         imgElem4.src = `video/mobile/Bubble/Bubble(${result}).png`;
-        sceneInfo[5].objs.videoImages2.push(imgElem4);
+        sceneInfo[5].objs.videoImages.push(imgElem4);
       }
 
     }
@@ -578,7 +610,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // const canvase0 = document.querySelector('#video-canvas-0');
     const canvase1 = document.querySelector('#video-canvas-1');
+    const canvase11 = document.querySelector('#video-canvas-1-1');
+    const canvase12 = document.querySelector('#video-canvas-1-2');
     const canvase2 = document.querySelector('#video-canvas-2');
+    const canvase21 = document.querySelector('#video-canvas-2-1');
+    const canvase22 = document.querySelector('#video-canvas-2-2');
     const canvase3 = document.querySelector('#video-canvas-3');
     
     switch(checkPCMobile){
@@ -619,9 +655,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     // 추후 에펙 위치조정해야할듯함
                     canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
 
+                    
+                    canvase12.style.transform = 'translate3d(-40%, -27%, 0px) scale(.2)';
+                    
+
                     canvase2.width = 1920;
                     canvase2.height = 1080;
                     canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
+                    canvase21.style.transform = 'translate3d(-43%, -84%, 0px) scale(.2)';
+                    canvase22.style.transform = 'translate3d(-35%, -24%, 0px) scale(.2)';
+
 
       break;
       // 모바일 768
@@ -632,10 +675,14 @@ document.addEventListener('DOMContentLoaded', function() {
               canvase1.width = 1080;
               canvase1.height = 1920;
               canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
+              canvase11.style.transform = 'translate3d(-55%, -78%, 0px) scale(.2)';
+              canvase12.style.transform = 'translate3d(-35%, -45%, 0px) scale(.2)';
         
               canvase2.width = 1080;
               canvase2.height = 1920;
               canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
+              canvase21.style.transform = 'translate3d(-36%, -77%, 0px) scale(.2)';
+              canvase22.style.transform = 'translate3d(-54%, -40%, 0px) scale(.2)';
 
               canvase3.width = 1080;
               canvase3.height = 1920;
@@ -699,7 +746,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
       sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
       sceneInfo[2].objs.canvas2.style.transform = `translate3d(-66%, -78%, 0) scale(.2)`;
-      sceneInfo[2].objs.canvas3.style.transform = `translate3d(-11%, -24%, 0) scale(.2)`;
+      sceneInfo[2].objs.canvas3.style.transform = `translate3d(-30%, -33%, 0) scale(.2)`;
       // sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
       sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
       sceneInfo[3].objs.canvas2.style.transform = `translate3d(-32%, -78%, 0) scale(.2)`;
@@ -1589,7 +1636,7 @@ document.addEventListener('DOMContentLoaded', function() {
       end: "bottom bottom", 
       scrub: true, // 스크롤 양에 따라 애니메이션 조절
       pin: true,
-      // markers: true,
+      
   
       onLeave: () => {
         // console.log("END부분입니다!");
