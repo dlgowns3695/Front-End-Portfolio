@@ -1805,6 +1805,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  gsap.to(".ruler", {
+    scrollTrigger: {
+      trigger: ".container",
+      start: "11% top", // 시작 지점
+
+      // markers: true,
+      onEnter: () => gsap.to(".ruler", { opacity: 1, duration: 0.5 }),
+      onLeave: () => gsap.to(".ruler", { opacity: 0, duration: 0.5 }),
+      onEnterBack: () => gsap.to(".ruler", { opacity: 1, duration: 0.5 }),
+      onLeaveBack: () => gsap.to(".ruler", { opacity: 0, duration: 0.5 }),
+    }
+  });
+
+
   let animation = lottie.loadAnimation({
       container: document.getElementById('lottie'), // 애니메이션을 표시할 컨테이너
       renderer: 'svg', // 렌더러 형식: 'svg', 'canvas', 'html'
@@ -1815,24 +1829,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   const email01 = document.querySelector(".e-mail01");
-  const email02 = document.querySelector(".e-mail02");
   const mousechk = document.querySelector(".mouseChk");
-  animation.play();
+ 
 
   mousechk.addEventListener("mouseenter", function(){
     email01.style.display = 'none';
-    // email02.style.display = 'none'; // 이메일 SVG 숨김
     document.getElementById('lottie').style.display = 'block'; // Lottie 애니메이션 보이기
-    animation.play(); // Lottie 애니메이션 재생
-    // console.log('email01 호버');
+    animation.play();
+    
 });
 
 mousechk.addEventListener("mouseleave", function(){
     email01.style.display = 'block';
-    // email02.style.display = 'none'; // 이메일 SVG 숨김
     document.getElementById('lottie').style.display = 'none'; // Lottie 애니메이션 숨기기
-    animation.stop(); // Lottie 애니메이션 멈춤
-    // console.log('email01 빠져나옴');
+    animation.stop(); 
+    
 });
 
 
