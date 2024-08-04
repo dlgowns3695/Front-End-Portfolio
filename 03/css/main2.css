@@ -24,7 +24,7 @@
          ;
   }
 
-#lottie{width: 80px; height: 80px;}
+#lottie{width: 80px; height: 80px; display: none;}
 #video-canvas-1-1{opacity: 0; transition: opacity .3s;}
 #video-canvas-1-2{opacity: 0; transition: opacity .3s;}
 
