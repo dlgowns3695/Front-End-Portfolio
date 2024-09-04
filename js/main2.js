@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   const sceneInfo = [
+    // 0 빙하
     {
-      // 0
+      
       type: "sticky",
       heightNum: 5, // 브라우저 높이의 5배로 scrollHeight 세팅
       scrollHeight: 0, // 여러 DEVICE에서 열때 높이값을 다르게 해주기 위해 초기값 0
@@ -38,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         logoPosContainer: document.querySelector(".logoPosContainer"),
         // document.querySelectorAll("#scroll-section-0 .logoPosContainer .Pos img"), NodeList
-        logo1: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo1 img"),
-        logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .IKEAlogo2 img"),
+        logo1: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .quietPlaceLink a"),
+        logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ikeaLink a"),
         // logo3: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo3 img"),
-        logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .LEAGUEofLEGENDslogo4 img"),
-        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 img"),
+        logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ediyacoffeeLink a"),
+        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 a"),
         section0Bg: document.querySelector("#scroll-section-0 .bg"),
 
         canvas: document.querySelector("#video-canvas-0"),
@@ -71,8 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
       logoPosContainer_translateY_out: [0, -20, { start: 0.75, end: 0.8 }],
       },
     },
+    // 1 문구
     {
-      // 1
+      
       type: "normal",
       heightNum: 5,
       scrollHeight: 0,
@@ -80,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container: document.querySelector("#scroll-section-1"),
       },
     },
+    // 2 콰플
     {
       // 2, 콰이어트 플레이스 예정
       type: "sticky",
@@ -202,8 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
         imageSequence: [0, 296],
       }
     },
+    // 3 이케아
     {
-      // 3 이케아 예정
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -301,9 +304,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
     },
+    // 4 이름로고
     {
-    
-      // 4
       type: "normal",
       heightNum: 5,
       scrollHeight: 0,
@@ -330,45 +332,120 @@ document.addEventListener('DOMContentLoaded', function() {
         // messageC_opacity_out: [[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }]],
       }
     },
-
-    
-    // {
-    //   // 5 ,,  콘택트 전 카드들 예정
-    //   type: "sticky",
-    //   heightNum: 5,
-    //   scrollHeight: 0,
-    //   objs: {
-    //     container: document.querySelector("#scroll-section-5"),
-
-    //   },
-    //   values : {
-
-    //   }
-    // },
+    // 5 contact (구슬)
     {
-    // 5, contact ,, 이케아꺼로 임시방편
-    type: "sticky",
-    heightNum: 3,
-    scrollHeight: 0,
-    objs: {
-      container: document.querySelector("#scroll-section-5"),
+      type: "sticky",
+      heightNum: 3,
+      scrollHeight: 0,
+      objs: {
+        container: document.querySelector("#scroll-section-5"),
 
-      // contact: document.querySelector("#scroll-section-0 .main-message.a"),
+        // contact: document.querySelector("#scroll-section-0 .main-message.a"),
 
-      canvas: document.querySelector("#video-canvas-3"),
-      context: document.querySelector("#video-canvas-3").getContext("2d"),
-      videoImages: [],
+        canvas: document.querySelector("#video-canvas-3"),
+        context: document.querySelector("#video-canvas-3").getContext("2d"),
+        videoImages: [],
+      },
+      values: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+        canvas_opacity_in: [0, .3, { start: 0.05, end: 0.5 }],
+        canvas_opacity_out: [.3, 0, { start: 0.85, end: 0.9 }],
+      },
+
     },
-    values: {
-      videoImageCount: 297,
-      imageSequence: [0, 296],
-      canvas_opacity_in: [0, .3, { start: 0.05, end: 0.5 }],
-      canvas_opacity_out: [.3, 0, { start: 0.85, end: 0.9 }],
-    },
-    
+    // 6 이디야 예정
+    {
+      type: "sticky",
+      heightNum: 5,
+      scrollHeight: 0,
+      objs: {
+        container: document.querySelector("#scroll-section-6"),
+
+        link: document.querySelector("#scroll-section-6 .ediyaGsapContainer .moreBtnarea"),
+
+        messageP1A: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP1"),
+        messageP1B: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP2"),
+        messageP1C: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP3"),
+
+        messageP2A: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP1"),
+        messageP2B: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP2"),
+        messageP2C: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP3"),
+        messageP2D: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP4"),
+
+        messageF: document.querySelector("#scroll-section-6 .ediyaGsapContainer .ediyaH1"),
+        messageG: document.querySelector("#scroll-section-6 .ediyaGsapContainer .ediyaH1 .ediyaDec"),
+
+        canvas: document.querySelector("#video-canvas-4"),
+        context: document.querySelector("#video-canvas-4").getContext("2d"),
+        videoImages: [],
+
+      },
+      values: {
+        videoImageCount: 204,
+        imageSequence: [0, 203],
+
+        messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageP1B_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageP1C_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+
+
+        messageP2A_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2B_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2C_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2D_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageF_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+
+        messageP1A_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageP1B_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageP1C_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+
+        messageP2A_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2B_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2C_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2D_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageF_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageG_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+        link_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+        messageP1A_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+        messageP1B_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+        messageP1C_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+
+
+        messageP2A_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2B_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2C_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2D_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageF_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+
+        messageP1A_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+        messageP1B_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+        messageP1C_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+
+
+        messageP2A_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2B_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2C_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2D_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageF_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageG_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+
+        link_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+
+      },
+      values2: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      },
+      values3: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      }
     }
-    
-    
+      
   ];
   function getState() {
     const width = window.innerWidth;
@@ -459,22 +536,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
       }
 
-      // 콰플 우상단
-      // let imgElemMobile21;
-      // for (let i = 0; i < sceneInfo[2].values2.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElemMobile21 = new Image();
-      //   imgElemMobile21.src = `video/mobile/Bubble/Bubble(${result}).png`;
-      //   sceneInfo[2].objs.videoImages2.push(imgElemMobile21);
-      // }
-      // // 콰플 좌하단
-      // let imgElemMobile22;
-      // for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElemMobile22 = new Image();
-      //   imgElemMobile22.src = `video/mobile/Bubble/Bubble(${result}).png`;
-      //   sceneInfo[2].objs.videoImages3.push(imgElemMobile22);
-      // }
 
       // 콰이어트플레이스 모바일
       let imgElem2;
@@ -484,22 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
         imgElem2.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`;
         sceneInfo[2].objs.videoImages.push(imgElem2);
       }
-      // // 이케아 우상단
-      // let imgElemMobile31;
-      // for (let i = 0; i < sceneInfo[3].values2.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElemMobile31 = new Image();
-      //   imgElemMobile31.src = `video/mobile/Bubble/Bubble(${result}).png`;
-      //   sceneInfo[3].objs.videoImages2.push(imgElemMobile31);
-      // }
-      // // 이케아 좌하단
-      // let imgElemMobile32;
-      // for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElemMobile32 = new Image();
-      //   imgElemMobile32.src = `video/mobile/Bubble/Bubble(${result}).png`;
-      //   sceneInfo[3].objs.videoImages3.push(imgElemMobile32);
-      // }
+
 
       // 이케아 모바일
       let imgElem3;
@@ -545,24 +591,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sceneInfo[2].objs.videoImages.push(imgElem2);
       }
 
-      // // 콰플 우상단
-      // let imgElem21;
-      // for (let i = 0; i < sceneInfo[2].values2.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElem21 = new Image();
-      //   imgElem21.src = `video/006/Bubble(${result}).png`;
-      //   sceneInfo[2].objs.videoImages2.push(imgElem21);
-      // }
-      // // 콰플 좌하단
-      // let imgElem22;
-      // for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElem22 = new Image();
-      //   imgElem22.src = `video/006/Bubble(${result}).png`;
-      //   sceneInfo[2].objs.videoImages3.push(imgElem22);
-      // }
-
-
       // 이케아 피씨
       let imgElem3;
       for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
@@ -572,26 +600,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
 
-      // // 이케아 우상단
-      // let imgElem31;
-      // for (let i = 0; i < sceneInfo[3].values2.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElem31 = new Image();
-      //   imgElem31.src = `video/006/Bubble(${result}).png`;
-      //   sceneInfo[3].objs.videoImages2.push(imgElem31);
-      // }
-      // // 이케아 좌하단
-      // let imgElem32;
-      // for (let i = 0; i < sceneInfo[2].values3.videoImageCount; i++) {
-      //   let result = `${i}`.padStart(0, "0");
-      //   imgElem32 = new Image();
-      //   imgElem32.src = `video/006/Bubble(${result}).png`;
-      //   sceneInfo[3].objs.videoImages3.push(imgElem32);
-      // }
-
-
-
-
       // 콘택트 예정
       let imgElem4;
       for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
@@ -599,6 +607,15 @@ document.addEventListener('DOMContentLoaded', function() {
         imgElem4 = new Image();
         imgElem4.src = `video/006/Bubble(${result}).png`;
         sceneInfo[5].objs.videoImages.push(imgElem4);
+      }
+
+      // 이디야 피씨
+      let imgElem6;
+      for (let i = 0; i < sceneInfo[6].values.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem6 = new Image();
+        imgElem6.src = `video/005/IKEA(${result}).png`;
+        sceneInfo[6].objs.videoImages.push(imgElem6);
       }
     }
 
@@ -616,6 +633,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // const canvase21 = document.querySelector('#video-canvas-2-1');
     // const canvase22 = document.querySelector('#video-canvas-2-2');
     const canvase3 = document.querySelector('#video-canvas-3');
+
+    const canvase4 = document.querySelector('#video-canvas-4');
     
     switch(checkPCMobile){
       // 피씨 1920
@@ -631,6 +650,9 @@ document.addEventListener('DOMContentLoaded', function() {
               canvase3.width = 1920;
               canvase3.height = 1080;
 
+              canvase4.width = 1920;
+              canvase4.height = 1080;
+
       break;
       // 노트북 1600
       case 1:
@@ -644,6 +666,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     canvase3.width = 1920;
                     canvase3.height = 1080;
+
+                    canvase4.width = 1920;
+                    canvase4.height = 1080;
       break;
       // 패드 1024
       case 2:
@@ -687,30 +712,14 @@ document.addEventListener('DOMContentLoaded', function() {
               canvase3.width = 1080;
               canvase3.height = 1920;
               canvase3.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
+              3
+              canvase4.width = 1080;
+              canvase4.height = 1920;
+              canvase4.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
 
       break;
     }
-      // console.log(checkPCMobile)
-      // if (checkPCMobile === 3) {
-      //   // 모바일일 때
-      //   sceneInfo[0].objs.canvas.style.transform = 'translate3d(-50%, -50%, 0px) scale(0.65)';
-      //   canvase1.width = 1080;
-      //   canvase1.height = 1920;
-      //   canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(0.4)';
 
-      //   canvase2.width = 1080;
-      //   canvase2.height = 1920;
-      //   canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(0.4)';
-
-      // } else {
-      //   // PC일 때
-      //   canvase1.width = 1920;
-      //   canvase1.height = 1080;
-
-      //   canvase2.width = 1920;
-      //   canvase2.height = 1080;
-      // }
-    
   }
  
 
@@ -749,9 +758,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // sceneInfo[2].objs.canvas3.style.transform = `translate3d(-30%, -33%, 0) scale(.2)`;
       // sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
       sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
+      
       // sceneInfo[3].objs.canvas2.style.transform = `translate3d(-32%, -78%, 0) scale(.2)`;
       // sceneInfo[3].objs.canvas3.style.transform = `translate3d(-75%, -35%, 0) scale(.2)`; 
       sceneInfo[5].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
+
+      sceneInfo[6].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
   }
   setLayout();
   canvasSize();
@@ -888,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       }
       if (scrollRatio >= 0.6){
-        // console.log('포인터')
+        console.log('포인터')
         objs.logo1.style.cursor = ' pointer ';
         objs.logo2.style.cursor = ' pointer ';
         // objs.logo3.style.cursor = ' pointer ';
@@ -896,7 +908,7 @@ document.addEventListener('DOMContentLoaded', function() {
         objs.logo5.style.cursor = ' pointer ';
       }
       if(scrollRatio >= 0.9 || scrollRatio < 0.6){
-        // console.log('오토')
+        console.log('오토')
         objs.logo1.style.cursor = ' auto ';
         objs.logo2.style.cursor = ' auto ';
         // objs.logo3.style.cursor = ' auto ';
@@ -1357,6 +1369,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         break;
         case 5:
+          
           console.log("5 play");
           let sequence4 = Math.round(
             calcValues(values.imageSequence, currentYoffset)
@@ -1383,8 +1396,229 @@ document.addEventListener('DOMContentLoaded', function() {
         objs.context.drawImage(objs.videoImages[sequence4], 0, 0);
 
         break;
+
+        case 6:
+        console.log("3play");
+        let sequence6 = Math.round(
+          calcValues(values.imageSequence, currentYoffset)
+        );
+
+        // let sequence32 = Math.round(
+        //   calcValues(values3.imageSequence, currentYoffset)
+        // );
+      
+      console.log('sequence6 >>> '+ sequence6);
+      // 캔버스초기화,, 잔상효과 없애기 위함
+      objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
+      objs.context.drawImage(objs.videoImages[sequence6], 0, 0);
+
+      // objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
+      // objs.context2.drawImage(objs.videoImages2[sequence32], 0, 0);
+
+      // objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
+      // objs.context3.drawImage(objs.videoImages3[sequence32], 0, 0);
+
+      // console.log(scrollRatio+' < < 씬2의 scrollRatio')
+      if (scrollRatio <= 0.35) {
+          
+        // in
+        objs.messageP1A.style.opacity = calcValues(
+          values.messageP1A_opacity_in,
+          currentYoffset
+        );
+        objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1A_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+        // in
+        objs.messageP1B.style.opacity = calcValues(
+          values.messageP1B_opacity_in,
+          currentYoffset
+          
+        );
+        objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1B_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+        // in
+        objs.messageP1C.style.opacity = calcValues(
+          values.messageP1C_opacity_in,
+          currentYoffset
+          
+        );
+        objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1C_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+
+
+      } else {
+        // out
+        objs.messageP1A.style.opacity = calcValues(
+          values.messageP1A_opacity_out,
+          currentYoffset
+        );
+        objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1A_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+        // out
+        objs.messageP1B.style.opacity = calcValues(
+          values.messageP1B_opacity_out,
+          currentYoffset
+        );
+        objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1B_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+        // out
+        objs.messageP1C.style.opacity = calcValues(
+          values.messageP1C_opacity_out,
+          currentYoffset
+        );
+        objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
+          values.messageP1C_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+      }
+
+      if (scrollRatio <= 0.92) {
+        // in
+        objs.messageP2A.style.opacity = calcValues(
+          values.messageP2A_opacity_in,
+          currentYoffset
+        );
+        objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2A_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+        // in
+        objs.messageP2B.style.opacity = calcValues(
+          values.messageP2B_opacity_in,
+          currentYoffset
+        );
+        objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2B_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+        // in
+        objs.messageP2C.style.opacity = calcValues(
+          values.messageP2C_opacity_in,
+          currentYoffset
+        );
+        objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2C_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+        // in
+        objs.messageP2D.style.opacity = calcValues(
+          values.messageP2C_opacity_in,
+          currentYoffset
+        );
+        objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2C_translateY_in,
+          currentYoffset
+        )}%, 0)`;
+
+
+      } else {
+        // out
+        objs.messageP2A.style.opacity = calcValues(
+          values.messageP2A_opacity_out,
+          currentYoffset
+        );
+        objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2A_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+        // out
+        objs.messageP2B.style.opacity = calcValues(
+          values.messageP2B_opacity_out,
+          currentYoffset
+        );
+        objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2B_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+        // out
+        objs.messageP2C.style.opacity = calcValues(
+          values.messageP2C_opacity_out,
+          currentYoffset
+        );
+        objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2C_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+        // out
+        objs.messageP2D.style.opacity = calcValues(
+          values.messageP2C_opacity_out,
+          currentYoffset
+        );
+        objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
+          values.messageP2C_translateY_out,
+          currentYoffset
+        )}%, 0)`;
+
+      }
+
+        if (scrollRatio <= 0.95) {
+          // in
+          objs.messageF.style.opacity = calcValues(
+            values.messageF_opacity_in,
+            currentYoffset
+          );
+          objs.messageF.style.transform = `translate3d(0, ${calcValues(
+            values.messageF_translateY_in,
+            currentYoffset
+          )}%, 0)`;
+
+          objs.messageG.style.opacity = calcValues(
+            values.messageG_opacity_in,
+            currentYoffset
+          );
+          objs.link.style.opacity = calcValues(
+            values.link_opacity_in,
+            currentYoffset
+          );
+        } else {
+          // out
+          objs.messageF.style.opacity = calcValues(
+            values.messageF_opacity_out,
+            currentYoffset
+          );
+          objs.messageF.style.transform = `translate3d(0, ${calcValues(
+            values.messageF_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+
+          objs.messageG.style.opacity = calcValues(
+            values.messageG_opacity_out,
+            currentYoffset
+          );
+          objs.link.style.opacity = calcValues(
+            values.link_opacity_out,
+            currentYoffset
+          );
+        }
+
     }
   }
+
+
+
+
 
   // 스크롤 될 때 바뀌는 값에 대한 기능
   function scrollLoop() {

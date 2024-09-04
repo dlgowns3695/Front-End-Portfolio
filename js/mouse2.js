@@ -616,12 +616,21 @@ function resizeCanvas() {
 }
 
 document.addEventListener('mousemove', e => {
-  pointers[0].moved = pointers[0].down;
-  pointers[0].dx = (e.offsetX - pointers[0].x) * 10.0;
-  pointers[0].dy = (e.offsetY - pointers[0].y) * 10.0;
-  pointers[0].x = e.offsetX;
-  pointers[0].y = e.offsetY;
+  // 링크나 텍스트가 있는 영역을 감지 (예: 특정 div 내부에 있는지 확인)
+  const isOverLinkOrText = e.target.closest('.link, .text');
+  
+  
+  if (!isOverLinkOrText) {
+    // 유체 시뮬레이션 이벤트 발생
+    pointers[0].moved = pointers[0].down;
+    pointers[0].dx = (e.clientX - pointers[0].x) * 10.0;
+    pointers[0].dy = (e.clientY - pointers[0].y) * 10.0;
+    pointers[0].x = e.clientX;
+    pointers[0].y = e.clientY;
+    // console.log(pointers[0].y = e.offsetY + ' < pointers[0].y = e.offsetY')
+  }
 });
+
 
 const colors = [
   [0.0, 0.0, 0.029],
