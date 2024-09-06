@@ -163,14 +163,14 @@ body.before-load {overflow: hidden;}
   width: 100%;
 }
 /* js에서 쇼 addClass해서 block만듬 --> 벗어나면 다시 기본상태로 */
-#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-0 #scroll-section-0 .sticky-elem, 
 #show-scene-1 #scroll-section-1 .sticky-elem,
 #show-scene-2 #scroll-section-2 .sticky-elem,
 #show-scene-3 #scroll-section-3 .sticky-elem,
 #show-scene-4 #scroll-section-4 .sticky-elem,
 /* #show-scene-5 #scroll-section-5 .sticky-elem, */
 #show-scene-5 #scroll-section-5 .sticky-elem,
-#show-scene-6 #scroll-section-33 .sticky-elem {
+#show-scene-6 #scroll-section-6 .sticky-elem {
   display: block;
   will-change: transform, opacity;
 }
@@ -631,7 +631,10 @@ pointer-events: none;
   opacity: 0;
 }
 
-#scroll-section-4 {
+
+/* 이름문구 섹션5 */
+
+#scroll-section-5 {
   position: relative;
   height: 100vh;
   padding: 0;
@@ -645,7 +648,7 @@ pointer-events: none;
   justify-content: center;
 
 }
-.section-4-dim{
+.section-5-dim{
   position: absolute; 
   top: 0; 
   left: 0;
@@ -666,84 +669,84 @@ pointer-events: none;
   z-index: 999;
 }
 
-#scroll-section-4 .sticky-message {position:relative;}
+#scroll-section-5 .sticky-message {position:relative;}
 
 
-#scroll-section-33{position: relative;opacity: 1; z-index: 20;}
-#scroll-section-33 .ikeaGsapContainer {
+
+/* 4 이디야 섹션  */
+#scroll-section-4{
+  position: relative; 
+  /* margin-top: 1800px;  */
+  opacity: 1;
+  z-index: 20;
+}
+#scroll-section-4 .ediyaGsapContainer .moreBtnarea{top: 20vh; left: -1vw;}
+#scroll-section-4 .ediyaGsapContainer {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
 }
-.SortingRight{
-    left: 70vw;
-    width: 335px;
-    height: 100%;
-    position: absolute;
-    top: 15vh;
-}
-#scroll-section-33 .ikeaGsapContainer .ikeaLanguageContainer{
-  position: absolute;
-  top: 0;
-  right: 0;
+#scroll-section-4 .ediyaGsapContainer .languageContainer{
+  position: relative; top: 20vh; left: 8vw; 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  
 }
-#scroll-section-33 .ikeaGsapContainer .ikeaLanguageContainer .languageIcon{
+#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon{
   display: flex; justify-content: space-between; gap:1.5rem;
   opacity: 0;
   transform: scale(0);
-  color: #fff;  
+  color: #fff; 
 }
 
-#scroll-section-33 .ikeaLanguageContainer .leftBracket img,#scroll-section-33 .ikeaLanguageContainer .rightBracket img{width: 35px}
-#scroll-section-33 .ikeaLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
-#scroll-section-33 .ikeaLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
-#scroll-section-33 .ikeaGsapContainer .languageDec{
-  height: 100%;
-    width: 100%;
-    text-align: right;
-    position: absolute;
-    top: 145px;
-    left: 0;
-    font-size: 1.5rem;
-    color: #fff;
-}
-#scroll-section-33 .ikeaGsapContainer .languageDec p{
-  font-size: 0.9rem;
-  opacity: 0; 
+#scroll-section-4 .languageContainer .leftBracket img,
+#scroll-section-4 .languageContainer .rightBracket img{width: 35px}
+#scroll-section-4 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
+#scroll-section-4 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
+#scroll-section-4 .ediyaGsapContainer .languageDec{
+  width: 100%;
+  position: relative;top:25vh; left:8vw; font-size: 1.5rem; color: #fff;
   line-height: 1.5;
 }
-#scroll-section-33 .ikeaGsapContainer .languageDec .p1{
-  position: absolute;
-}
-#scroll-section-33 .ikeaGsapContainer .languageDec .p2{
-  top: 0;
-  right: 0;
-  position: absolute;
-}
-#scroll-section-33 .ikeaGsapContainer .moreBtnarea{
-  position: absolute; top: 24vh; left: 0vw;}
-.ikeaGsapContainer .ikeaH1 {
-  /* 기존 left 70vw */
+#scroll-section-4 .ediyaGsapContainer .languageDec p{font-size: 0.9rem;opacity: 0;}
+
+#scroll-section-4 .ediyaGsapContainer .languageDec .p1{ position: absolute;}
+#scroll-section-4 .ediyaGsapContainer .languageDec .p2{position: absolute;}
+
+.ediyaGsapContainer .ediyaH1 {
   position: relative;
   top: 55vh;
-  left: 8vw;
+  left: 70vw;
   font-size: 3rem;
   opacity: 0;
   color:#fff;
 }
-#scroll-section-33 .ikeaGsapContainer .ikeaDec{
+
+#scroll-section-4 .ediyaGsapContainer .ediyaDec{
   position: relative; 
   top: 5vh;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.section-33lines {
+.section-4dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background: url('../images/background.jpg');
+  opacity: 0.1;
+  pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
+  background-attachment: fixed;
+  /* z-index: -1; */
+}
+
+.section-4lines {
   position:-webkit-sticky;
   position: sticky;
   top: 0;
@@ -751,56 +754,36 @@ pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -100px; 
+  /* margin-top: -100vh;  */
   pointer-events: none;
   overflow: hidden;
   opacity: 0;
 }
 
-.section-33line {
+
+.section-4line {
   position: absolute;
   width: 232rem;
   height: 1px;
   background: rgba(255,255,255,0.1);
-  transform: rotate(31deg) translateZ(0)
+  transform: rotate(-33deg) translateZ(0)
+  
 }
 
-.section-33line.section-33style1 {top: 13vh}
-.section-33line.section-33style2 {top: 93vh}
-
-.section-33dim {
-  position: absolute;
-  top: 0;
-  left: -0;
-  right: 0;
-  bottom: 0;
-  background: url('../images/background.jpg');
-  opacity: 0.1;
-  pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
-  background-attachment: fixed;
-}
-.section-33blackdim{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #141414;
-  opacity: 0;
-}
+.section-4line.section-4style1 {top: 13vh;}
+.section-4line.section-4style2 {top: 93vh;}
 
 
-#scroll-section-5{
+/* 6 콘택트 섹션  */
+
+#scroll-section-6{
   /* border: 3px solid red; */
   position: relative;
-  /* background-color: black; */
-
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.section-5-dim{
+.section-6-dim{
   position: absolute; top: 0;
   left: 0; right: 0;
   bottom: 0;
@@ -866,22 +849,11 @@ pointer-events: none;
   gap: 2rem;
   display: flex;
   flex: 0 1 30%;
-  /* text-align: center; */
-  /* margin-top: 15vh; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-/* .mouseChk{
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  z-index: 1;
-} */
-.email-icons svg {
-  transition: opacity 0.5s ease;
-}
-
+.email-icons svg {transition: opacity 0.5s ease;}
 .e-mail01 path {
   fill: transparent;
   stroke-dasharray: 1582;
@@ -890,9 +862,7 @@ pointer-events: none;
 
 /* Hover */
 
-.e-mail01:hover path {
-  animation: eMail01Anim 1.5s ease-in-out forwards;
-}
+.e-mail01:hover path {animation: eMail01Anim 1.5s ease-in-out forwards;}
 
 @keyframes  eMail01Anim {
 
@@ -918,13 +888,8 @@ pointer-events: none;
       stroke-dashoffset: 3164;
   }
 }
-.iconBox05 svg{stroke: white;
-  stroke-width: 2; /* 원하는 테두리 두께로 조절 */
-}
-
-.e-mail02 {
-  display: none;
-}
+.iconBox05 svg{stroke: white;stroke-width: 2; /* 원하는 테두리 두께로 조절 */}
+.e-mail02 {display: none;}
 .mouseCanvas{
   position: fixed;
   top: 0;
@@ -937,11 +902,7 @@ pointer-events: none;
 }
 .contactTextBoxMiddleMobile{display: none;}
 
-.pin-spacer {
-  pointer-events: none;
-}
-
-
+.pin-spacer {pointer-events: none;}
 
 @media (max-width:1600px){
   #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 33px}

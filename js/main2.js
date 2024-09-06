@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageA: document.querySelector("#scroll-section-0 .main-message.a"),
         messageB: document.querySelector("#scroll-section-0 .main-message.b"),
 
+        logodisplayFlexContaner: document.querySelector(".logodisplayFlexContaner"),
         logoPosContainer: document.querySelector(".logoPosContainer"),
         // document.querySelectorAll("#scroll-section-0 .logoPosContainer .Pos img"), NodeList
         logo1: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .quietPlaceLink a"),
@@ -304,46 +305,145 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
     },
-    // 4 이름로고
+    // 4 이디야 예정
+    {
+      
+      type: "sticky",
+      heightNum: 5,
+      scrollHeight: 0,
+      objs: {
+        container: document.querySelector("#scroll-section-4"),
+
+        link: document.querySelector("#scroll-section-4 .ediyaGsapContainer .moreBtnarea"),
+
+        messageP1A: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p1 .decP1"),
+        messageP1B: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p1 .decP2"),
+        messageP1C: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p1 .decP3"),
+
+        messageP2A: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p2 .decP1"),
+        messageP2B: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p2 .decP2"),
+        messageP2C: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p2 .decP3"),
+        messageP2D: document.querySelector("#scroll-section-4 .ediyaGsapContainer .p2 .decP4"),
+
+        messageF: document.querySelector("#scroll-section-4 .ediyaGsapContainer .ediyaH1"),
+        messageG: document.querySelector("#scroll-section-4 .ediyaGsapContainer .ediyaH1 .ediyaDec"),
+        pinB: document.querySelector("#scroll-section-4 .b .pin"),
+        pinC: document.querySelector("#scroll-section-4 .c .pin"),
+        canvas: document.querySelector("#video-canvas-3"),
+        context: document.querySelector("#video-canvas-3").getContext("2d"),
+        videoImages: [],
+      },
+      values: {
+          videoImageCount: 206,
+          imageSequence: [0, 205],
+
+        messageA_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageP1B_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageP1C_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+
+
+        messageP2A_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2B_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2C_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageP2D_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+
+        // messageE_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+        messageF_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
+        messageA_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+        
+        messageP1A_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageP1B_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageP1C_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+
+        messageP2A_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2B_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2C_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageP2D_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+
+        // messageE_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+        messageF_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        messageG_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+        link_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
+
+        messageA_translateY_out: [0, -20, { start: 0.3, end: 0.35 }],
+        messageP1A_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+        messageP1B_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+        messageP1C_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
+
+
+        messageP2A_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2B_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2C_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageP2D_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+
+
+
+        // messageE_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        messageF_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
+        
+        messageA_opacity_out: [1, 0, { start: 0.3, end: 0.35 }],
+        messageP1A_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+        messageP1B_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+        messageP1C_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+
+
+        messageP2A_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2B_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2C_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageP2D_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+
+
+
+        // messageE_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageF_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+        messageG_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+
+        link_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
+
+        pinB_scaleY: [0.5, 1, { start: 0.5, end: 0.55 }],
+        pinC_scaleY: [0.5, 1, { start: 0.72, end: 0.77 }],
+        pinB_opacity_in: [0, 1, { start: 0.5, end: 0.55 }],
+        pinC_opacity_in: [0, 1, { start: 0.72, end: 0.77 }],
+        pinB_opacity_out: [1, 0, { start: 0.58, end: 0.63 }],
+        pinC_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
+        
+      },
+      values2: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      },
+      values3: {
+        videoImageCount: 297,
+        imageSequence: [0, 296],
+      }
+    },
+    // 5 이름로고
     {
       type: "normal",
       heightNum: 5,
       scrollHeight: 0,
       objs: {
-        container: document.querySelector("#scroll-section-4"),
-        // messageA: document.querySelectorAll("#scroll-section-4 .a li"),
-        // messageB: document.querySelectorAll("#scroll-section-4 .b li"),
-        // messageC: document.querySelectorAll("#scroll-section-4 .c li"),
+        container: document.querySelector("#scroll-section-5"),
       },
       values : {
-        // messageA_translateX_in: [[-5, 0, { start: 0.15, end: 0.2 }], [-5, 0, { start: 0.18, end: 0.23 }], [-5, 0, { start: 0.21, end: 0.26 }], [-5, 0, { start: 0.24, end: 0.29 }]],
-        // messageA_translateX_out: [[0, 5, { start: 0.3, end: 0.35 }],[0, 5, { start: 0.3, end: 0.35 }],[0, 5, { start: 0.3, end: 0.35 }],[0, 5, { start: 0.3, end: 0.35 }]],
-        // messageA_opacity_in: [[0, 1, { start: 0.15, end: 0.2 }],[0, 1, { start: 0.18, end: 0.23 }],[0, 1, { start: 0.21, end: 0.26 }],[0, 1, { start: 0.24, end: 0.29 }]],
-        // messageA_opacity_out: [[1, 0, { start: 0.3, end: 0.35 }],[1, 0, { start: 0.3, end: 0.35 }],[1, 0, { start: 0.3, end: 0.35 }],[1, 0, { start: 0.3, end: 0.35 }]],
 
-        // messageB_translateX_in: [[5, 0, { start: 0.5, end: 0.55 }], [5, 0, { start: 0.53, end: 0.58 }], [5, 0, { start: 0.56, end: 0.61 }], [5, 0, { start: 0.59, end: 0.64 }]],
-        // messageB_translateX_out: [[0, -5, { start: 0.58, end: 0.63 }],[0, -5, { start: 0.58, end: 0.63 }],[0, -5, { start: 0.58, end: 0.63 }],[0, -5, { start: 0.58, end: 0.63 }]],
-        // messageB_opacity_in: [[0, 1, { start: 0.5, end: 0.55 }],[0, 1, { start: 0.53, end: 0.58 }],[0, 1, { start: 0.56, end: 0.61 }],[0, 1, { start: 0.59, end: 0.64 }]],
-        // messageB_opacity_out: [[1, 0, { start: 0.58, end: 0.63 }],[1, 0, { start: 0.58, end: 0.63 }],[1, 0, { start: 0.58, end: 0.63 }],[1, 0, { start: 0.58, end: 0.63 }]],
-
-        // messageC_translateX_in: [[-5, 0, { start: 0.72, end: 0.77 }], [-5, 0, { start: 0.75, end: 0.8 }], [-5, 0, { start: 0.78, end: 0.83 }], [-5, 0, { start: 0.81, end: 0.86 }]],
-        // messageC_translateX_out: [[0, 5, { start: 0.85, end: 0.9 }],[0, 5, { start: 0.85, end: 0.9 }],[0, 5, { start: 0.85, end: 0.9 }],[0, 5, { start: 0.85, end: 0.9 }]],
-        // messageC_opacity_in: [[0, 1, { start: 0.72, end: 0.77 }],[0, 1, { start: 0.75, end: 0.8 }],[0, 1, { start: 0.78, end: 0.83 }],[0, 1, { start: 0.81, end: 0.86 }]],
-        // messageC_opacity_out: [[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }],[1, 0, { start: 0.85, end: 0.9 }]],
-      }
+       }
     },
-    // 5 contact (구슬)
+    // 6 contact (구슬)
     {
       type: "sticky",
       heightNum: 3,
       scrollHeight: 0,
       objs: {
-        container: document.querySelector("#scroll-section-5"),
+        container: document.querySelector("#scroll-section-6"),
 
         // contact: document.querySelector("#scroll-section-0 .main-message.a"),
 
-        canvas: document.querySelector("#video-canvas-3"),
-        context: document.querySelector("#video-canvas-3").getContext("2d"),
+        canvas: document.querySelector("#video-canvas-4"),
+        context: document.querySelector("#video-canvas-4").getContext("2d"),
         videoImages: [],
       },
       values: {
@@ -354,97 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
       },
 
     },
-    // 6 이디야 예정
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        container: document.querySelector("#scroll-section-6"),
 
-        link: document.querySelector("#scroll-section-6 .ediyaGsapContainer .moreBtnarea"),
-
-        messageP1A: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP1"),
-        messageP1B: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP2"),
-        messageP1C: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p1 .decP3"),
-
-        messageP2A: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP1"),
-        messageP2B: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP2"),
-        messageP2C: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP3"),
-        messageP2D: document.querySelector("#scroll-section-6 .ediyaGsapContainer .p2 .decP4"),
-
-        messageF: document.querySelector("#scroll-section-6 .ediyaGsapContainer .ediyaH1"),
-        messageG: document.querySelector("#scroll-section-6 .ediyaGsapContainer .ediyaH1 .ediyaDec"),
-
-        canvas: document.querySelector("#video-canvas-4"),
-        context: document.querySelector("#video-canvas-4").getContext("2d"),
-        videoImages: [],
-
-      },
-      values: {
-        videoImageCount: 204,
-        imageSequence: [0, 203],
-
-        messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
-        messageP1B_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
-        messageP1C_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
-
-
-        messageP2A_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
-        messageP2B_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
-        messageP2C_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
-        messageP2D_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
-        messageF_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
-
-        messageP1A_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-        messageP1B_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-        messageP1C_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-
-
-        messageP2A_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
-        messageP2B_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
-        messageP2C_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
-        messageP2D_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
-        messageF_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-        messageG_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-
-        link_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
-
-        messageP1A_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
-        messageP1B_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
-        messageP1C_translateY_out: [0, -20, { start: 0.4, end: 0.45 }],
-
-
-        messageP2A_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
-        messageP2B_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
-        messageP2C_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
-        messageP2D_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
-        messageF_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
-
-        messageP1A_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
-        messageP1B_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
-        messageP1C_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
-
-
-        messageP2A_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-        messageP2B_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-        messageP2C_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-        messageP2D_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-        messageF_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-        messageG_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-
-        link_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
-
-      },
-      values2: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      },
-      values3: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      }
-    }
       
   ];
   function getState() {
@@ -557,12 +567,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // 콘택트 모바일
-      let imgElem4;
-      for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
+      let imgElem6;
+      for (let i = 0; i < sceneInfo[6].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
-        imgElem4 = new Image();
-        imgElem4.src = `video/mobile/Bubble/Bubble(${result}).png`;
-        sceneInfo[5].objs.videoImages.push(imgElem4);
+        imgElem6 = new Image();
+        imgElem6.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        sceneInfo[6].objs.videoImages.push(imgElem6);
       }
 
     }
@@ -600,23 +610,25 @@ document.addEventListener('DOMContentLoaded', function() {
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
 
-      // 콘택트 예정
+      // 이디야 피씨
       let imgElem4;
-      for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
+      for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/006/Bubble(${result}).png`;
-        sceneInfo[5].objs.videoImages.push(imgElem4);
+        imgElem4.src = `video/004/quietplace(${result}).png`;
+        sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
-      // 이디야 피씨
+      // 콘택트 예정
       let imgElem6;
       for (let i = 0; i < sceneInfo[6].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem6 = new Image();
-        imgElem6.src = `video/005/IKEA(${result}).png`;
+        imgElem6.src = `video/006/Bubble(${result}).png`;
         sceneInfo[6].objs.videoImages.push(imgElem6);
       }
+
+
     }
 
   }
@@ -625,15 +637,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // 캔버스들 모바일, 피씨에따라 사이즈 교체
   function canvasSize(){
 
-    // const canvase0 = document.querySelector('#video-canvas-0');
+    // 콰플
     const canvase1 = document.querySelector('#video-canvas-1');
-    // const canvase11 = document.querySelector('#video-canvas-1-1');
-    // const canvase12 = document.querySelector('#video-canvas-1-2');
+    // 이케아
     const canvase2 = document.querySelector('#video-canvas-2');
-    // const canvase21 = document.querySelector('#video-canvas-2-1');
-    // const canvase22 = document.querySelector('#video-canvas-2-2');
+    // 이디야
     const canvase3 = document.querySelector('#video-canvas-3');
-
+    // 콘택트
     const canvase4 = document.querySelector('#video-canvas-4');
     
     switch(checkPCMobile){
@@ -677,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     sceneInfo[0].objs.canvas.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
                     canvase1.width = 1920;
                     canvase1.height = 1080;
-                    // 추후 에펙 위치조정해야할듯함
+                    
                     canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
 
                     
@@ -687,8 +697,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     canvase2.width = 1920;
                     canvase2.height = 1080;
                     canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
-                    // canvase21.style.transform = 'translate3d(-43%, -84%, 0px) scale(.2)';
-                    // canvase22.style.transform = 'translate3d(-35%, -24%, 0px) scale(.2)';
 
 
       break;
@@ -700,19 +708,17 @@ document.addEventListener('DOMContentLoaded', function() {
               canvase1.width = 1080;
               canvase1.height = 1920;
               canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
-              // canvase11.style.transform = 'translate3d(-55%, -78%, 0px) scale(.2)';
-              // canvase12.style.transform = 'translate3d(-35%, -45%, 0px) scale(.2)';
+
         
               canvase2.width = 1080;
               canvase2.height = 1920;
               canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
-              // canvase21.style.transform = 'translate3d(-36%, -77%, 0px) scale(.2)';
-              // canvase22.style.transform = 'translate3d(-54%, -40%, 0px) scale(.2)';
+
 
               canvase3.width = 1080;
               canvase3.height = 1920;
               canvase3.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
-              3
+              
               canvase4.width = 1080;
               canvase4.height = 1920;
               canvase4.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
@@ -726,8 +732,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 각 스크롤 섹션의 높이 세팅
   function setLayout() {
-
-    const sec4Title = document.querySelector('#scroll-section-4 .sticky-message');
 
     for (let i = 0; i < sceneInfo.length; i++) {
       if (sceneInfo[i].type === "sticky") {
@@ -751,18 +755,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // console.log(currentScene >> +'currentScene')
 
       const heightRatio = window.innerHeight / 1080; // window.innerHeight / 캔버스 원래 height 비율
-      // 아래 위치값 css에서 처리했음 (캔버스) 
       sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
       sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
-      // sceneInfo[2].objs.canvas2.style.transform = `translate3d(-66%, -78%, 0) scale(.2)`;
-      // sceneInfo[2].objs.canvas3.style.transform = `translate3d(-30%, -33%, 0) scale(.2)`;
-      // sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
       sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
-      
-      // sceneInfo[3].objs.canvas2.style.transform = `translate3d(-32%, -78%, 0) scale(.2)`;
-      // sceneInfo[3].objs.canvas3.style.transform = `translate3d(-75%, -35%, 0) scale(.2)`; 
-      sceneInfo[5].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
-
+      sceneInfo[4].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
       sceneInfo[6].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
   }
   setLayout();
@@ -906,6 +902,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // objs.logo3.style.cursor = ' pointer ';
         objs.logo4.style.cursor = ' pointer ';
         objs.logo5.style.cursor = ' pointer ';
+        objs.logodisplayFlexContaner.style.pointerEvents = 'auto'
       }
       if(scrollRatio >= 0.9 || scrollRatio < 0.6){
         console.log('오토')
@@ -914,6 +911,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // objs.logo3.style.cursor = ' auto ';
         objs.logo4.style.cursor = ' auto ';
         objs.logo5.style.cursor = ' auto ';
+
+        objs.logodisplayFlexContaner.style.pointerEvents = 'none'
       }
         break;
       case 1:
@@ -924,28 +923,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let sequence2 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
-        // let sequence22 = Math.round(
-        //   calcValues(values2.imageSequence, currentYoffset)
-        // );
-        // // values3이랑 values2 같아서 3안씀
-        // let sequence23 = Math.round(
-        //   calcValues(values2.imageSequence, currentYoffset)
-        // );
-        // console.log(sequence2 + ' 시원스2 ');
-      
-      //  console.log('sequence2 >>> '+sequence22);
+
       // 캔버스초기화,, 잔상효과 없애기 위함
       objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
-      //  objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
       objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
 
-      // objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
-      // objs.context2.drawImage(objs.videoImages2[sequence22], 0, 0);
-
-      // objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
-      // objs.context3.drawImage(objs.videoImages3[sequence23], 0, 0);
-
-      // console.log(scrollRatio+' < < 씬2의 scrollRatio')
         if (scrollRatio <= 0.35) {
           
           // in
@@ -1143,7 +1125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         break;
       case 3:
-        console.log("3play");
+        // console.log("3play");
         let sequence3 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
@@ -1365,213 +1347,169 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
         case 4:
 
-        console.log("4 play");
-        
-        break;
-        case 5:
-          
-          console.log("5 play");
-          let sequence4 = Math.round(
-            calcValues(values.imageSequence, currentYoffset)
-          );
+          console.log("4 play 이디야 ");
+        let sequence4 = Math.round(
+          calcValues(values.imageSequence, currentYoffset)
+        );
 
-          if (scrollRatio <= 0.3) {
-          
-            // in
-            objs.canvas.style.opacity = calcValues(
-              values.canvas_opacity_in,
-              currentYoffset
-            );
-          }
-          else {
-            objs.canvas.style.opacity = calcValues(
-              values.canvas_opacity_out,
-              currentYoffset
-            );
-          }
-        
-        console.log('sequence4 >>> '+sequence4);
         // 캔버스초기화,, 잔상효과 없애기 위함
         objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
         objs.context.drawImage(objs.videoImages[sequence4], 0, 0);
 
-        break;
-
-        case 6:
-        console.log("3play");
-        let sequence6 = Math.round(
-          calcValues(values.imageSequence, currentYoffset)
-        );
-
-        // let sequence32 = Math.round(
-        //   calcValues(values3.imageSequence, currentYoffset)
-        // );
-      
-      console.log('sequence6 >>> '+ sequence6);
-      // 캔버스초기화,, 잔상효과 없애기 위함
-      objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
-      objs.context.drawImage(objs.videoImages[sequence6], 0, 0);
-
-      // objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
-      // objs.context2.drawImage(objs.videoImages2[sequence32], 0, 0);
-
-      // objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
-      // objs.context3.drawImage(objs.videoImages3[sequence32], 0, 0);
-
-      // console.log(scrollRatio+' < < 씬2의 scrollRatio')
-      if (scrollRatio <= 0.35) {
+        if (scrollRatio <= 0.35) {
           
-        // in
-        objs.messageP1A.style.opacity = calcValues(
-          values.messageP1A_opacity_in,
-          currentYoffset
-        );
-        objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1A_translateY_in,
-          currentYoffset
-        )}%, 0)`;
+          // in
+          objs.messageP1A.style.opacity = calcValues(
+            values.messageP1A_opacity_in,
+            currentYoffset
+          );
+          objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1A_translateY_in,
+            currentYoffset
+          )}%, 0)`;
 
-        // in
-        objs.messageP1B.style.opacity = calcValues(
-          values.messageP1B_opacity_in,
-          currentYoffset
-          
-        );
-        objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1B_translateY_in,
-          currentYoffset
-        )}%, 0)`;
-
-        // in
-        objs.messageP1C.style.opacity = calcValues(
-          values.messageP1C_opacity_in,
-          currentYoffset
-          
-        );
-        objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1C_translateY_in,
-          currentYoffset
-        )}%, 0)`;
+          // in
+          objs.messageP1B.style.opacity = calcValues(
+            values.messageP1B_opacity_in,
+            currentYoffset
+          );
+          objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1B_translateY_in,
+            currentYoffset
+          )}%, 0)`;
 
 
+          // in
+          objs.messageP1C.style.opacity = calcValues(
+            values.messageP1C_opacity_in,
+            currentYoffset
+          );
+          objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1C_translateY_in,
+            currentYoffset
+          )}%, 0)`;
 
-      } else {
-        // out
-        objs.messageP1A.style.opacity = calcValues(
-          values.messageP1A_opacity_out,
-          currentYoffset
-        );
-        objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1A_translateY_out,
-          currentYoffset
-        )}%, 0)`;
-
-        // out
-        objs.messageP1B.style.opacity = calcValues(
-          values.messageP1B_opacity_out,
-          currentYoffset
-        );
-        objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1B_translateY_out,
-          currentYoffset
-        )}%, 0)`;
-
-        // out
-        objs.messageP1C.style.opacity = calcValues(
-          values.messageP1C_opacity_out,
-          currentYoffset
-        );
-        objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
-          values.messageP1C_translateY_out,
-          currentYoffset
-        )}%, 0)`;
-
-      }
-
-      if (scrollRatio <= 0.92) {
-        // in
-        objs.messageP2A.style.opacity = calcValues(
-          values.messageP2A_opacity_in,
-          currentYoffset
-        );
-        objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2A_translateY_in,
-          currentYoffset
-        )}%, 0)`;
-
-        // in
-        objs.messageP2B.style.opacity = calcValues(
-          values.messageP2B_opacity_in,
-          currentYoffset
-        );
-        objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2B_translateY_in,
-          currentYoffset
-        )}%, 0)`;
-
-        // in
-        objs.messageP2C.style.opacity = calcValues(
-          values.messageP2C_opacity_in,
-          currentYoffset
-        );
-        objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2C_translateY_in,
-          currentYoffset
-        )}%, 0)`;
-
-        // in
-        objs.messageP2D.style.opacity = calcValues(
-          values.messageP2C_opacity_in,
-          currentYoffset
-        );
-        objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2C_translateY_in,
-          currentYoffset
-        )}%, 0)`;
+        } else {
+          // out
+          objs.messageP1A.style.opacity = calcValues(
+            values.messageP1A_opacity_out,
+            currentYoffset
+          );
+          objs.messageP1A.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1A_translateY_out,
+            currentYoffset
+          )}%, 0)`;
 
 
-      } else {
-        // out
-        objs.messageP2A.style.opacity = calcValues(
-          values.messageP2A_opacity_out,
-          currentYoffset
-        );
-        objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2A_translateY_out,
-          currentYoffset
-        )}%, 0)`;
+          // out
+          objs.messageP1B.style.opacity = calcValues(
+            values.messageP1B_opacity_out,
+            currentYoffset
+          );
+          objs.messageP1B.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1B_translateY_out,
+            currentYoffset
+          )}%, 0)`;
 
-        // out
-        objs.messageP2B.style.opacity = calcValues(
-          values.messageP2B_opacity_out,
-          currentYoffset
-        );
-        objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2B_translateY_out,
-          currentYoffset
-        )}%, 0)`;
+          // out
+          objs.messageP1C.style.opacity = calcValues(
+            values.messageP1C_opacity_out,
+            currentYoffset
+          );
+          objs.messageP1C.style.transform = `translate3d(0, ${calcValues(
+            values.messageP1C_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+        }
 
-        // out
-        objs.messageP2C.style.opacity = calcValues(
-          values.messageP2C_opacity_out,
-          currentYoffset
-        );
-        objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2C_translateY_out,
-          currentYoffset
-        )}%, 0)`;
 
-        // out
-        objs.messageP2D.style.opacity = calcValues(
-          values.messageP2C_opacity_out,
-          currentYoffset
-        );
-        objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
-          values.messageP2C_translateY_out,
-          currentYoffset
-        )}%, 0)`;
 
-      }
+        if (scrollRatio <= 0.92) {
+          // in
+          objs.messageP2A.style.opacity = calcValues(
+            values.messageP2A_opacity_in,
+            currentYoffset
+          );
+          objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2A_translateY_in,
+            currentYoffset
+          )}%, 0)`;
+
+          // in
+          objs.messageP2B.style.opacity = calcValues(
+            values.messageP2B_opacity_in,
+            currentYoffset
+          );
+          objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2B_translateY_in,
+            currentYoffset
+          )}%, 0)`;
+
+          // in
+          objs.messageP2C.style.opacity = calcValues(
+            values.messageP2C_opacity_in,
+            currentYoffset
+          );
+          objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2C_translateY_in,
+            currentYoffset
+          )}%, 0)`;
+
+          // in
+          objs.messageP2D.style.opacity = calcValues(
+            values.messageP2C_opacity_in,
+            currentYoffset
+          );
+          objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2C_translateY_in,
+            currentYoffset
+          )}%, 0)`;
+
+
+        } else {
+          // out
+          objs.messageP2A.style.opacity = calcValues(
+            values.messageP2A_opacity_out,
+            currentYoffset
+          );
+          objs.messageP2A.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2A_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+
+
+          // out
+          objs.messageP2B.style.opacity = calcValues(
+            values.messageP2B_opacity_out,
+            currentYoffset
+          );
+          objs.messageP2B.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2B_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+
+
+          // out
+          objs.messageP2C.style.opacity = calcValues(
+            values.messageP2C_opacity_out,
+            currentYoffset
+          );
+          objs.messageP2C.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2C_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+
+
+          // out
+          objs.messageP2D.style.opacity = calcValues(
+            values.messageP2C_opacity_out,
+            currentYoffset
+          );
+          objs.messageP2D.style.transform = `translate3d(0, ${calcValues(
+            values.messageP2C_translateY_out,
+            currentYoffset
+          )}%, 0)`;
+        }
 
         if (scrollRatio <= 0.95) {
           // in
@@ -1612,6 +1550,21 @@ document.addEventListener('DOMContentLoaded', function() {
             currentYoffset
           );
         }
+        
+        break;
+        case 5:
+          console.log('case 5 play')
+        break;
+        case 6:
+        console.log("6play");
+        let sequence6 = Math.round(
+          calcValues(values.imageSequence, currentYoffset)
+        );
+
+        console.log('sequence6 >>> '+ sequence6);
+        // 캔버스초기화,, 잔상효과 없애기 위함
+        objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
+        objs.context.drawImage(objs.videoImages[sequence6], 0, 0)
 
     }
   }
@@ -1647,8 +1600,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (enterNewscene) return; // 섹션이 바뀌는 순간은 playAnimation();이 동작 안함
     playAnimation();
   }
-  // 로드 후 상시로 검사해서 이미지 로드하기 ,, 첫이미지 표시하기
-  let checkInterval = setInterval(function() {
+
+
+    // 로드 후 상시로 검사해서 이미지 로드하기 ,, 첫이미지 표시하기
+    let checkInterval = setInterval(function() {
     // .loading-percent 요소의 텍스트 콘텐츠 가져오기
     let percentText = document.querySelector('.loading-percent').innerText;
   
@@ -1730,6 +1685,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }); 
 
+  // 콰이어트 플레이스 영역
 
   gsap.to(".section-2blackdim", {
     opacity:0,
@@ -1742,8 +1698,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // markers:true,
     }
   }); 
-
-
 
   gsap.to(".quietplaceGsapContainer", {
     scrollTrigger: {
@@ -1770,8 +1724,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
-  
 
   gsap.to("#scroll-section-2 .languageContainer .leftBracket",{
     opacity: 1,
@@ -1847,21 +1799,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  gsap.to(".section-3lines", {
-    scrollTrigger: {
-      trigger: ".section-3lines",
-      start: "top top", // 시작 지점
-      end: "bottom bottom",
-      pin: true,
-      // markers: true,
-      onEnter: () => gsap.to(".section-3lines", { opacity: 1, duration: 0.5 }),
-      onLeave: () => gsap.to(".section-3lines", { opacity: 0, duration: 0.5 }),
-      onEnterBack: () => gsap.to(".section-3lines", { opacity: 1, duration: 0.5 }),
-      onLeaveBack: () => gsap.to(".section-3lines", { opacity: 0, duration: 0.5 }),
-    }
-  });
-
-
   // ********* 아래는 이케아 섹션
   gsap.to(".ikeaGsapContainer", {
     scrollTrigger: {
@@ -1871,7 +1808,6 @@ document.addEventListener('DOMContentLoaded', function() {
       scrub: true, // 스크롤 양에 따라 애니메이션 조절
       pin: true,
       
-  
       onLeave: () => {
         // console.log("END부분입니다!");
         gsap.to(".ikeaGsapContainer", {
@@ -1888,7 +1824,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
   
   gsap.to("#scroll-section-3 .ikeaLanguageContainer .leftBracket",{
     opacity: 1,
@@ -1946,12 +1881,158 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }); 
 
+  gsap.to(".section-3lines", {
+    scrollTrigger: {
+      trigger: ".section-3lines",
+      start: "top top", // 시작 지점
+      end: "bottom bottom",
+      pin: true,
+      // markers: true,
+      onEnter: () => gsap.to(".section-3lines", { opacity: 1, duration: 0.5 }),
+      onLeave: () => gsap.to(".section-3lines", { opacity: 0, duration: 0.5 }),
+      onEnterBack: () => gsap.to(".section-3lines", { opacity: 1, duration: 0.5 }),
+      onLeaveBack: () => gsap.to(".section-3lines", { opacity: 0, duration: 0.5 }),
+    }
+  });
 
-  gsap.to(".section-5-dim", {
+
+  // 이디야 영역
+
+  // gsap.to(".section-4blackdim", {
+  //   opacity:1,
+  //   duration:0.5,
+  //   scrollTrigger: {
+  //       trigger: ".section-4blackdim",
+  //       start: "85% center ", // 시작 지점
+  //       end: "bottom bottom", 
+  //       scrub: true, // 스크롤 양에 따라 애니메이션 조절
+  //       markers:true,
+  //   }
+  // }); 
+
+  // gsap.to(".section-4blackdim", {
+  //   opacity:0,
+  //   duration:0.5,
+  //   scrollTrigger: {
+  //       trigger: ".section-4blackdim",
+  //       start: "top top ", // 시작 지점
+  //       end: "+=1000", 
+  //       scrub: true, // 스크롤 양에 따라 애니메이션 조절
+  //       markers:true,
+  //   }
+  // }); 
+
+  gsap.to(".ediyaGsapContainer", {
+    scrollTrigger: {
+      trigger: ".ediyaGsapContainer",
+      start: "top top", // 시작 지점
+      end: "bottom bottom", 
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      pin: true,
+      // markers: true,
+  
+      onLeave: () => {
+        console.log("END부분입니다!");
+        gsap.to(".ediyaGsapContainer", {
+          opacity: 0,
+          duration: 0.5 // 투명도 전환 애니메이션 지속 시간
+        });
+      },
+      onEnterBack: () => {
+        console.log("돌아왔습니다!");
+        gsap.to(".ediyaGsapContainer", {
+          opacity: 1,
+          duration: 0.5 // 투명도 전환 애니메이션 지속 시간
+        });
+      }
+    }
+  });
+
+  gsap.to("#scroll-section-4 .languageContainer .leftBracket",{
+    opacity: 1,
+    left: 0,
+    duration:0.5,
+    scrollTrigger:{
+      trigger: ".ediyaGsapContainer",
+      start: "top top ", // 시작 지점
+      end: "+=500px", 
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      // pin:true,
+      // markers:true,
+      
+    }
+  })
+
+  gsap.to("#scroll-section-4 .languageContainer .rightBracket",{
+    opacity: 1,
+    left: 0,
+    duration:0.5,
+    scrollTrigger:{
+      trigger: ".ediyaGsapContainer",
+      start: "top top ", // 시작 지점
+      end: "+=500px", 
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      // pin:true,
+      // markers:true,
+      
+    }
+  })
+
+  gsap.to("#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon",{
+    opacity: 1,
+    scale: '1',
+    duration:0.5,
+    scrollTrigger:{
+      trigger: "#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon",
+      start: "20vh top ", // 시작 지점
+      end: "+=500px", 
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      // pin:true,
+      // markers:true,
+      
+    }
+  })
+  
+  gsap.to("#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon",{
+    opacity: 1,
+    scale: '1',
+    duration:0.5,
+    scrollTrigger:{
+      trigger: "#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon",
+      start: "20vh top ", // 시작 지점
+      end: "+=500px", 
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      // pin:true,
+      // markers:true,
+      
+    }
+  })
+
+  gsap.to(".section-4lines", {
+    scrollTrigger: {
+      trigger: ".section-4lines",
+      start: "top top", // 시작 지점
+      end: "bottom bottom",
+      pin: true,
+      // markers: true,
+      onEnter: () => gsap.to(".section-4lines", { opacity: 1, duration: 0.5 }),
+      onLeave: () => gsap.to(".section-4ines", { opacity: 0, duration: 0.5 }),
+      onEnterBack: () => gsap.to(".section-4lines", { opacity: 1, duration: 0.5 }),
+      onLeaveBack: () => gsap.to(".section-4lines", { opacity: 0, duration: 0.5 }),
+    }
+  });
+
+
+
+
+
+
+
+  gsap.to(".section-6-dim", {
     opacity: 1,
     duration: 0.5,
     scrollTrigger: {
-      trigger: ".section-5-dim",
+      trigger: ".section-6-dim",
       start: "top top", // 시작 지점
       end: "+=500px", // 끝 지점
       scrub: true, // 스크롤 양에 따라 애니메이션 조절
@@ -1959,78 +2040,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // gsap.to(sceneInfo[2].objs.canvas2, {
-  //   opacity: 1,
-  //   duration: 0.3,
-  //   scrollTrigger: {
-  //     trigger: "#scroll-section-2",
-  //     start: "top top", // 시작 지점
-  //     end: "95% bottom", // 끝 지점
-  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     markers: true,
-    
-  //     onLeave: () => gsap.to(sceneInfo[2].objs.canvas2, { opacity: 0, duration: 0.3 }),
-  //     onEnterBack: () => gsap.to(sceneInfo[2].objs.canvas2, { opacity: 1, duration: .3 }),
-  //     // 
-  //   }
-  // });
-  
-  // gsap.to(sceneInfo[2].objs.canvas3, {
-  //   opacity: 1,
-  //   duration: 0.3,
-  //   scrollTrigger: {
-  //     trigger: "#scroll-section-2",
-  //     start: "top top", // 시작 지점
-  //     end: "95% bottom", // 끝 지점
-  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     markers: true,
-     
-  //     onLeave: () => gsap.to(sceneInfo[2].objs.canvas3, { opacity: 0, duration: 0.3 },console.log("onLeave")),
-  //     onEnterBack: () => gsap.to(sceneInfo[2].objs.canvas3, { opacity: 1, duration: 0.3 },console.log("onEnterBack")),
-      
-  //   }
-  // });
 
 
 
-  // gsap.to(sceneInfo[3].objs.canvas2, {
-  //   opacity: 1,
-  //   duration: 0.5,
-  //   scrollTrigger: {
-  //     trigger: "#scroll-section-3",
-  //     start: "top top", // 시작 지점
-  //     end: "95% bottom", // 끝 지점
-  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     markers: true,
-      
-  //     onLeave: () => gsap.to(sceneInfo[3].objs.canvas2, { opacity: 0, duration: 0.3 }),
-  //     onEnterBack: () => gsap.to(sceneInfo[3].objs.canvas2, { opacity: 1, duration: 0.3 }),
-      
-  //   }
-  // });
-  
-  // gsap.to(sceneInfo[3].objs.canvas3, {
-  //   opacity: 1,
-  //   duration: 0.5,
-  //   scrollTrigger: {
-  //     trigger: "#scroll-section-3",
-  //     start: "top top", // 시작 지점
-  //     end: "95% bottom", // 끝 지점
-  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     markers: true,
-      
-  //     onLeave: () => gsap.to(sceneInfo[3].objs.canvas3, { opacity: 0, duration: 0.3 },console.log("onLeave")),
-  //     onEnterBack: () => gsap.to(sceneInfo[3].objs.canvas3, { opacity: 1, duration: 0.3 },console.log("onEnterBack")),
-      
-  //   }
-  // });
 
+  // 마우스 캔버스
   gsap.to(".mouseCanvas", {
     scrollTrigger: {
       trigger: ".container",
       start: "11% top", // 시작 지점
-
-      // markers: true,
       onEnter: () => gsap.to(".mouseCanvas", { opacity: 1, duration: 0.5 }),
       onLeave: () => gsap.to(".mouseCanvas", { opacity: 0, duration: 0.5 }),
       onEnterBack: () => gsap.to(".mouseCanvas", { opacity: 1, duration: 0.5 }),
@@ -2038,7 +2056,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-
+  // 우측 수심 
   gsap.to(".ruler", {
     scrollTrigger: {
       trigger: ".container",
@@ -2051,36 +2069,6 @@ document.addEventListener('DOMContentLoaded', function() {
       onLeaveBack: () => gsap.to(".ruler", { opacity: 0, duration: 0.5 }),
     }
   });
-
-
-//   let animation = lottie.loadAnimation({
-//       container: document.getElementById('lottie'), // 애니메이션을 표시할 컨테이너
-//       renderer: 'svg', // 렌더러 형식: 'svg', 'canvas', 'html'
-//       loop: true, // 애니메이션 반복 여부
-//       autoplay: true, // 자동 재생 여부
-//       path: 'images/EmailAni.json' // JSON 파일 경로
-//   });
-
-
-//   const email01 = document.querySelector(".e-mail01");
-//   const mousechk = document.querySelector(".mouseChk");
- 
-
-//   mousechk.addEventListener("mouseenter", function(){
-//     email01.style.display = 'none';
-//     document.getElementById('lottie').style.display = 'block'; // Lottie 애니메이션 보이기
-//     animation.play();
-    
-// });
-
-// mousechk.addEventListener("mouseleave", function(){
-//     email01.style.display = 'block';
-//     document.getElementById('lottie').style.display = 'none'; // Lottie 애니메이션 숨기기
-//     animation.stop(); 
-    
-// });
-
-
 
   window.addEventListener("resize", setLayout);
   window.addEventListener('resize', checkWindowSize); 
