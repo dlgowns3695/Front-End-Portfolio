@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 // 젤 처음 로드
 document.addEventListener('DOMContentLoaded', function() {
   /* 즉시 호출 함수*/
@@ -40,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         logodisplayFlexContaner: document.querySelector(".logodisplayFlexContaner"),
         logoPosContainer: document.querySelector(".logoPosContainer"),
         // document.querySelectorAll("#scroll-section-0 .logoPosContainer .Pos img"), NodeList
-        logo1: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .quietPlaceLink a"),
-        logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ikeaLink a"),
+        logo1: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .quietPlaceLink "),
+        logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ikeaLink "),
         // logo3: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo3 img"),
-        logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ediyacoffeeLink a"),
-        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 a"),
+        logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ediyacoffeeLink "),
+        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 "),
         section0Bg: document.querySelector("#scroll-section-0 .bg"),
 
         canvas: document.querySelector("#video-canvas-0"),
@@ -564,6 +558,15 @@ document.addEventListener('DOMContentLoaded', function() {
         imgElem3 = new Image();
         imgElem3.src = `video/mobile/IKEA/IKEAmobile(${result}).png`;
         sceneInfo[3].objs.videoImages.push(imgElem3);
+      }
+
+      // 이디야 모바일
+      let imgElem4;
+      for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
+        let result = `${i}`.padStart(0, "0");
+        imgElem4 = new Image();
+        imgElem4.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`;
+        sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
       // 콘택트 모바일
@@ -1869,18 +1872,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  gsap.to(".section-3blackdim", {
-    opacity:1,
-    duration:0.5,
-    scrollTrigger: {
-        trigger: ".section-3blackdim",
-        start: "85% center ", // 시작 지점
-        end: "bottom bottom", 
-        scrub: true, // 스크롤 양에 따라 애니메이션 조절
-        // markers:true,
-    }
-  }); 
-
   gsap.to(".section-3lines", {
     scrollTrigger: {
       trigger: ".section-3lines",
@@ -2069,6 +2060,40 @@ document.addEventListener('DOMContentLoaded', function() {
       onLeaveBack: () => gsap.to(".ruler", { opacity: 0, duration: 0.5 }),
     }
   });
+
+  document.querySelectorAll('.Pos div').forEach(item => {
+    item.addEventListener('click', (event) => {
+      const clickedClass = event.currentTarget.classList[0];
+      let targetSection = null;
+  
+      // 클래스명에 따라 스크롤할 섹션 선택
+      if (clickedClass === 'quietPlaceLink') {
+        targetSection = document.querySelector('#scroll-section-2');
+      } else if (clickedClass === 'ikeaLink') {
+        targetSection = document.querySelector('#scroll-section-3');
+      } else if (clickedClass === 'ediyacoffeeLink') {
+        targetSection = document.querySelector('#scroll-section-4');
+      } else if (clickedClass === 'QUIETPLACElogo5') {
+        targetSection = document.querySelector('#scroll-section-5');
+      }
+  
+      if (targetSection) {
+        // targetSection의 위치 계산
+        const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        // 10% 더 아래 스크롤 조정 (페이지 높이의 10%)
+        const targetPosition = sectionTop - (-window.innerHeight * 2);
+
+        console.log(targetPosition + '< targetPosition')
+  
+        // 부드럽게 스크롤
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
 
   window.addEventListener("resize", setLayout);
   window.addEventListener('resize', checkWindowSize); 

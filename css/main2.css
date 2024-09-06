@@ -1,14 +1,5 @@
 @charset 'utf-8';
 
-/* 
-  1. 영어랑 한글 더 가까이 0
-  2. 이름 맨위처럼 키우기 0
-  3. SVG 애니메이션 할 수 있으면 넣기 
-  4. git icon 변경 0 
-
-  .contactTextBoxBottom {gap : 5rem 2rem;} 0
-*/
-
 @font-face {
     font-family: 'TWKEverett';
     src: url('../font/TWKEverett/TWKEverett-Regular.otf') format('woff2'),
@@ -24,13 +15,6 @@
          ;
   }
 
-/* #lottie{width: 80px; height: 80px; display: none;} */
-/* #video-canvas-1-1{opacity: 0; transition: opacity .3s;}
-#video-canvas-1-2{opacity: 0; transition: opacity .3s;}
-
-#video-canvas-2-1{opacity: 0; transition: opacity .3s;}
-#video-canvas-2-2{opacity: 0; transition: opacity .3s;} */
-
 
 html {font-family: "Noto Sans KR", sans-serif;font-size: 1rem;line-height: 1.3;}
 
@@ -38,16 +22,12 @@ body {letter-spacing: -0.05em; background: #141414; overflow-x:hidden;}
 a {color: rgb(235, 235, 235);text-decoration: none;}
 body.before-load {overflow: hidden;}
 .container {position: relative; overflow: hidden;}
-/* .bubble {
-  position: absolute;
-  z-index: 999999999999; 
-} */
 
 .en1 {font-family: 'TWKEverett';font-weight: normal;}
 .en2 {font-family: 'GesturaDisplay';font-weight: normal;}
-/* !important; */
+
 .point {color: #324eef }
-/* !important; */
+
 .light-point {color: #008cff;font-size:1.1em;}
 .kr {letter-spacing: -0.03rem;}
 
@@ -168,7 +148,6 @@ body.before-load {overflow: hidden;}
 #show-scene-2 #scroll-section-2 .sticky-elem,
 #show-scene-3 #scroll-section-3 .sticky-elem,
 #show-scene-4 #scroll-section-4 .sticky-elem,
-/* #show-scene-5 #scroll-section-5 .sticky-elem, */
 #show-scene-5 #scroll-section-5 .sticky-elem,
 #show-scene-6 #scroll-section-6 .sticky-elem {
   display: block;
@@ -268,23 +247,16 @@ body.before-load {overflow: hidden;}
   gap:4rem;
 }
 
-#scroll-section-0 .logoPosContainer .Pos img {
-  width: 120px;
-}
-#scroll-section-0 .logoPosContainer .Pos a {
-  cursor: auto;
-}
-
+#scroll-section-0 .logoPosContainer .Pos img {width: 120px;}
+#scroll-section-0 .logoPosContainer .Pos a {cursor: auto;}
 
 #scroll-section-1 {
-  
   padding: 0;
   position: relative;
   height:100vh;
   display:flex;
   justify-content: center;
   align-items: center;
-  /* z-index: -1; */
 }
 
 #scroll-section-1 .textfill{
@@ -418,7 +390,8 @@ pointer-events: none;
   color: #fff; 
 }
 
-#scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 35px}
+.leftBracket , .rightBracket {width: 35px}
+
 #scroll-section-2 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
 #scroll-section-2 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
 #scroll-section-2 .quietplaceGsapContainer .languageDec{
@@ -428,15 +401,10 @@ pointer-events: none;
 #scroll-section-2 .quietplaceGsapContainer .languageDec p{
   font-size: 0.9rem;
   opacity: 0;
-  /* line-height: 1.5; */
 }
 
-#scroll-section-2 .quietplaceGsapContainer .languageDec .p1{
-  position: absolute;
-}
-#scroll-section-2 .quietplaceGsapContainer .languageDec .p2{
-  position: absolute;
-}
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p1{position: absolute;}
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p2{position: absolute;}
 
 .quietplaceGsapContainer .quietplaceH1 {
   position: relative;
@@ -541,11 +509,11 @@ pointer-events: none;
   color: #fff;  
 }
 
-#scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 35px}
+
 #scroll-section-3 .ikeaLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
 #scroll-section-3 .ikeaLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
 #scroll-section-3 .ikeaGsapContainer .languageDec{
-  height: 100%;
+    height: 100%;
     width: 100%;
     text-align: right;
     position: absolute;
@@ -559,9 +527,7 @@ pointer-events: none;
   opacity: 0; 
   line-height: 1.5;
 }
-#scroll-section-3 .ikeaGsapContainer .languageDec .p1{
-  position: absolute;
-}
+#scroll-section-3 .ikeaGsapContainer .languageDec .p1{position: absolute;}
 #scroll-section-3 .ikeaGsapContainer .languageDec .p2{
   top: 0;
   right: 0;
@@ -671,8 +637,6 @@ pointer-events: none;
 
 #scroll-section-5 .sticky-message {position:relative;}
 
-
-
 /* 4 이디야 섹션  */
 #scroll-section-4{
   position: relative; 
@@ -702,8 +666,6 @@ pointer-events: none;
   color: #fff; 
 }
 
-#scroll-section-4 .languageContainer .leftBracket img,
-#scroll-section-4 .languageContainer .rightBracket img{width: 35px}
 #scroll-section-4 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
 #scroll-section-4 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
 #scroll-section-4 .ediyaGsapContainer .languageDec{
@@ -905,24 +867,29 @@ pointer-events: none;
 .pin-spacer {pointer-events: none;}
 
 @media (max-width:1600px){
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 33px}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 33px}
-  .languageIcon img, .languageIcon svg{width: 62px; height: 62px;}
+  .leftBracket,
+  .rightBracket{width: 33px}
+
+  .languageIcon img,
+  .languageIcon svg{width: 62px; height: 62px;}
 }
 
 @media (max-width:1450px){
   .moreBtn{width: 150px; height: 150px;}
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 30px}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 30px}
+  .leftBracket,
+  .rightBracket{width: 30px}
+  
   .languageIcon img, .languageIcon svg{width: 55px; height: 55px;}
 
   .quietplaceGsapContainer .quietplaceH1{font-size: 2.3rem;top:60vh; left: 65vw;}
   .ikeaGsapContainer .ikeaH1{top: 55vh; font-size: 2.3rem;}
+  .ediyaGsapContainer .ediyaH1{top: 55vh; font-size: 2.3rem;}
 }
 
 @media (max-width:1350px){
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 25px}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 25px}
+  .leftBracket,
+  .rightBracket{width: 25px}
+
   .languageIcon img, .languageIcon svg{width: 50px; height: 50px;}
  
 }
@@ -934,20 +901,27 @@ pointer-events: none;
   .main-message{font-size: 2.5rem;}
   #scroll-section-1 .textBox{font-size: 4rem;}
 
-
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 20px}
+  .leftBracket,
+  .rightBracket{width: 20px}
+  .languageIcon img, .languageIcon svg{width: 47px; height: 47px;}
+  
   #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 20vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 25vh;}
-  .languageIcon img, .languageIcon svg{width: 47px; height: 47px;}
   #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
     font-size: 2rem;
     left: 62vw;
   }
 
   .SortingRight{left: 65vw;}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px}
   #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
   .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
+
+  #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 20vh;}
+  #scroll-section-4 .ediyaGsapContainer .languageDec{top: 25vh;}
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
+    font-size: 2rem;
+    left: 62vw;
+  }
 }  
 
 
@@ -962,12 +936,15 @@ pointer-events: none;
   .pcMyIntroduction{display: block;}
   
   #scroll-section-1 .textBox{font-size: 5rem;}
+
+  .leftBracket,
+  .rightBracket{width: 20px}
+
   .languageIcon img, .languageIcon svg{width: 45px; height: 45px;}
+
   #scroll-section-2 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 15vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
-  
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 20px;}
   #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
     top: 68vh;
     left: 55vw;
@@ -975,9 +952,17 @@ pointer-events: none;
 
   .SortingRight{left: 60vw;}
   #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img,#scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 20px;}
 
   .ikeaGsapContainer .ikeaH1{top: 68vh;}
+
+
+  #scroll-section-4 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
+  #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 15vh;}
+  #scroll-section-4 .ediyaGsapContainer .languageDec{top: 20vh;}
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
+    top: 68vh;
+    left: 55vw;
+  }
 
   .iconBox04 .email-icons>svg{display: none;}
   .contactTextBoxMiddle{font-size: 1.3rem;}
@@ -1019,10 +1004,15 @@ pointer-events: none;
       align-items: center;
   }
 
-  #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: 50vh; left: 5vw;}
-  #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:50vh; left: 72vw;}
+  .leftBracket,
+  .rightBracket{width: 18px}
+  /* 기존 top 50vh */
+  #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
+  #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:-22vh; left: 74vw;}
+  #scroll-section-4 .ediyaGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
 
   #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
+  #scroll-section-4 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
 
   #scroll-section-2 .quietplaceGsapContainer{
     width: 100vw;
@@ -1050,9 +1040,6 @@ pointer-events: none;
     text-align: center;
   }
 
-  .languageIcon img, .languageIcon svg {width:45px;height:45px;}
-
-  #scroll-section-2 .languageContainer .leftBracket img,.rightBracket img{width: 18px}
   #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
     text-align: center;
     top: -3vh;
@@ -1101,8 +1088,7 @@ pointer-events: none;
     text-align: center;
   }
   .SortingRight{position: static; left: auto;}
-  #scroll-section-3 .ikeaLanguageContainer .leftBracket img{width: 18px}
-  #scroll-section-3 .ikeaLanguageContainer .rightBracket img{width: 18px}
+
   
   .ikeaGsapContainer .ikeaH1{
     text-align: center;
@@ -1118,6 +1104,52 @@ pointer-events: none;
 
 
   #scroll-section-3 .ikeaGsapContainer .ikeaDec{
+    display: none;
+    top: 50vh;
+    font-size: 0.8rem;
+  }
+
+
+
+  
+  #scroll-section-4 .ediyaGsapContainer{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #scroll-section-4 .ediyaGsapContainer .languageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24vh;left: 0;
+  }
+  
+  #scroll-section-4 .ediyaGsapContainer .languageDec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    top: 76vh;
+    left: 0;
+    text-align: center;
+  }
+
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
+    text-align: center;
+    top: -3vh;
+    left: 0vw;
+    font-size: 2.3rem;
+    line-height: 1.1;
+  }
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1 .moreBtnarea {
+    right: 50vw;
+    bottom: -45vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .ediyaDec{
     display: none;
     top: 50vh;
     font-size: 0.8rem;

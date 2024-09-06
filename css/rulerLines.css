@@ -31,7 +31,7 @@ bottom: 5rem;
   width: 2rem;
   height: 100%;
   position: fixed;
-  left: 96%;
+  right: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,4 +121,9 @@ top:80%;
 
 .rulerLines span:nth-child(9) {
 top:90%;
+}
+
+@media (max-width:768px){
+.ruler{display: none;}
+
 }
