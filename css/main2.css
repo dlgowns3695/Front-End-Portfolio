@@ -988,6 +988,7 @@ pointer-events: none;
 
 
  @media (max-width:768px){
+  .cursor{display: none;}
   #scroll-section-0 .bg{top: 0vh;}
   #scroll-section-0 h1{font-size: 2.5rem;}
   #scroll-section-0 .scolldimPc{ display: none;}
