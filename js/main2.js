@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let checkPCMobile = 0 // 피씨0, 노트북1, 패드2, 모바일,3
   // let prevCheckPCMobile = checkPCMobile; // 이전 상태 저장
 
-
+   
   const sceneInfo = [
     // 0 빙하
     {
@@ -900,20 +900,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (scrollRatio >= 0.6){
         console.log('포인터')
-        objs.logo1.style.cursor = ' pointer ';
-        objs.logo2.style.cursor = ' pointer ';
-        // objs.logo3.style.cursor = ' pointer ';
-        objs.logo4.style.cursor = ' pointer ';
-        objs.logo5.style.cursor = ' pointer ';
+        // objs.logo1.style.cursor = ' pointer ';
+        // objs.logo2.style.cursor = ' pointer ';
+        // // objs.logo3.style.cursor = ' pointer ';
+        // objs.logo4.style.cursor = ' pointer ';
+        // objs.logo5.style.cursor = ' pointer ';
         objs.logodisplayFlexContaner.style.pointerEvents = 'auto'
       }
       if(scrollRatio >= 0.9 || scrollRatio < 0.6){
         console.log('오토')
-        objs.logo1.style.cursor = ' auto ';
-        objs.logo2.style.cursor = ' auto ';
-        // objs.logo3.style.cursor = ' auto ';
-        objs.logo4.style.cursor = ' auto ';
-        objs.logo5.style.cursor = ' auto ';
+        // objs.logo1.style.cursor = ' auto ';
+        // objs.logo2.style.cursor = ' auto ';
+        // // objs.logo3.style.cursor = ' auto ';
+        // objs.logo4.style.cursor = ' auto ';
+        // objs.logo5.style.cursor = ' auto ';
 
         objs.logodisplayFlexContaner.style.pointerEvents = 'none'
       }
@@ -2093,6 +2093,53 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  const cursor = document.querySelector('.cursor');
+  window.addEventListener('mousemove', (event) => {
+    
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+  });
+  
+  const moreBtns = document.querySelectorAll('.moreBtn');
+const strength = 0.5;
+
+moreBtns.forEach(circleBtn => {
+  // 마우스가 버튼에 들어올 때
+  circleBtn.addEventListener('mouseenter', function () {
+    cursor.style.transform = 'scale(8)';
+    cursor.style.backgroundColor = '#324eef';  // 배경색 변경
+    document.addEventListener('mousemove', moveButton);
+  });
+
+  // 마우스가 버튼에서 나갈 때
+  circleBtn.addEventListener('mouseleave', function () {
+    cursor.style.transform = 'scale(1)';
+    cursor.style.backgroundColor = '#fff';  // 기본 색상으로 복귀
+    gsap.to(circleBtn, { x: 0, y: 0, duration: 0.6, ease: "power3.out" });
+    document.removeEventListener('mousemove', moveButton);
+  });
+
+  // 마우스가 버튼 위에 있을 때 버튼을 마우스 쪽으로 끌어오는 함수
+  function moveButton(e) {
+    const btnRect = circleBtn.getBoundingClientRect();
+    const btnX = btnRect.left + btnRect.width / 2;
+    const btnY = btnRect.top + btnRect.height / 2;
+
+    const distanceX = e.clientX - btnX;
+    const distanceY = e.clientY - btnY;
+
+    const moveX = distanceX * strength;
+    const moveY = distanceY * strength;
+
+    gsap.to(circleBtn, { x: moveX, y: moveY, duration: 0.4, ease: "power3.out" });
+  }
+});
+
+  
+  
+
+
   
 
   window.addEventListener("resize", setLayout);
