@@ -1,8 +1,3 @@
-// import { gsap } from "https://cdn.skypack.dev/gsap@3.11.4";
-// import splitType from "https://cdn.skypack.dev/split-type@0.3.3";
-
-// gsap.registerPlugin(ScrollTrigger);
-
 
 import { gsap } from "https://cdn.skypack.dev/gsap@3.11.4";
 import splitType from "https://cdn.skypack.dev/split-type@0.3.3";

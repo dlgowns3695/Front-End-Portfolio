@@ -105,13 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         context: document.querySelector("#video-canvas-1").getContext("2d"),
         videoImages: [],
         
-        // canvas2: document.querySelector("#video-canvas-1-1"),
-        // context2: document.querySelector("#video-canvas-1-1").getContext("2d"),
-        // videoImages2: [],
-
-        // canvas3: document.querySelector("#video-canvas-1-2"),
-        // context3: document.querySelector("#video-canvas-1-2").getContext("2d"),
-        // videoImages3: [],
       },
       values: {
           videoImageCount: 206,
@@ -128,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2C_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
         messageP2D_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
 
-        // messageE_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+
         messageF_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
         messageA_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
 
@@ -143,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2C_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
         messageP2D_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
 
-        // messageE_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
         messageF_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
         messageG_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
         link_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
@@ -161,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-        // messageE_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
         messageF_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
         
         messageA_opacity_out: [1, 0, { start: 0.3, end: 0.35 }],
@@ -177,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-        // messageE_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
         messageF_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
         messageG_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
 
@@ -225,14 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas: document.querySelector("#video-canvas-2"),
         context: document.querySelector("#video-canvas-2").getContext("2d"),
         videoImages: [],
-
-        // canvas2: document.querySelector("#video-canvas-2-1"),
-        // context2: document.querySelector("#video-canvas-2-1").getContext("2d"),
-        // videoImages2: [],
-
-        // canvas3: document.querySelector("#video-canvas-2-2"),
-        // context3: document.querySelector("#video-canvas-2-2").getContext("2d"),
-        // videoImages3: [],
       },
       values: {
         videoImageCount: 204,
@@ -342,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2C_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
         messageP2D_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
 
-        // messageE_translateY_in: [20, 0, { start: 0.55, end: 0.6 }],
+
         messageF_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
         messageA_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
 
@@ -357,7 +339,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2C_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
         messageP2D_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
 
-        // messageE_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
         messageF_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
         messageG_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
         link_opacity_in: [0, 1, { start: 0.15, end: 0.2 }],
@@ -374,8 +355,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2D_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
 
 
-
-        // messageE_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
         messageF_translateY_out: [0, -20, { start: 0.8, end: 0.9 }],
         
         messageA_opacity_out: [1, 0, { start: 0.3, end: 0.35 }],
@@ -390,8 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageP2D_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
 
 
-
-        // messageE_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
         messageF_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
         messageG_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
 
@@ -433,9 +410,6 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-6"),
-
-        // contact: document.querySelector("#scroll-section-0 .main-message.a"),
-
         canvas: document.querySelector("#video-canvas-4"),
         context: document.querySelector("#video-canvas-4").getContext("2d"),
         videoImages: [],
@@ -449,7 +423,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     },
 
-      
   ];
   function getState() {
     const width = window.innerWidth;
@@ -693,10 +666,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     canvase1.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
 
-                    
-                    // canvase12.style.transform = 'translate3d(-40%, -27%, 0px) scale(.2)';
-                    
-
                     canvase2.width = 1920;
                     canvase2.height = 1080;
                     canvase2.style.transform = 'translate3d(-50%, -50%, 0px) scale(.9)';
@@ -731,7 +700,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
  
-
 
   // 각 스크롤 섹션의 높이 세팅
   function setLayout() {
@@ -900,21 +868,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (scrollRatio >= 0.6){
         console.log('포인터')
-        // objs.logo1.style.cursor = ' pointer ';
-        // objs.logo2.style.cursor = ' pointer ';
-        // // objs.logo3.style.cursor = ' pointer ';
-        // objs.logo4.style.cursor = ' pointer ';
-        // objs.logo5.style.cursor = ' pointer ';
         objs.logodisplayFlexContaner.style.pointerEvents = 'auto'
       }
       if(scrollRatio >= 0.9 || scrollRatio < 0.6){
         console.log('오토')
-        // objs.logo1.style.cursor = ' auto ';
-        // objs.logo2.style.cursor = ' auto ';
-        // // objs.logo3.style.cursor = ' auto ';
-        // objs.logo4.style.cursor = ' auto ';
-        // objs.logo5.style.cursor = ' auto ';
-
         objs.logodisplayFlexContaner.style.pointerEvents = 'none'
       }
         break;
@@ -1133,20 +1090,10 @@ document.addEventListener('DOMContentLoaded', function() {
           calcValues(values.imageSequence, currentYoffset)
         );
 
-        // let sequence32 = Math.round(
-        //   calcValues(values3.imageSequence, currentYoffset)
-        // );
-      
       console.log('sequence3 >>> '+sequence3);
       // 캔버스초기화,, 잔상효과 없애기 위함
       objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
       objs.context.drawImage(objs.videoImages[sequence3], 0, 0);
-
-      // objs.context2.clearRect(0, 0, objs.canvas2.width, objs.canvas2.height);
-      // objs.context2.drawImage(objs.videoImages2[sequence32], 0, 0);
-
-      // objs.context3.clearRect(0, 0, objs.canvas3.width, objs.canvas3.height);
-      // objs.context3.drawImage(objs.videoImages3[sequence32], 0, 0);
 
       // console.log(scrollRatio+' < < 씬2의 scrollRatio')
       if (scrollRatio <= 0.35) {
@@ -1258,9 +1205,6 @@ document.addEventListener('DOMContentLoaded', function() {
           values.messageP2C_translateY_in,
           currentYoffset
         )}%, 0)`;
-
-
-
 
 
 
@@ -1889,30 +1833,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 이디야 영역
 
-  // gsap.to(".section-4blackdim", {
-  //   opacity:1,
-  //   duration:0.5,
-  //   scrollTrigger: {
-  //       trigger: ".section-4blackdim",
-  //       start: "85% center ", // 시작 지점
-  //       end: "bottom bottom", 
-  //       scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //       markers:true,
-  //   }
-  // }); 
-
-  // gsap.to(".section-4blackdim", {
-  //   opacity:0,
-  //   duration:0.5,
-  //   scrollTrigger: {
-  //       trigger: ".section-4blackdim",
-  //       start: "top top ", // 시작 지점
-  //       end: "+=1000", 
-  //       scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //       markers:true,
-  //   }
-  // }); 
-
   gsap.to(".ediyaGsapContainer", {
     scrollTrigger: {
       trigger: ".ediyaGsapContainer",
@@ -2068,11 +1988,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // 클래스명에 따라 스크롤할 섹션 선택
       if (clickedClass === 'quietPlaceLink') {
+        // 콰플
         targetSection = document.querySelector('#scroll-section-2');
       } else if (clickedClass === 'ikeaLink') {
+        // 이케아
         targetSection = document.querySelector('#scroll-section-3');
       } else if (clickedClass === 'ediyacoffeeLink') {
+        // 이디야
         targetSection = document.querySelector('#scroll-section-4');
+        // 콘택트 (임시)
       } else if (clickedClass === 'QUIETPLACElogo5') {
         targetSection = document.querySelector('#scroll-section-5');
       }
@@ -2102,9 +2026,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   const moreBtns = document.querySelectorAll('.moreBtn');
-const strength = 0.5;
+  const strength = 0.5;
 
-moreBtns.forEach(circleBtn => {
+  moreBtns.forEach(circleBtn => {
   // 마우스가 버튼에 들어올 때
   circleBtn.addEventListener('mouseenter', function () {
     cursor.style.transform = 'scale(8)';
@@ -2137,8 +2061,6 @@ moreBtns.forEach(circleBtn => {
 });
 
   
-  
-
 
   
 

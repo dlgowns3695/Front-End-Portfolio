@@ -60,7 +60,7 @@ position: absolute;
 .mask {
   position: fixed;
   height: 35%;
-  width: 6.5rem;
+  width: 7.5rem;
   /* background-color: #000; */
   z-index: 500;
   display: flex;
