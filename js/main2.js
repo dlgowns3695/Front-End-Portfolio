@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`;
+        imgElem4.src = `video/mobile/EDIYA/EDIYAmobile(${result}).png`;
         sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem2 = new Image();
-        imgElem2.src = `video/004/quietplace(${result}).png`;
+        imgElem2.src = `video/quietplace/quietplace(${result}).png`;
         sceneInfo[2].objs.videoImages.push(imgElem2);
       }
 
@@ -582,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem3 = new Image();
-        imgElem3.src = `video/005/IKEA(${result}).png`;
+        imgElem3.src = `video/ikea/IKEA(${result}).png`;
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
 
@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/004/quietplace(${result}).png`;
+        imgElem4.src = `video/ediya/ediya(${result}).png`;
         sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[6].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem6 = new Image();
-        imgElem6.src = `video/006/Bubble(${result}).png`;
+        imgElem6.src = `video/bubble/Bubble(${result}).png`;
         sceneInfo[6].objs.videoImages.push(imgElem6);
       }
 
@@ -1923,11 +1923,11 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollTrigger: {
       trigger: ".section-4lines",
       start: "top top", // 시작 지점
-      end: "bottom bottom",
+      end: "70% bottom",
       pin: true,
       // markers: true,
       onEnter: () => gsap.to(".section-4lines", { opacity: 1, duration: 0.5 }),
-      onLeave: () => gsap.to(".section-4ines", { opacity: 0, duration: 0.5 }),
+      onLeave: () => gsap.to(".section-4lines", { opacity: 0, duration: 0.5 }),
       onEnterBack: () => gsap.to(".section-4lines", { opacity: 1, duration: 0.5 }),
       onLeaveBack: () => gsap.to(".section-4lines", { opacity: 0, duration: 0.5 }),
     }
@@ -1939,6 +1939,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+  gsap.to(".section6DivContanier .sticky-elem-canvas", {
+    opacity: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: "#scroll-section-6",
+      start: "top top", // 시작 지점
+      end: "+=500px", // 끝 지점
+      scrub: true, // 스크롤 양에 따라 애니메이션 조절
+      // markers: true,
+    }
+  });
   gsap.to(".section-6-dim", {
     opacity: 1,
     duration: 0.5,

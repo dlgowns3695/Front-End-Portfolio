@@ -35,6 +35,7 @@ a {color: rgb(235, 235, 235);text-decoration: none; cursor: none; }
   mix-blend-mode: difference;
   z-index: 999999;
 }
+.section6DivContanier>.sticky-elem-canvas{opacity: 0;}
 
 body.before-load {overflow: hidden;}
 .container {position: relative; overflow: hidden;}

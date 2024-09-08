@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
   const sceneInfo = [
+    // 0 빙하
     {
-      // 0
       type: "sticky",
       heightNum: 5, // 브라우저 높이의 5배로 scrollHeight 세팅
       scrollHeight: 0, // 여러 DEVICE에서 열때 높이값을 다르게 해주기 위해 초기값 0
@@ -19,17 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         imageSequence: [0, 140], // 이미지 범위
       },
     },
-    // {
-    //   // 1
-    //   type: "normal",
-    //   heightNum: 5,
-    //   scrollHeight: 0,
-    //   objs: {
-    //     container: document.querySelector("#scroll-section-1"),
-    //   },
-    // },
-    {
-      // 2, 콰이어트 플레이스 예정
+    // 1 콰이어트 플레이스 
+    { 
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -43,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
           imageSequence: [0, 205]
       },
     },
-    {
-      // 3 이케아 예정
+    // 2 이케아 
+    {  
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -60,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
       },
   
     },
+    // 3 콘택트 예정
     {
-      // 4 콘택트 예정
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -76,6 +67,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
       },
   
+    },
+    // 4 이디야
+    { 
+      type: "sticky",
+      heightNum: 5,
+      scrollHeight: 0,
+      objs: {
+        canvas: document.querySelector("#video-canvas-3"),
+        context: document.querySelector("#video-canvas-3").getContext("2d"),
+        videoImages: [],
+      },
+      values: {
+          videoImageCount: 206,
+          imageSequence: [0, 205]
+      },
     },
     
   ];
@@ -93,20 +99,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // 콰이어트플레이스 피씨
   for (let i = 0; i < sceneInfo[1].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/004/quietplace(${result}).png`);
+    images.push(`video/quietplace/quietplace(${result}).png`);
   }
 
   // 이케아 피씨
   for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/005/IKEA(${result}).png`);
+    images.push(`video/ikea/IKEA(${result}).png`);
   }
 
-  // 콘택트
+  // 콘택트 피씨
   for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/006/Bubble(${result}).png`);
+    images.push(`video/bubble/Bubble(${result}).png`);
   }
+
+  // 이디야 피씨
+  for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
+    let result = `${i}`.padStart(0, "0");
+    images.push(`video/ediya/ediya(${result}).png`);
+  }
+
+
+
+  // 모바일 ******************
+
 
   // Scene 0 모바일 이미지 로드
   for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
@@ -127,9 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // 콘택트 모바일
-  for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
+  for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
     images.push(`video/mobile/Bubble/Bubble(${result}).png`);
+  }
+
+  // 이디야 모바일
+  for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
+    let result = `${i}`.padStart(0, "0");
+    images.push(`video/mobile/EDIYA/EDIYAMobile(${result}).png`);
   }
 
 
