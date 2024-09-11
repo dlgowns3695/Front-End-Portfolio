@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;stroke:#252C69;stroke-miterlimit:10;}
-</style>
-<g>
-	<path class="st0" d="M7.85,27.1l32.26,18.96l32-19.63c0,0,0.07,26.65,0.02,31.9c-0.06,5.34-4.87,6.84-4.87,6.84
-		s-49.93,0.15-53.48,0s-5.93-5.48-5.93-5.48V27.1v-7.7c0,0,1.89-4.59,6.31-4.62c4.02-0.03,43.74,0,50.92,0
-		c0.81,0,1.61,0.17,2.33,0.53c1.73,0.84,4.66,2.69,4.65,5.51c-0.01,3.98,0.05,5.62,0.05,5.62"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1040">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #252c69;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M754.57,641.58l-32.15,17.78-32.15-17.78h0v-6.6c0-2.21,1.79-4,4-4h56.3c2.21,0,4,1.79,4,4v42.48c0,2.21-1.79,4-4,4h-56.3c-2.21,0-4-1.79-4-4v-35.88"/>
 </svg>

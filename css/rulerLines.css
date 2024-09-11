@@ -60,7 +60,7 @@ position: absolute;
 
 .mask {
   position: fixed;
-  height: 35%;
+  height: 33.5%;
   width: 2.5rem;
   /* background-color: #000; */
   z-index: 500;
@@ -85,6 +85,50 @@ border-width: 1px 0 0px 0;
 border-color: rgb(var(--c));
 border-style: solid;
 justify-content: start;
+}
+
+.psi,.miusM{
+  text-wrap: nowrap;
+}
+
+/* 스크롤에 따라 움직이는 공 */
+.scroll-indicator {
+  /* 공의 크기 */
+  /* width: 10px;  
+  height: 10px;  */
+
+  width: 50px;  
+  height: 50px; 
+  /* 공 색상 */
+  /* background-color: rgb(var(--c), 1);  */
+   /* 원형으로 만들기 */
+  /* border-radius: 50%; */
+  position: absolute;
+  position: fixed;
+  left: 50%; /* 중앙 정렬 */
+  transform: translateX(-50%); /* 중앙에 배치 */
+  top: 0; /* 시작 위치는 맨 위 */
+
+
+
+}
+
+.scroll-indicator svg{
+    /* 반짝이는 애니메이션 추가 */
+    transition: top 0.2s ease; /* 스크롤 시 부드러운 움직임 */
+    animation: glow 2s infinite ease-in-out;
+}
+
+/* 잠수함 불빛처럼 천천히 반짝이는 애니메이션 */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(var(--c), 0.5), 0 0 10px rgba(var(--c), 0.3);
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(var(--c), 0.8), 0 0 20px rgba(var(--c), 0.6);
+    opacity: 1;
+  }
 }
 
 

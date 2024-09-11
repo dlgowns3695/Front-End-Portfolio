@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [], // 이미지 담아줄 배열
       },
       values: {
-        videoImageCount: 141, // 이미지 개수
-        imageSequence: [0, 140], // 이미지 범위
+        videoImageCount: 71, // 이미지 개수
+        imageSequence: [0, 70], // 이미지 범위
       },
     },
     // 1 콰이어트 플레이스 
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-          videoImageCount: 206,
-          imageSequence: [0, 205]
+        videoImageCount: 103,
+        imageSequence: [0, 102],
       },
     },
     // 2 이케아 
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 204,
-        imageSequence: [0, 203],
+        videoImageCount:102,
+        imageSequence: [0, 101],
 
       },
   
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
+        videoImageCount: 149,
+        imageSequence: [0, 148],
 
       },
   
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-          videoImageCount: 206,
-          imageSequence: [0, 205]
+        videoImageCount: 103,
+        imageSequence: [0, 102],
       },
     },
     
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Scene 0 피씨 이미지 로드
   for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
     let result = `${i}`.padStart(1, "0");
-    images.push(`video/001/${result}.webp`);
+    images.push(`video/001/0(${result}).webp`);
   }
 
   // 콰이어트플레이스 피씨
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Scene 0 모바일 이미지 로드
   for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
     let result = `${i}`.padStart(1, "0");
-    images.push(`video/001/${result}.webp`);
+    images.push(`video/001/0(${result}).webp`);
   }
 
   // 콰이어트플레이스 모바일

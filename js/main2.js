@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [], // 이미지 담아줄 배열
       },
       values: {
-        videoImageCount: 141, // 이미지 개수
-        imageSequence: [0, 140], // 이미지 범위
+        videoImageCount: 71, // 이미지 개수
+        imageSequence: [0, 70], // 이미지 범위
 
       messageA_opacity_in: [0, 1, { start: 0.3, end: 0.5 }], // opacity 0에서 1로
       messageA_opacity_out: [1, 0, { start: 0.55, end: 0.6 }], // opacity 0에서 1로
@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
       },
       values: {
-          videoImageCount: 206,
-          imageSequence: [0, 205],
+          videoImageCount: 103,
+          imageSequence: [0, 102],
 
         messageA_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
         messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
@@ -181,14 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pinC_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
         
       },
-      values2: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      },
-      values3: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      }
     },
     // 3 이케아
     {
@@ -217,8 +209,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 204,
-        imageSequence: [0, 203],
+        videoImageCount:102,
+        imageSequence: [0, 101],
 
         messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
         messageP1B_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
@@ -271,14 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link_opacity_out: [1, 0, { start: 0.8, end: 0.9 }],
 
       },
-      values2: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      },
-      values3: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      }
 
     },
     // 4 이디야 예정
@@ -310,8 +294,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-          videoImageCount: 206,
-          imageSequence: [0, 205],
+          videoImageCount: 103,
+          imageSequence: [0, 102],
 
         messageA_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
         messageP1A_translateY_in: [20, 0, { start: 0.15, end: 0.2 }],
@@ -382,14 +366,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pinC_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
         
       },
-      values2: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      },
-      values3: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-      }
     },
     // 5 이름로고
     {
@@ -403,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
        }
     },
-    // 6 contact (구슬)
+    // 6 contact (구슬) ,0.52 비율에서 멈추기
     {
       type: "sticky",
       heightNum: 3,
@@ -415,10 +391,10 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 297,
-        imageSequence: [0, 296],
-        canvas_opacity_in: [0, .3, { start: 0.05, end: 0.5 }],
-        canvas_opacity_out: [.3, 0, { start: 0.85, end: 0.9 }],
+        videoImageCount: 149,
+        imageSequence: [0, 148],
+        canvas_opacity_in: [0, .2, { start: 0.05, end: 0.2 }],
+        canvas_opacity_out: [.2, 0, { start: 0.5, end: 0.9 }],
       },
 
     },
@@ -507,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
         let result = `${i}`.padStart(1, "0");
         let imgElem = new Image();
-        imgElem.src = `video/001/${result}.webp`;
+        imgElem.src = `video/001/0(${result}).webp`;
         // imgElem.onload = () => onImageLoad(0);
         sceneInfo[0].objs.videoImages.push(imgElem);
         
@@ -538,7 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/mobile/EDIYA/EDIYAmobile(${result}).png`;
+        imgElem4.src = `video/mobile/EDIYA/EDIYAMobile(${result}).png`;
         sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
@@ -562,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
         let result = `${i}`.padStart(1, "0");
         imgElem = new Image();
-        imgElem.src = `video/001/${result}.webp`;
+        imgElem.src = `video/001/0(${result}).webp`;
         // imgElem.onload = () => onImageLoad(0);
         sceneInfo[0].objs.videoImages.push(imgElem);
       }
@@ -693,7 +669,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
               canvase4.width = 1080;
               canvase4.height = 1920;
-              canvase4.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
+              canvase4.style.transform = 'translate3d(-50%, -50%, 0px) scale(.35)';
 
       break;
     }
@@ -1502,16 +1478,43 @@ document.addEventListener('DOMContentLoaded', function() {
         case 5:
           console.log('case 5 play')
         break;
+
         case 6:
         console.log("6play");
         let sequence6 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
-
         console.log('sequence6 >>> '+ sequence6);
+        console.log(scrollRatio)
+
+        if(scrollRatio <= 0.6){
+          objs.canvas.style.opacity = calcValues(
+            values.canvas_opacity_in,
+            currentYoffset
+          );
+          console.log('opacity in~')
+        }
+        else{
+          objs.canvas.style.opacity = calcValues(
+            values.canvas_opacity_out,
+            currentYoffset
+          );
+          console.log('opacity out~')
+        }
+
+        if (scrollRatio <= 0.52) {
         // 캔버스초기화,, 잔상효과 없애기 위함
         objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
         objs.context.drawImage(objs.videoImages[sequence6], 0, 0)
+          
+        }
+        // else 
+        //   // in
+        //   objs.canvas.style.position = '';
+          
+        
+        
+
 
     }
   }
@@ -1939,17 +1942,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  gsap.to(".section6DivContanier .sticky-elem-canvas", {
-    opacity: 1,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#scroll-section-6",
-      start: "top top", // 시작 지점
-      end: "+=500px", // 끝 지점
-      scrub: true, // 스크롤 양에 따라 애니메이션 조절
-      // markers: true,
-    }
-  });
+  // gsap.to(".section6DivContanier .sticky-elem-canvas", {
+  //   opacity: 1,
+  //   duration: 0.5,
+  //   scrollTrigger: {
+  //     trigger: "#scroll-section-6",
+  //     start: "top top", // 시작 지점
+  //     end: "+=500px", // 끝 지점
+  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
+  //     // markers: true,
+  //   }
+  // });
+
+
+
   gsap.to(".section-6-dim", {
     opacity: 1,
     duration: 0.5,
@@ -2071,6 +2077,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+  const eMailIcon = document.querySelector('.email-icons svg');
+  console.log(eMailIcon)
+
+
+  eMailIcon.addEventListener('mouseenter', function () {
+    console.log('마우스 진입')
+  });
   
 
   
