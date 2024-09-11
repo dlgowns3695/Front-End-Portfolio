@@ -1,7 +1,7 @@
 
 :root {
   --b: 10,100,155;
-  --c: 238, 199, 99;
+  --c: 255, 255, 255;
   --t: 204, 204, 204;
   --f: 255,255,255;
 }
@@ -61,7 +61,7 @@ position: absolute;
 .mask {
   position: fixed;
   height: 35%;
-  width: 7.5rem;
+  width: 2.5rem;
   /* background-color: #000; */
   z-index: 500;
   display: flex;
