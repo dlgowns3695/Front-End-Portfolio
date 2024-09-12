@@ -834,7 +834,12 @@ pointer-events: none;
   flex-direction: column;
 }
 
-.email-icons svg{transition: opacity 0.5s ease;}
+.email-icons svg {
+  width: 80px;
+  height: 80px;
+  transition: opacity 0.5s ease;
+}
+
 
 .email-icons svg path {
   fill: transparent;
