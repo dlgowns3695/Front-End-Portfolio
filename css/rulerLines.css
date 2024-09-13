@@ -68,7 +68,7 @@ position: absolute;
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgb(var(--c));
 }
 
@@ -88,13 +88,15 @@ justify-content: start;
 }
 
 .psi,.miusM{
+  margin: 10px;
   text-wrap: nowrap;
 }
 
 
 
 .scroll-indicator {
-  width: 50px;
+  height: 35px;
+  width: 35px;
 
   position: absolute;
   left: 50%;
@@ -106,17 +108,10 @@ justify-content: start;
 .scroll-indicator svg {
   width: 100%;
   height: 100%;
-
   transition: top 0.2s ease; 
-
 }
 
-.scroll-indicator svg path{
-
-
-
-  animation: glow 2s infinite ease-in-out;
-}
+.scroll-indicator svg path{ animation: glow 2s infinite ease-in-out;}
 
 /* 잠수함 불빛처럼 천천히 반짝이는 애니메이션 */
 @keyframes glow {
@@ -130,6 +125,23 @@ justify-content: start;
   }
 }
 
+  /* 둥둥 뜨는 애니메이션 */
+  .scroll-indicator svg {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  /* 애니메이션 키프레임 설정 */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* 위로 10px 이동 */
+    }
+    100% {
+      transform: translateY(0); /* 원래 위치로 돌아옴 */
+    }
+  }
 
 .rulerLines span:nth-child(1) {
 top:10%;

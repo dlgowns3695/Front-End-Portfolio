@@ -833,7 +833,7 @@ pointer-events: none;
   align-items: center;
   flex-direction: column;
 }
-
+.email-icons{position: relative; width: 80px; height: 80px;}
 .email-icons svg {
   width: 80px;
   height: 80px;
@@ -843,7 +843,7 @@ pointer-events: none;
 
 .email-icons svg path {
   fill: transparent;
-  stroke-dasharray: 1582;
+  stroke-dasharray: 349.008;
   stroke-dashoffset: 0;
 }
 
@@ -858,7 +858,7 @@ pointer-events: none;
   }
 
   40% {
-      stroke-dashoffset: 1582;
+      stroke-dashoffset: 174.5;
   }
 
   60% {
@@ -866,17 +866,23 @@ pointer-events: none;
   }
 
   80% {
-      fill: #008cff;
-      stroke-dashoffset: 3164;
+      /* fill: #008cff; */
+      stroke-dashoffset: 349;
   }
 
   100% {
-      fill: #008cff;
-      stroke-dashoffset: 3164;
+      /* fill: #008cff; */
+      stroke-dashoffset: 349.008;
   }
 }
-.iconBox05 svg{stroke: white;stroke-width: 2; /* 원하는 테두리 두께로 조절 */}
 
+.email-icons01,
+.email-icons02{position: absolute; top: 0; left: 0;}
+
+.email-icons01{z-index: 1;}
+
+
+.iconBox05 svg{stroke: white;stroke-width: 2; /* 원하는 테두리 두께로 조절 */}
 .e-mail02 {display: none;}
 
 .mouseCanvas{
