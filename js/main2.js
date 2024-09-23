@@ -843,11 +843,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       }
       if (scrollRatio >= 0.6){
-        console.log('포인터')
+        // console.log('포인터')
         objs.logodisplayFlexContaner.style.pointerEvents = 'auto'
       }
       if(scrollRatio >= 0.9 || scrollRatio < 0.6){
-        console.log('오토')
+        // console.log('오토')
         objs.logodisplayFlexContaner.style.pointerEvents = 'none'
       }
         break;
@@ -1066,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
           calcValues(values.imageSequence, currentYoffset)
         );
 
-      console.log('sequence3 >>> '+sequence3);
+      // console.log('sequence3 >>> '+sequence3);
       // 캔버스초기화,, 잔상효과 없애기 위함
       objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
       objs.context.drawImage(objs.videoImages[sequence3], 0, 0);
@@ -1270,7 +1270,7 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
         case 4:
 
-          console.log("4 play 이디야 ");
+          // console.log("4 play 이디야 ");
         let sequence4 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
@@ -1476,30 +1476,30 @@ document.addEventListener('DOMContentLoaded', function() {
         
         break;
         case 5:
-          console.log('case 5 play')
+          // console.log('case 5 play')
         break;
 
         case 6:
-        console.log("6play");
+        // console.log("6play");
         let sequence6 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
-        console.log('sequence6 >>> '+ sequence6);
-        console.log(scrollRatio)
+        // console.log('sequence6 >>> '+ sequence6);
+        // console.log(scrollRatio)
 
         if(scrollRatio <= 0.6){
           objs.canvas.style.opacity = calcValues(
             values.canvas_opacity_in,
             currentYoffset
           );
-          console.log('opacity in~')
+          // console.log('opacity in~')
         }
         else{
           objs.canvas.style.opacity = calcValues(
             values.canvas_opacity_out,
             currentYoffset
           );
-          console.log('opacity out~')
+          // console.log('opacity out~')
         }
 
         if (scrollRatio <= 0.52) {
@@ -1659,14 +1659,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // markers: true,
   
       onLeave: () => {
-        console.log("END부분입니다!");
+        // console.log("END부분입니다!");
         gsap.to(".quietplaceGsapContainer", {
           opacity: 0,
           duration: 0.5 // 투명도 전환 애니메이션 지속 시간
         });
       },
       onEnterBack: () => {
-        console.log("돌아왔습니다!");
+        // console.log("돌아왔습니다!");
         gsap.to(".quietplaceGsapContainer", {
           opacity: 1,
           duration: 0.5 // 투명도 전환 애니메이션 지속 시간
@@ -1846,14 +1846,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // markers: true,
   
       onLeave: () => {
-        console.log("END부분입니다!");
+        // console.log("END부분입니다!");
         gsap.to(".ediyaGsapContainer", {
           opacity: 0,
           duration: 0.5 // 투명도 전환 애니메이션 지속 시간
         });
       },
       onEnterBack: () => {
-        console.log("돌아왔습니다!");
+        // console.log("돌아왔습니다!");
         gsap.to(".ediyaGsapContainer", {
           opacity: 1,
           duration: 0.5 // 투명도 전환 애니메이션 지속 시간
