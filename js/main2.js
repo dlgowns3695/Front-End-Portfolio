@@ -2082,9 +2082,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // console.log(eMailIcon)
 
 
-  eMailIcon.addEventListener('mouseenter', function () {
-    // console.log('마우스 진입')
+
+
+  // path 요소 선택
+  const pathElement = document.querySelector('.phonenumberIcons svg');
+
+  pathElement.addEventListener('mouseenter', function () {
+    console.log('마우스 진입')
   });
+
 
 
   
