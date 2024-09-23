@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function checkWindowSize() {
 
     const width = window.innerWidth;
-    console.log(width)
+    // console.log(width)
 
     // 1600 보다 크면 피씨
     if (width > 1600) {
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('laptop');
         // console.log('피씨입니다.')
         checkPCMobile = 0;
-        console.log('checkPCMobile > ' + checkPCMobile)
+        // console.log('checkPCMobile > ' + checkPCMobile)
       
     } 
     // 1024보다 작으면 노트북
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('pad');
       // console.log('노트북입니다.')
       checkPCMobile = 1;
-      console.log('checkPCMobile > ' + checkPCMobile)
+      // console.log('checkPCMobile > ' + checkPCMobile)
     }
     
     // 768보다 크면 패드
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('laptop');
         // console.log('패드입니다.')
         checkPCMobile = 2;
-        console.log('checkPCMobile > ' + checkPCMobile)
+        // console.log('checkPCMobile > ' + checkPCMobile)
     }
     // 나머지 피씨
     else{
@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('laptop');
         // console.log('모바일입니다.')
         checkPCMobile = 3;
-        console.log('checkPCMobile > ' + checkPCMobile)
+        // console.log('checkPCMobile > ' + checkPCMobile)
     }
 
 
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function() {
     switch(checkPCMobile){
       // 피씨 1920
       case 0:
-        console.log('피씨요')
+        // console.log('피씨요')
               // PC일 때
               canvase1.width = 1920;
               canvase1.height = 1080;
@@ -618,7 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
       // 노트북 1600
       case 1:
-        console.log('노트북이요')
+        // console.log('노트북이요')
                     // PC일 때
                     canvase1.width = 1920;
                     canvase1.height = 1080;
@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
       // 패드 1024
       case 2:
-        console.log('패드요')
+        // console.log('패드요')
                     // PC일 때
                     sceneInfo[0].objs.canvas.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
                     canvase1.width = 1920;
@@ -1561,14 +1561,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let percentLoaded = parseInt(percentText.replace('%', ''));
   
     // 실시간으로 로딩 퍼센트 출력
-    console.log("현재 로딩 진행 상태: " + percentLoaded + "%");
+    // console.log("현재 로딩 진행 상태: " + percentLoaded + "%");
 
     // 로딩 퍼센트가 100 이상이면 동작 실행
     if (percentLoaded >= 99) {
-      console.log("이미지 로드 시작");
+      // console.log("이미지 로드 시작");
       // 로드때 첫 이미지 나오게
       sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
-      console.log("이미지 로드 완료");
+      // console.log("이미지 로드 완료");
       
       
       // 검사를 멈추기 위해 setInterval 클리어
@@ -2079,11 +2079,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   const eMailIcon = document.querySelector('.email-icons svg');
-  console.log(eMailIcon)
+  // console.log(eMailIcon)
 
 
   eMailIcon.addEventListener('mouseenter', function () {
-    console.log('마우스 진입')
+    // console.log('마우스 진입')
   });
 
 

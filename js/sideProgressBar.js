@@ -19,7 +19,7 @@ function updateScroller() {
   // 스크롤 인디케이터의 위치 업데이트 (상단 0%, 하단 100% 가정)
   const rulerHeight = document.querySelector(".rulerLines").offsetHeight;
   const indicator = document.querySelector(".scroll-indicator");
-  console.log(indicator.offsetHeight)
+  // console.log(indicator.offsetHeight)
 
   // 인디케이터의 위치를 스크롤 퍼센트에 맞게 조정
   const indicatorTop = (scrollY / (documentHeight - viewportHeight)) * (rulerHeight - indicator.offsetHeight);

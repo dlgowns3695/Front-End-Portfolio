@@ -226,9 +226,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (current > 100) {
           
           clearInterval(progressTimer);
-          console.log("이미지가 로드1111되었습니다.");
+          // console.log("이미지가 로드1111되었습니다.");
           loadingChk = 1;
-          console.log(loadingChk + ' << loadingChk ');
+          // console.log(loadingChk + ' << loadingChk ');
           
 
           // 순차적으로 아이콘 표시하기
