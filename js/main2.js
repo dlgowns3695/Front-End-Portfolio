@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
     switch(checkPCMobile){
       // 피씨 1920
       case 0:
-        // console.log('피씨요')
+        console.log('피씨요')
               // PC일 때
               canvase1.width = 1920;
               canvase1.height = 1080;
@@ -620,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
       // 노트북 1600
       case 1:
-        // console.log('노트북이요')
+        console.log('노트북이요')
                     // PC일 때
                     canvase1.width = 1920;
                     canvase1.height = 1080;
@@ -636,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
       // 패드 1024
       case 2:
-        // console.log('패드요')
+        console.log('패드요')
                     // PC일 때
                     sceneInfo[0].objs.canvas.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
                     canvase1.width = 1920;
@@ -652,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
       // 모바일 768
       case 3:
-        // console.log('모바일이요')
+        console.log('모바일이요')
               // 모바일일 때
               sceneInfo[0].objs.canvas.style.transform = 'translate3d(-50%, -50%, 0px) scale(1)';
               canvase1.width = 1080;
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
               canvase4.width = 1080;
               canvase4.height = 1920;
-              canvase4.style.transform = 'translate3d(-50%, -50%, 0px) scale(.35)';
+              canvase4.style.transform = 'translate3d(-50%, -10%, 0px)';
 
       break;
     }
@@ -708,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
       sceneInfo[3].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
       sceneInfo[4].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;   
-      sceneInfo[6].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
+      // sceneInfo[6].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;  
   }
   setLayout();
   canvasSize();
@@ -1507,14 +1507,52 @@ document.addEventListener('DOMContentLoaded', function() {
           // console.log('opacity out~')
         }
 
-        if (scrollRatio >= 0.52) {
-          objs.canvas.style.transform = "translate3d(-50%, 20%, 0px) scale(1)";
-          fixedRemove.style.position = 'relative'; 
+        console.log(checkPCMobile)
+        // 피씨0, 노트북1, 패드2, 모바일3
+        if (checkPCMobile == 3) { // 모바일 경우
+          if (scrollRatio >= 0.52) {
+            objs.canvas.style.transform = "translate3d(-50%, -10%, 0px) scale(1)";
+            fixedRemove.style.position = 'relative'; 
+            console.log('모바일이 아닌게 적용');
+          } else { 
+            objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
+            fixedRemove.style.position = 'fixed';
+          }
+        } 
+        else if (checkPCMobile == 2) { // 패드 경우
+          if (scrollRatio >= 0.479) {
+            objs.canvas.style.transform = "translate3d(-50%, 25%, 0px) scale(1)";
+            fixedRemove.style.position = 'relative'; 
+            console.log('모바일이 아닌게 적용');
+          } else { 
+            objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
+            fixedRemove.style.position = 'fixed';
+          }
+        } 
+        
+        
+        else if(checkPCMobile == 1 || checkPCMobile == 0 ) { // 노트북 or 피씨
+          if (scrollRatio >= 0.52) {
+            objs.canvas.style.transform = "translate3d(-50%, 18%, 0px) scale(1)";
+            fixedRemove.style.position = 'relative'; 
+            console.log('모바일 적용');
+          } else { 
+            objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
+            fixedRemove.style.position = 'fixed';
+          }
         }
-        else{ 
-          objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
-          fixedRemove.style.position = 'fixed';
-        }
+
+        
+        // if (scrollRatio >= 0.52 && checkPCMobile == 3) {
+        //   objs.canvas.style.transform = "translate3d(-50%, -70%, 0px) scale(1)";
+        //   fixedRemove.style.position = 'relative'; 
+        // }
+        // else{ 
+        //   objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
+        //   fixedRemove.style.position = 'fixed';
+        // }
+
+       
     }
   }
 
@@ -1934,24 +1972,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-  // gsap.to(".section6DivContanier .sticky-elem-canvas", {
-  //   opacity: 1,
-  //   duration: 0.5,
-  //   scrollTrigger: {
-  //     trigger: "#scroll-section-6",
-  //     start: "top top", // 시작 지점
-  //     end: "+=500px", // 끝 지점
-  //     scrub: true, // 스크롤 양에 따라 애니메이션 조절
-  //     // markers: true,
-  //   }
-  // });
-
-
-
   gsap.to(".section-6-dim", {
     opacity: 1,
     duration: 0.5,
@@ -2074,14 +2094,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-  const eMailIcon = document.querySelector('.email-icons svg');
-  // console.log(eMailIcon)
+const path = document.querySelector('.email-icons01 path'); // path 요소 선택
 
+    if (path) {
+        // 총 패스 길이 가져오기
+        const totalLength = path.getTotalLength();
+        
+        // 콘솔에 출력
+        console.log(`Total path length: ${totalLength}`);
+    } else {
+        console.log('dateIcon01의 path 요소를 찾을 수 없습니다.');
+    }
 
 
 
   // path 요소 선택
-  const pathElement = document.querySelector('.phonenumberIcons svg');
+  const pathElement = document.querySelector('.nameIcon01');
 
   pathElement.addEventListener('mouseenter', function () {
     console.log('마우스 진입')

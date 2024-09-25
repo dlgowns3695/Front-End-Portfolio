@@ -837,6 +837,99 @@ pointer-events: none;
 }
 
 
+
+
+.nameIcons{position: relative; width: 80px; height: 80px;}
+.nameIcons svg path {
+  fill: transparent;
+  stroke-dasharray: 205.2631;
+  stroke-dashoffset: 0;
+}
+/* 휴대폰모양 Hover */
+.nameIcons svg:hover path {animation: nameAnim 1.5s ease-in-out forwards;}
+@keyframes  nameAnim {
+  0% {
+      stroke-dashoffset: 0;
+  }
+  40% {
+      stroke-dashoffset: 102;
+  }
+
+  80% {
+      stroke-dashoffset: 205;
+  }
+  100% {
+      stroke-dashoffset: 205.2631;
+  }
+}
+.nameIcon01,
+.nameIcon02{position: absolute; top: 0; left: 0;}
+.nameIcon01{z-index: 1;}
+
+
+
+.dateIcons{position: relative; width: 80px; height: 80px;}
+.dateIcons svg path {
+  fill: transparent;
+  stroke-dasharray: 365.0589;
+  stroke-dashoffset: 0;
+}
+/* 휴대폰모양 Hover */
+.dateIcons svg:hover path {animation: dateAnim 1.5s ease-in-out forwards;}
+@keyframes  dateAnim {
+  0% {
+      stroke-dashoffset: 0;
+  }
+  40% {
+      stroke-dashoffset: 180;
+  }
+
+  80% {
+      stroke-dashoffset: 340;
+  }
+  100% {
+      stroke-dashoffset: 365.0589;
+  }
+}
+.dateIcon01,
+.dateIcon02{position: absolute; top: 0; left: 0;}
+.dateIcon01{z-index: 1;}
+
+
+
+
+.phonenumberIcons{position: relative; width: 80px; height: 80px;}
+.phonenumberIcons svg path {
+  fill: transparent;
+  stroke-dasharray: 226.6350;
+  stroke-dashoffset: 0;
+}
+/* 휴대폰모양 Hover */
+.phonenumberIcons svg:hover path {animation: phoneNumAnim 1.5s ease-in-out forwards;}
+@keyframes  phoneNumAnim {
+  0% {
+      stroke-dashoffset: 0;
+  }
+  40% {
+      stroke-dashoffset: 110;
+  }
+
+  80% {
+      stroke-dashoffset: 204;
+  }
+  100% {
+      stroke-dashoffset: 226.6350;
+  }
+}
+.numberIcon01,
+.numberIcon02{position: absolute; top: 0; left: 0;}
+.numberIcon01{z-index: 1;}
+
+
+
+
+
+
 .email-icons{position: relative; width: 80px; height: 80px;}
 .email-icons svg {
   width: 80px;
@@ -871,33 +964,36 @@ pointer-events: none;
 
 
 
-
-.phonenumberIcons{position: relative; width: 80px; height: 80px;}
-.phonenumberIcons svg path {
+.gitIcons{position: relative; width: 80px; height: 80px;}
+.gitIcons svg path {
   fill: transparent;
-  stroke-dasharray: 264.00045;
+  stroke-dasharray: 365.0589;
   stroke-dashoffset: 0;
 }
 /* 휴대폰모양 Hover */
-.phonenumberIcons svg:hover path {animation: phoneNumAnim 1.5s ease-in-out forwards;}
-@keyframes  phoneNumAnim {
+.gitIcons svg:hover path {animation: gitAnim 1.5s ease-in-out forwards;}
+@keyframes  gitAnim {
   0% {
       stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 132;
+      stroke-dashoffset: 180;
   }
 
   80% {
-      stroke-dashoffset: 264;
+      stroke-dashoffset: 340;
   }
   100% {
-      stroke-dashoffset: 264.00045;
+      stroke-dashoffset: 365.0589;
   }
 }
-.numberIcon01,
-.numberIcon02{position: absolute; top: 0; left: 0;}
-.numberIcon01{z-index: 1;}
+.gitIcon01,
+.gitIcon02{position: absolute; top: 0; left: 0;}
+.gitIcon01{z-index: 1;}
+
+.iconName{margin-top: 10px;}
+
+
 
 
 
@@ -997,7 +1093,7 @@ pointer-events: none;
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
   #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
     top: 68vh;
-    left: 55vw;
+    left: 50vw;
   }
 
   .SortingRight{left:55vw;}
@@ -1014,9 +1110,22 @@ pointer-events: none;
     left: 55vw;
   }
 
-  .iconBox04 .email-icons>svg{display: none;}
+  /* .iconBox04 .email-icons>svg{display: none;} */
   .contactTextBoxMiddle{font-size: 1.3rem;}
-  .contactTextBoxBottom{gap:2rem; top: 60vh;}
+  .contactTextBoxBottom{gap:0rem; top: 50vh; padding: 0;}
+
+
+  .contactTextBoxBottom .iconBox01,
+  .contactTextBoxBottom .iconBox02,
+  .contactTextBoxBottom .iconBox03,
+  .contactTextBoxBottom .iconBox04,
+  .contactTextBoxBottom .iconBox05,
+  .contactTextBoxBottom .iconBox06 {
+    gap: 0rem;
+    flex: 0 1 48%;
+  }
+
+  .iconBox{margin: 30px 0;}
 }  
 
 
@@ -1217,17 +1326,16 @@ pointer-events: none;
   .contactTextBoxMiddle{font-size: .9rem;}
   .contactTextBoxMiddleMobileMarginBottom{margin-bottom: 3vh;}
  
-  .contactTextBoxBottom{gap: .5rem; font-size: 0.75rem; margin-top: -10vh;}
+  .contactTextBoxBottom{
+    font-size: 0.75rem; margin-top: -10vh; top: 60vh; 
+    gap: 2rem; justify-content: center;
+  }
   .contactTextBoxBottom .iconBox01,
   .contactTextBoxBottom .iconBox02,
   .contactTextBoxBottom .iconBox03,
   .contactTextBoxBottom .iconBox04,
   .contactTextBoxBottom .iconBox05,
   .contactTextBoxBottom .iconBox06{flex: 0 1 40%;}
-
-
-
-
 
 
 
