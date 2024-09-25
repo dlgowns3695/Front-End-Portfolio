@@ -48,6 +48,7 @@ body.before-load {overflow: hidden;}
 .light-point {color: #008cff;font-size:1.1em;}
 .kr {letter-spacing: -0.03rem;}
 
+
 .scroll-section {
   position: relative;
   padding-top: 50vh;
@@ -98,6 +99,7 @@ body.before-load {overflow: hidden;}
 }
 
 #scroll-section-0 h1 {font-size: 6rem;}
+.contactPageH1{font-size: 1rem;}
 
 .main-message {
     display: flex;

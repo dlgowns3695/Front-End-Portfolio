@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
         logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ikeaLink "),
         // logo3: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo3 img"),
         logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ediyacoffeeLink "),
-        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 "),
+        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .contactPage "),
+        // logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 "),
         section0Bg: document.querySelector("#scroll-section-0 .bg"),
 
         canvas: document.querySelector("#video-canvas-0"),
@@ -400,6 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
   ];
+  
   function getState() {
     const width = window.innerWidth;
     return width < 769 ? 1 : 0; // 모바일이면 1, PC이면 0 반환
@@ -1480,12 +1482,15 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
 
         case 6:
-        // console.log("6play");
+        console.log("6play");
         let sequence6 = Math.round(
           calcValues(values.imageSequence, currentYoffset)
         );
+        objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
+        objs.context.drawImage(objs.videoImages[sequence6], 0, 0)
         // console.log('sequence6 >>> '+ sequence6);
-        // console.log(scrollRatio)
+        console.log(scrollRatio)
+        let fixedRemove = document.querySelector('.section6DivContanier .sticky-elem');
 
         if(scrollRatio <= 0.6){
           objs.canvas.style.opacity = calcValues(
@@ -1502,25 +1507,16 @@ document.addEventListener('DOMContentLoaded', function() {
           // console.log('opacity out~')
         }
 
-        if (scrollRatio <= 0.52) {
-        // 캔버스초기화,, 잔상효과 없애기 위함
-        objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
-        objs.context.drawImage(objs.videoImages[sequence6], 0, 0)
-          
+        if (scrollRatio >= 0.52) {
+          objs.canvas.style.transform = "translate3d(-50%, 20%, 0px) scale(1)";
+          fixedRemove.style.position = 'relative'; 
         }
-        // else 
-        //   // in
-        //   objs.canvas.style.position = '';
-          
-        
-        
-
-
+        else{ 
+          objs.canvas.style.transform = "translate3d(-50%, -50%, 0px) scale(1)";
+          fixedRemove.style.position = 'fixed';
+        }
     }
   }
-
-
-
 
 
   // 스크롤 될 때 바뀌는 값에 대한 기능
@@ -2014,7 +2010,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 이디야
         targetSection = document.querySelector('#scroll-section-4');
         // 콘택트 (임시)
-      } else if (clickedClass === 'QUIETPLACElogo5') {
+      } else if (clickedClass === 'contactPage') {
         targetSection = document.querySelector('#scroll-section-5');
       }
   
