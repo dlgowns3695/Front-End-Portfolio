@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 103,
-        imageSequence: [0, 102],
+        videoImageCount: 52,
+        imageSequence: [0, 51],
       },
     },
     // 2 이케아 
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount:102,
-        imageSequence: [0, 101],
+        videoImageCount:51,
+        imageSequence: [0, 50],
 
       },
   
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 149,
-        imageSequence: [0, 148],
+        videoImageCount: 24,
+        imageSequence: [0, 23],
 
       },
   
@@ -79,8 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
         videoImages: [],
       },
       values: {
-        videoImageCount: 103,
-        imageSequence: [0, 102],
+        videoImageCount: 52,
+        imageSequence: [0, 51],
+      },
+    },
+
+    // 5 GPT
+    { 
+      type: "sticky",
+      heightNum: 5,
+      scrollHeight: 0,
+      objs: {
+        canvas: document.querySelector("#video-canvas-gpt"),
+        context: document.querySelector("#video-canvas-gpt").getContext("2d"),
+        videoImages: [],
+      },
+      values: {
+        videoImageCount: 55,
+        imageSequence: [0, 54],
       },
     },
     
@@ -121,6 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
+  // 이디야 피씨
+  for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
+    let result = `${i}`.padStart(0, "0");
+    images.push(`video/chatGPT/chatGPT(${result}).png`);
+  }
+
+
 
   // 모바일 ******************
 
@@ -153,6 +176,12 @@ document.addEventListener('DOMContentLoaded', function() {
   for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
     images.push(`video/mobile/EDIYA/EDIYAMobile(${result}).png`);
+  }
+
+  // 이디야 모바일
+  for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
+    let result = `${i}`.padStart(0, "0");
+    images.push(`video/mobile/chatGPT/chatGPT(${result}).png`);
   }
 
 

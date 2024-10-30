@@ -164,11 +164,12 @@ body.before-load {overflow: hidden;}
 /* js에서 쇼 addClass해서 block만듬 --> 벗어나면 다시 기본상태로 */
 #show-scene-0 #scroll-section-0 .sticky-elem, 
 #show-scene-1 #scroll-section-1 .sticky-elem,
-#show-scene-2 #scroll-section-2 .sticky-elem,
-#show-scene-3 #scroll-section-3 .sticky-elem,
-#show-scene-4 #scroll-section-4 .sticky-elem,
-#show-scene-5 #scroll-section-5 .sticky-elem,
-#show-scene-6 #scroll-section-6 .sticky-elem {
+#show-scene-2 #scroll-section-gpt .sticky-elem,
+#show-scene-3 #scroll-section-2 .sticky-elem,
+#show-scene-4 #scroll-section-3 .sticky-elem,
+#show-scene-5 #scroll-section-4 .sticky-elem,
+#show-scene-6 #scroll-section-5 .sticky-elem,
+#show-scene-7 #scroll-section-6 .sticky-elem {
   display: block;
   will-change: transform, opacity;
 }
@@ -316,13 +317,6 @@ background-clip: text;
 pointer-events: none;
 }
 
-/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
-#scroll-section-2{
-  position: relative; 
-  margin-top: 1800px; 
-  opacity: 1;
-  z-index: 20;
-}
 
 .moreBtnarea{
   position: absolute;
@@ -387,9 +381,148 @@ pointer-events: none;
   }
 
 
+
+
+
+
+  #scroll-section-gpt{position: relative;opacity: 1; z-index: 20;  margin-top: 1800px;}
+  #scroll-section-gpt .gptGsapContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer .languageIcon{
+    display: flex; justify-content: space-between; gap:1.5rem;
+    opacity: 0;
+    transform: scale(0);
+    color: #fff;  
+  }
+  
+  
+  #scroll-section-gpt .gptLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
+  #scroll-section-gpt .gptLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
+  #scroll-section-gpt .gptGsapContainer .languageDec{
+      height: 100%;
+      width: 100%;
+      text-align: right;
+      position: absolute;
+      top: 145px;
+      left: 0;
+      font-size: 1.5rem;
+      color: #fff;
+  }
+  #scroll-section-gpt .gptGsapContainer .languageDec p{
+    font-size: 0.9rem;
+    opacity: 0; 
+    line-height: 1.5;
+  }
+  #scroll-section-gpt .gptGsapContainer .languageDec .p1{position: absolute;}
+  #scroll-section-gpt .gptGsapContainer .languageDec .p2{
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  #scroll-section-gpt .gptGsapContainer .moreBtnarea{
+    position: absolute; top: 24vh; left: 0vw;}
+  .gptGsapContainer .gptH1 {
+    /* 기존 left 70vw */
+    position: relative;
+    top: 55vh;
+    left: 8vw;
+    font-size: 3rem;
+    opacity: 0;
+    color:#fff;
+  }
+  #scroll-section-gpt .gptGsapContainer .gptDec{
+    position: relative; 
+    top: 5vh;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+  
+  .section-gptlines {
+    position:-webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 500vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px; 
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  .section-gptline {
+    position: absolute;
+    width: 232rem;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(31deg) translateZ(0)
+  }
+  
+  .section-gptline.section-gptstyle1 {top: 13vh}
+  .section-gptline.section-gptstyle2 {top: 93vh}
+  
+  .section-gptdim {
+    position: absolute;
+    top: 0;
+    left: -0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #324eef; */
+    background: url('../images/background.jpg');
+    opacity: 0.1;
+    pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
+    background-attachment: fixed;
+  }
+  .section-gptblackdim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 1;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
+#scroll-section-2{
+  position: relative; 
+  /* margin-top: 1800px;  */
+  opacity: 1;
+  z-index: 20;
+}
+
+
+
+
 #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{    top: 20vh;
   left: -1vw;}
 #scroll-section-2 .quietplaceGsapContainer {
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -447,13 +580,15 @@ pointer-events: none;
   left: 0;
   right: 0;
   bottom: 0;
-  
+  /* background-color: #324eef; */
   background: url('../images/background.jpg');
   opacity: 0.1;
   pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
   background-attachment: fixed;
   /* z-index: -1; */
 }
+
+/* 
 .section-2blackdim{
   position: absolute;
   top: 0;
@@ -461,9 +596,9 @@ pointer-events: none;
   bottom: 0;
   right: 0;
   background-color: black;
-  opacity: 1;
-  /* z-index: -1; */
-}
+  opacity: 0;
+ 
+} */
 
 
 .section-2lines {
@@ -498,6 +633,15 @@ pointer-events: none;
 .languageIcon img, .languageIcon svg {width:66px;height:66px;}
 
 /* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
+
+.SortingRight{
+    left: 70vw;
+    width: 335px;
+    height: 100%;
+    position: absolute;
+    top: 15vh;
+}
+
 #scroll-section-3{position: relative;opacity: 1; z-index: 20;}
 #scroll-section-3 .ikeaGsapContainer {
   position: absolute;
@@ -506,13 +650,7 @@ pointer-events: none;
   bottom: 0;
   right: 0;
 }
-.SortingRight{
-    left: 70vw;
-    width: 335px;
-    height: 100%;
-    position: absolute;
-    top: 15vh;
-}
+
 #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
   position: absolute;
   top: 0;
@@ -1027,6 +1165,7 @@ pointer-events: none;
   
   .languageIcon img, .languageIcon svg{width: 55px; height: 55px;}
 
+  .gptGsapContainer .gptH1{top: 55vh; font-size: 2.3rem;}
   .quietplaceGsapContainer .quietplaceH1{font-size: 2.3rem;top:60vh; left: 65vw;}
   .ikeaGsapContainer .ikeaH1{top: 55vh; font-size: 2.3rem;}
   .ediyaGsapContainer .ediyaH1{top: 55vh; font-size: 2.3rem;}
@@ -1050,6 +1189,10 @@ pointer-events: none;
   .leftBracket,
   .rightBracket{width: 20px}
   .languageIcon img, .languageIcon svg{width: 47px; height: 47px;}
+
+
+  #scroll-section-gpt .gptGsapContainer .languageDec .p{font-size: 0.8rem;}
+  .gptGsapContainer .gptH1{top: 62vh; font-size: 2rem;}
   
   #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 20vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 25vh;}
@@ -1061,6 +1204,8 @@ pointer-events: none;
   .SortingRight{left: 65vw;}
   #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
   .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
+
+
 
   #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 20vh;}
   #scroll-section-4 .ediyaGsapContainer .languageDec{top: 25vh;}
@@ -1088,20 +1233,17 @@ pointer-events: none;
 
   .languageIcon img, .languageIcon svg{width: 45px; height: 45px;}
 
+  #scroll-section-gpt .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
+
   #scroll-section-2 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 15vh;}
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
-  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
-    top: 68vh;
-    left: 50vw;
-  }
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{top: 68vh;left: 50vw;}
 
   .SortingRight{left:55vw;}
+
   #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
-
   .ikeaGsapContainer .ikeaH1{top: 68vh;}
-
-
   #scroll-section-4 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
   #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 15vh;}
   #scroll-section-4 .ediyaGsapContainer .languageDec{top: 20vh;}
@@ -1167,12 +1309,70 @@ pointer-events: none;
   .leftBracket,
   .rightBracket{width: 18px}
   /* 기존 top 50vh */
+  #scroll-section-gpt .gptGsapContainer .moreBtnarea{top:-22vh; left: 74vw;}
   #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
   #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:-22vh; left: 74vw;}
   #scroll-section-4 .ediyaGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
 
   #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
   #scroll-section-4 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
+
+
+
+  #scroll-section-gpt .gptGsapContainer .languageDec p{
+    font-size: 0.9rem;
+  }
+   #scroll-section-gpt .gptGsapContainer{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24vh;left: 0;
+  }
+
+  #scroll-section-gpt .sticky-elem-canvas canvas{top: 55%;}
+  #scroll-section-gpt .gptGsapContainer .languageDec .p2{right: auto;}
+  #scroll-section-gpt .gptGsapContainer .languageDec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    top: 76vh;
+    left: 0;
+    text-align: center;
+  }
+  /* .SortingRight{position: static; left: auto;} */
+
+  
+  .gptGsapContainer .gptH1{
+    text-align: center;
+    top: 7vh;
+    left: 0;
+    font-size: 2.3rem;
+    line-height: 1.1;
+  }
+   .gptGsapContainer .gptH1 .moreBtnarea {
+    right: -25vw;
+    bottom: -45vh;
+  }
+
+
+  #scroll-section-gpt .gptGsapContainer .gptDec{
+    display: none;
+    top: 50vh;
+    font-size: 0.8rem;
+  }
+
+
+
 
   #scroll-section-2 .quietplaceGsapContainer{
     width: 100vw;
@@ -1211,11 +1411,21 @@ pointer-events: none;
     right: 50vw;
     bottom: -45vh;
   }
+
   #scroll-section-2 .quietplaceGsapContainer .quietplaceDec{
     display: none;
     top: 50vh;
     font-size: 0.8rem;
   }
+
+
+
+
+
+
+
+
+
 
   #scroll-section-3 .ikeaGsapContainer .languageDec p{
     font-size: 0.9rem;
