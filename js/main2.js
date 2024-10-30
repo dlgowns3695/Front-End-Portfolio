@@ -2018,7 +2018,7 @@ document.addEventListener('DOMContentLoaded', function() {
         start: "top top ", // 시작 지점
         end: "+=1000", 
         scrub: true, // 스크롤 양에 따라 애니메이션 조절
-        markers:true,
+        // markers:true,
     }
   }); 
 
@@ -2057,7 +2057,7 @@ document.addEventListener('DOMContentLoaded', function() {
       end: "+=500px", 
       scrub: true, // 스크롤 양에 따라 애니메이션 조절
       // pin:true,
-      markers:true,
+      // markers:true,
       
     }
   })
