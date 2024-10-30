@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         logo2: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ikeaLink "),
         // logo3: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo3 img"),
         logo4: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .ediyacoffeeLink "),
-        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .contactPage "),
+        logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .chatgpt-logo "),
         // logo5: document.querySelector("#scroll-section-0 .logoPosContainer .Pos .QUIETPLACElogo5 "),
         section0Bg: document.querySelector("#scroll-section-0 .bg"),
 
@@ -2479,9 +2479,9 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (clickedClass === 'ediyacoffeeLink') {
         // 이디야
         targetSection = document.querySelector('#scroll-section-4');
-        // 콘택트 (임시)
-      } else if (clickedClass === 'contactPage') {
-        targetSection = document.querySelector('#scroll-section-5');
+        // gpt
+      } else if (clickedClass === 'chatgpt-logo') {
+        targetSection = document.querySelector('#scroll-section-gpt');
       }
   
       if (targetSection) {
