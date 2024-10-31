@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElemMoGpt = new Image();
-        imgElemMoGpt.src = `video/mobile/chatGPT/chatGPT(${result}).png`;
+        imgElemMoGpt.src = `video/mobile/chatGPT/chatGPT(${result}).webp`;
         sceneInfo[2].objs.videoImages.push(imgElemMoGpt);
       }
 
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem3 = new Image();
-        imgElem3.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`;
+        imgElem3.src = `video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).webp`;
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
 
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/mobile/IKEA/IKEAmobile(${result}).png`;
+        imgElem4.src = `video/mobile/IKEA/IKEAmobile(${result}).webp`;
         sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem5 = new Image();
-        imgElem5.src = `video/mobile/EDIYA/EDIYAMobile(${result}).png`;
+        imgElem5.src = `video/mobile/EDIYA/EDIYAMobile(${result}).webp`;
         sceneInfo[5].objs.videoImages.push(imgElem5);
       }
 
@@ -618,7 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[7].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem7 = new Image();
-        imgElem7.src = `video/mobile/Bubble/Bubble(${result}).png`;
+        imgElem7.src = `video/mobile/Bubble/Bubble(${result}).webp`;
         sceneInfo[7].objs.videoImages.push(imgElem7);
       }
 
@@ -644,7 +644,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElemGPT = new Image();
-        imgElemGPT.src = `video/chatGPT/chatGPT(${result}).png`;
+        imgElemGPT.src = `video/chatGPT/chatGPT(${result}).webp`;
         sceneInfo[2].objs.videoImages.push(imgElemGPT);
       }
 
@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem3 = new Image();
-        imgElem3.src = `video/quietplace/quietplace(${result}).png`;
+        imgElem3.src = `video/quietplace/quietplace(${result}).webp`;
         sceneInfo[3].objs.videoImages.push(imgElem3);
       }
 
@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem4 = new Image();
-        imgElem4.src = `video/ikea/IKEA(${result}).png`;
+        imgElem4.src = `video/ikea/IKEA(${result}).webp`;
         sceneInfo[4].objs.videoImages.push(imgElem4);
       }
 
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem5 = new Image();
-        imgElem5.src = `video/ediya/ediya(${result}).png`;
+        imgElem5.src = `video/ediya/ediya(${result}).webp`;
         sceneInfo[5].objs.videoImages.push(imgElem5);
       }
 
@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sceneInfo[7].values.videoImageCount; i++) {
         let result = `${i}`.padStart(0, "0");
         imgElem7 = new Image();
-        imgElem7.src = `video/bubble/Bubble(${result}).png`;
+        imgElem7.src = `video/bubble/Bubble(${result}).webp`;
         sceneInfo[7].objs.videoImages.push(imgElem7);
       }
 

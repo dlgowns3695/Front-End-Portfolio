@@ -115,32 +115,32 @@ document.addEventListener('DOMContentLoaded', function() {
   // 콰이어트플레이스 피씨
   for (let i = 0; i < sceneInfo[1].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/quietplace/quietplace(${result}).png`);
+    images.push(`video/quietplace/quietplace(${result}).webp`);
   }
 
   // 이케아 피씨
   for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/ikea/IKEA(${result}).png`);
+    images.push(`video/ikea/IKEA(${result}).webp`);
   }
 
   // 콘택트 피씨
   for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/bubble/Bubble(${result}).png`);
+    images.push(`video/bubble/Bubble(${result}).webp`);
   }
 
   // 이디야 피씨
   for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/ediya/ediya(${result}).png`);
+    images.push(`video/ediya/ediya(${result}).webp`);
   }
 
 
   // 이디야 피씨
   for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/chatGPT/chatGPT(${result}).png`);
+    images.push(`video/chatGPT/chatGPT(${result}).webp`);
   }
 
 
@@ -157,31 +157,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // 콰이어트플레이스 모바일
   for (let i = 0; i < sceneInfo[1].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).png`);
+    images.push(`video/mobile/QUIETPLACE/QUIETPLACEmobile(${result}).webp`);
   }
 
   // 이케아 모바일
   for (let i = 0; i < sceneInfo[2].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/mobile/IKEA/IKEAmobile(${result}).png`);
+    images.push(`video/mobile/IKEA/IKEAmobile(${result}).webp`);
   }
 
   // 콘택트 모바일
   for (let i = 0; i < sceneInfo[3].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/mobile/Bubble/Bubble(${result}).png`);
+    images.push(`video/mobile/Bubble/Bubble(${result}).webp`);
   }
 
   // 이디야 모바일
   for (let i = 0; i < sceneInfo[4].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/mobile/EDIYA/EDIYAMobile(${result}).png`);
+    images.push(`video/mobile/EDIYA/EDIYAMobile(${result}).webp`);
   }
 
   // 이디야 모바일
   for (let i = 0; i < sceneInfo[5].values.videoImageCount; i++) {
     let result = `${i}`.padStart(0, "0");
-    images.push(`video/mobile/chatGPT/chatGPT(${result}).png`);
+    images.push(`video/mobile/chatGPT/chatGPT(${result}).webp`);
   }
 
 
