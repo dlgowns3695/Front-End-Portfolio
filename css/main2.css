@@ -412,6 +412,11 @@ pointer-events: none;
     color: #fff;  
   }
   
+  #scroll-section-gpt .SortingRight{
+    left: 62vw;
+    
+    width: 500px;
+  }
   
   #scroll-section-gpt .gptLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
   #scroll-section-gpt .gptLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
@@ -430,14 +435,17 @@ pointer-events: none;
     opacity: 0; 
     line-height: 1.5;
   }
-  #scroll-section-gpt .gptGsapContainer .languageDec .p1{position: absolute;}
+  #scroll-section-gpt .gptGsapContainer .languageDec .p1{
+    top: 0;
+    right: 0;
+    position: absolute;}
   #scroll-section-gpt .gptGsapContainer .languageDec .p2{
     top: 0;
     right: 0;
     position: absolute;
   }
   #scroll-section-gpt .gptGsapContainer .moreBtnarea{
-    position: absolute; top: 24vh; left: 0vw;}
+    position: absolute; top: 24vh; left: 9vw;}
   .gptGsapContainer .gptH1 {
     /* 기존 left 70vw */
     position: relative;
@@ -1168,6 +1176,8 @@ pointer-events: none;
   
   .languageIcon img, .languageIcon svg{width: 55px; height: 55px;}
 
+  #scroll-section-gpt .SortingRight{left: 57vw;}
+
   .gptGsapContainer .gptH1{top: 55vh; font-size: 2.3rem;}
   .quietplaceGsapContainer .quietplaceH1{font-size: 2.3rem;top:60vh; left: 65vw;}
   .ikeaGsapContainer .ikeaH1{top: 55vh; font-size: 2.3rem;}
@@ -1177,6 +1187,8 @@ pointer-events: none;
 @media (max-width:1350px){
   .leftBracket,
   .rightBracket{width: 25px}
+
+  #scroll-section-gpt .SortingRight{left: 52vw;}
 
   .languageIcon img, .languageIcon svg{width: 50px; height: 50px;}
  
@@ -1204,6 +1216,7 @@ pointer-events: none;
     left: 62vw;
   }
 
+  #scroll-section-gpt .SortingRight{left: 48vw;}
   .SortingRight{left: 65vw;}
   #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
   .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
@@ -1243,6 +1256,7 @@ pointer-events: none;
   #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
   #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{top: 68vh;left: 50vw;}
 
+  #scroll-section-gpt .SortingRight{left: 40vw;}
   .SortingRight{left:55vw;}
 
   #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
