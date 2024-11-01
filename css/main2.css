@@ -264,10 +264,13 @@ body.before-load {overflow: hidden;}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap:4rem;
+  gap:3rem;
 }
 
 #scroll-section-0 .logoPosContainer .Pos img {width: 120px;}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(2) img {width: 140px;}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(3) img {width: 100px;}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(4) img {width: 130px;position:relative;top:-4px}
 /* #scroll-section-0 .logoPosContainer .Pos a {cursor: auto;} */
 
 #scroll-section-1 {
