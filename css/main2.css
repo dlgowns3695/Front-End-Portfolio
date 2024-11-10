@@ -1,25 +1,34 @@
 @charset 'utf-8';
 
 @font-face {
-    font-family: 'TWKEverett';
-    src: url('../font/TWKEverett/TWKEverett-Regular.otf') format('woff2'),
-        url('../font/TWKEverett/TWKEverett-Bold.otf')
-    ;
-  
-  }
-  /* url('/font/GesturaDisplay/GesturaDisplayTRIAL-Bold-BF64b75504296e4.woff') format('woff2'), */
-  @font-face {
-    font-family: 'GesturaDisplay';
-    src: 
-         url('../font/GesturaDisplay/GesturaTextTRIAL-Regular-BF64b755042cf0f.woff') format('woff2')
-         ;
-  }
+  font-family: "TWKEverett";
+  src: url("../font/TWKEverett/TWKEverett-Regular.otf") format("woff2"),
+    url("../font/TWKEverett/TWKEverett-Bold.otf");
+}
+/* url('/font/GesturaDisplay/GesturaDisplayTRIAL-Bold-BF64b75504296e4.woff') format('woff2'), */
+@font-face {
+  font-family: "GesturaDisplay";
+  src: url("../font/GesturaDisplay/GesturaTextTRIAL-Regular-BF64b755042cf0f.woff")
+    format("woff2");
+}
 
+html {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  line-height: 1.3;
+}
 
-html {font-family: "Noto Sans KR", sans-serif;font-size: 1rem;line-height: 1.3;}
-
-body {letter-spacing: -0.05em; background: #141414; overflow-x:hidden; cursor: none;}
-a {color: rgb(235, 235, 235);text-decoration: none; cursor: none; }
+body {
+  letter-spacing: -0.05em;
+  background: #141414;
+  overflow-x: hidden;
+  cursor: none;
+}
+a {
+  color: rgb(235, 235, 235);
+  text-decoration: none;
+  cursor: none;
+}
 
 .cursor {
   position: fixed;
@@ -30,24 +39,41 @@ a {color: rgb(235, 235, 235);text-decoration: none; cursor: none; }
   height: 20px;
   border-radius: 100%;
   background-color: #fff;
-  transition: height 0.5s ease, width 0.5s ease, transform 0.3s ease, background-color 0.5s ease;
+  transition: height 0.5s ease, width 0.5s ease, transform 0.3s ease,
+    background-color 0.5s ease;
   pointer-events: none;
   mix-blend-mode: difference;
   z-index: 999999;
 }
 
+body.before-load {
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+}
 
-body.before-load {overflow: hidden;}
-.container {position: relative; overflow: hidden;}
+.en1 {
+  font-family: "TWKEverett";
+  font-weight: normal;
+}
+.en2 {
+  font-family: "GesturaDisplay";
+  font-weight: normal;
+}
 
-.en1 {font-family: 'TWKEverett';font-weight: normal;}
-.en2 {font-family: 'GesturaDisplay';font-weight: normal;}
+.point {
+  color: #324eef;
+}
 
-.point {color: #324eef }
-
-.light-point {color: #008cff;font-size:1.1em;}
-.kr {letter-spacing: -0.03rem;}
-
+.light-point {
+  color: #008cff;
+  font-size: 1.1em;
+}
+.kr {
+  letter-spacing: -0.03rem;
+}
 
 .scroll-section {
   position: relative;
@@ -58,29 +84,29 @@ body.before-load {overflow: hidden;}
 /* 내용물을 채워야 공간이 늘어남 */
 
 #scroll-section-0 .fill {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4000px;
-    /* height: 100vh; */
-    pointer-events: none;
-    background: linear-gradient(180deg,#f8faff 0,#d6d8e3 100%);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4000px;
+  /* height: 100vh; */
+  pointer-events: none;
+  background: linear-gradient(180deg, #f8faff 0, #d6d8e3 100%);
 }
-    
+
 #scroll-section-0 .bg {
-    position: -webkit-sticky;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    will-change: transform; 
-    pointer-events: none;
+  position: -webkit-sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  will-change: transform;
+  pointer-events: none;
 }
-#scroll-section-0 .bg img{
+#scroll-section-0 .bg img {
   position: absolute;
   top: 2vh;
   width: 100%;
@@ -89,7 +115,7 @@ body.before-load {overflow: hidden;}
   /* object-fit: cover; */
 }
 
-.containerh1{
+.containerh1 {
   top: -20vh;
   position: relative;
   flex-direction: column;
@@ -98,37 +124,40 @@ body.before-load {overflow: hidden;}
   pointer-events: none;
 }
 
-#scroll-section-0 h1 {font-size: 6rem;}
-.contactPageH1{font-size: 1rem;}
+#scroll-section-0 h1 {
+  font-size: 6rem;
+}
+.contactPageH1 {
+  font-size: 1rem;
+}
 
 .main-message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 35vh;
-    margin: 5px 0;
-    height: 3em;
-    width: 97.8rem;
-    font-size: 3rem;
-    opacity: 0;
-    z-index: 3;
-    color: #fff;
-    text-align: center;
-    line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 35vh;
+  margin: 5px 0;
+  height: 3em;
+  width: 97.8rem;
+  font-size: 3rem;
+  opacity: 0;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .main-message .kr {
-    font-size:0.9rem;
-    line-height: 1.5;
-    margin-top:2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 2rem;
 }
 
 .main-message small {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2rem;
-} 
-
+}
 
 .description {
   max-width: 1000px;
@@ -149,10 +178,10 @@ body.before-load {overflow: hidden;}
   align-items: center;
   justify-content: center;
   height: 12rem;
-  font-size:2rem;
+  font-size: 2rem;
   color: white;
   background: #222;
-  border-top:4px solid #444;
+  border-top: 4px solid #444;
 }
 /* 기본상태 */
 .sticky-elem {
@@ -162,7 +191,7 @@ body.before-load {overflow: hidden;}
   width: 100%;
 }
 /* js에서 쇼 addClass해서 block만듬 --> 벗어나면 다시 기본상태로 */
-#show-scene-0 #scroll-section-0 .sticky-elem, 
+#show-scene-0 #scroll-section-0 .sticky-elem,
 #show-scene-1 #scroll-section-1 .sticky-elem,
 #show-scene-2 #scroll-section-gpt .sticky-elem,
 #show-scene-3 #scroll-section-2 .sticky-elem,
@@ -177,11 +206,13 @@ body.before-load {overflow: hidden;}
 .scroll-effect-end .sticky-elem {
   /* !important; */
   /* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
-  display: none 
+  display: none;
 }
-.sticky-elem-canvas {top: 0;height: 100%; }
+.sticky-elem-canvas {
+  top: 0;
+  height: 100%;
+}
 .sticky-elem-canvas canvas {
-  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -189,7 +220,6 @@ body.before-load {overflow: hidden;}
 
 /* 여기 캔버스는 뒷배경 canvas임 #scroll-section-0 .canvas */
 #scroll-section-0 .canvas {
-  
   position: absolute;
   top: 0;
   left: 0;
@@ -221,11 +251,14 @@ body.before-load {overflow: hidden;}
   display: none;
 }
 
-.mobileContinuing{display: none;}
-.mobileMyIntroduction{display: none;}
+.mobileContinuing {
+  display: none;
+}
+.mobileMyIntroduction {
+  display: none;
+}
 
-
-  /* !important; */
+/* !important; */
 .logodisplayFlexContaner {
   margin: 0 auto;
   display: flex;
@@ -240,7 +273,7 @@ body.before-load {overflow: hidden;}
   /* pointer-events: none; */
 }
 #scroll-section-0 .logoPosContainer {
-  display: flex  ;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -256,33 +289,41 @@ body.before-load {overflow: hidden;}
   will-change: transform, opacity;
   opacity: 0;
   z-index: 3;
-
-  
 }
-  
+
 #scroll-section-0 .logoPosContainer .Pos {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap:3rem;
+  gap: 3rem;
 }
 
-#scroll-section-0 .logoPosContainer .Pos img {width: 120px;}
-#scroll-section-0 .logoPosContainer .Pos > div:nth-child(2) img {width: 140px;}
-#scroll-section-0 .logoPosContainer .Pos > div:nth-child(3) img {width: 100px;}
-#scroll-section-0 .logoPosContainer .Pos > div:nth-child(4) img {width: 130px;position:relative;top:-4px}
+#scroll-section-0 .logoPosContainer .Pos img {
+  width: 120px;
+}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(2) img {
+  width: 140px;
+}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(3) img {
+  width: 100px;
+}
+#scroll-section-0 .logoPosContainer .Pos > div:nth-child(4) img {
+  width: 130px;
+  position: relative;
+  top: -4px;
+}
 /* #scroll-section-0 .logoPosContainer .Pos a {cursor: auto;} */
 
 #scroll-section-1 {
   padding: 0;
   position: relative;
-  height:100vh;
-  display:flex;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#scroll-section-1 .textfill{
+#scroll-section-1 .textfill {
   position: absolute;
   top: 0;
   right: 0;
@@ -291,7 +332,7 @@ body.before-load {overflow: hidden;}
   z-index: -1;
   background: black;
   pointer-events: none;
-} 
+}
 
 #scroll-section-1 .textBox {
   display: flex;
@@ -303,25 +344,23 @@ body.before-load {overflow: hidden;}
   font-size: 5rem;
   /* z-index: -1; */
   pointer-events: none;
-
 }
 
 .textBox > p {
-background: linear-gradient(
-to right,
-rgb(255, 255, 255) 50%,
-rgb(37, 37, 37) 50%
-);
-background-size: 200% 100%;
-background-position-x: 100%;
-color: transparent;
-background-clip: text;
--webkit-background-clip: text;
-pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 50%,
+    rgb(37, 37, 37) 50%
+  );
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  pointer-events: none;
 }
 
-
-.moreBtnarea{
+.moreBtnarea {
   position: absolute;
   top: 0;
   left: 0;
@@ -343,7 +382,7 @@ pointer-events: none;
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   position: relative;
   z-index: 2;
   display: flex;
@@ -354,7 +393,7 @@ pointer-events: none;
 .moreBtnarea .moreArr svg {
   width: 50px;
   height: 40px;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   fill: #008cff;
   position: relative;
   z-index: 2;
@@ -365,12 +404,12 @@ pointer-events: none;
   top: 0;
   width: 100%;
   height: 100%;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   z-index: 2;
   animation: moreRotate 6s linear infinite;
   fill: #ffffff;
 }
-.buttonDiv{
+.buttonDiv {
   width: 100vw;
   /* background: aliceblue; */
   position: absolute;
@@ -379,195 +418,227 @@ pointer-events: none;
   left: 0;
 }
 @keyframes moreRotate {
-    0% {transform: rotate(0);}   
-      100% {transform: rotate(360deg);}   
+  0% {
+    transform: rotate(0);
   }
-
-
-
-
-
-
-  #scroll-section-gpt{position: relative;opacity: 1; z-index: 20;  margin-top: 1800px;}
-  #scroll-section-gpt .gptGsapContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer{
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer .languageIcon{
-    display: flex; justify-content: space-between; gap:1.5rem;
-    opacity: 0;
-    transform: scale(0);
-    color: #fff;  
-  }
-  
-  #scroll-section-gpt .SortingRight{
-    left: 62vw;
-    
-    width: 500px;
-  }
-  
-  #scroll-section-gpt .gptLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
-  #scroll-section-gpt .gptLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
-  #scroll-section-gpt .gptGsapContainer .languageDec{
-      height: 100%;
-      width: 100%;
-      text-align: right;
-      position: absolute;
-      top: 145px;
-      left: 0;
-      font-size: 1.5rem;
-      color: #fff;
-  }
-  #scroll-section-gpt .gptGsapContainer .languageDec p{
-    font-size: 0.9rem;
-    opacity: 0; 
-    line-height: 1.5;
-  }
-  #scroll-section-gpt .gptGsapContainer .languageDec .p1{
-    top: 0;
-    right: 0;
-    position: absolute;}
-  #scroll-section-gpt .gptGsapContainer .languageDec .p2{
-    top: 0;
-    right: 0;
-    position: absolute;
-  }
-  #scroll-section-gpt .gptGsapContainer .moreBtnarea{
-    position: absolute; top: 24vh; left: 9vw;}
-  .gptGsapContainer .gptH1 {
-    /* 기존 left 70vw */
-    position: relative;
-    top: 55vh;
-    left: 8vw;
-    font-size: 3rem;
-    opacity: 0;
-    color:#fff;
-  }
-  #scroll-section-gpt .gptGsapContainer .gptDec{
-    position: relative; 
-    top: 5vh;
-    font-size: .9rem;
-    line-height: 1.5;
-  }
-  
-  .section-gptlines {
-    position:-webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 500vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -100px; 
-    pointer-events: none;
-    overflow: hidden;
-    opacity: 0;
-  }
-  
-  .section-gptline {
-    position: absolute;
-    width: 232rem;
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    transform: rotate(31deg) translateZ(0)
-  }
-  
-  .section-gptline.section-gptstyle1 {top: 13vh}
-  .section-gptline.section-gptstyle2 {top: 93vh}
-  
-  .section-gptdim {
-    position: absolute;
-    top: 0;
-    left: -0;
-    right: 0;
-    bottom: 0;
-    /* background-color: #324eef; */
-    background: url('../images/background.jpg');
-    opacity: 0.1;
-    pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
-    background-attachment: fixed;
-  }
-  .section-gptblackdim{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: black;
-    opacity: 1;
-  }
-
-
-
-
-
-
-
-
-
-
-
-/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
-#scroll-section-2{
-  position: relative; 
-  /* margin-top: 1800px;  */
-  opacity: 1;
-  z-index: 20;
 }
 
-
-
-
-#scroll-section-2 .quietplaceGsapContainer .moreBtnarea{    top: 20vh;
-  left: -1vw;}
-#scroll-section-2 .quietplaceGsapContainer {
-  
+#scroll-section-gpt {
+  position: relative;
+  opacity: 1;
+  z-index: 20;
+  margin-top: 1800px;
+}
+#scroll-section-gpt .gptGsapContainer {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  
 }
-#scroll-section-2 .quietplaceGsapContainer .languageContainer{
-  position: relative; top: 20vh; left: 8vw; 
+
+#scroll-section-gpt .gptGsapContainer .gptLanguageContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#scroll-section-gpt .gptGsapContainer .gptLanguageContainer .languageIcon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: scale(0);
+  color: #fff;
+}
+
+#scroll-section-gpt .SortingRight {
+  left: 58vw;
+
+  width: 500px;
+}
+
+#scroll-section-gpt .gptLanguageContainer .leftBracket {
+  position: relative;
+  left: 8vw;
+  opacity: 0;
+}
+#scroll-section-gpt .gptLanguageContainer .rightBracket {
+  position: relative;
+  left: -8vw;
+  opacity: 0;
+}
+#scroll-section-gpt .gptGsapContainer .languageDec {
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 145px;
+  left: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+#scroll-section-gpt .gptGsapContainer .languageDec p {
+  font-size: 0.9rem;
+  opacity: 0;
+  line-height: 1.5;
+}
+#scroll-section-gpt .gptGsapContainer .languageDec .p1 {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+#scroll-section-gpt .gptGsapContainer .languageDec .p2 {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+#scroll-section-gpt .gptGsapContainer .moreBtnarea {
+  position: absolute;
+  top: 24vh;
+  left: 9vw;
+}
+.gptGsapContainer .gptH1 {
+  /* 기존 left 70vw */
+  position: relative;
+  top: 55vh;
+  left: 8vw;
+  font-size: 3rem;
+  opacity: 0;
+  color: #fff;
+}
+#scroll-section-gpt .gptGsapContainer .gptDec {
+  position: relative;
+  top: 5vh;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.section-gptlines {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 500vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.section-gptline {
+  position: absolute;
+  width: 232rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(31deg) translateZ(0);
+}
+
+.section-gptline.section-gptstyle1 {
+  top: 13vh;
+}
+.section-gptline.section-gptstyle2 {
+  top: 93vh;
+}
+
+.section-gptdim {
+  position: absolute;
+  top: 0;
+  left: -0;
+  right: 0;
+  bottom: 0;
+  /* background-color: #324eef; */
+  background: url("../images/background.jpg");
+  opacity: 0.1;
+  pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
+  background-attachment: fixed;
+}
+.section-gptblackdim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 1;
+}
+
+/* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
+#scroll-section-2 {
+  position: relative;
+  /* margin-top: 1800px;  */
+  opacity: 1;
+  z-index: 20;
+}
+
+#scroll-section-2 .quietplaceGsapContainer .moreBtnarea {
+  top: 20vh;
+  left: -1vw;
+}
+#scroll-section-2 .quietplaceGsapContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageContainer {
+  position: relative;
+  top: 20vh;
+  left: 8vw;
   display: flex;
   align-items: center;
 }
-#scroll-section-2 .quietplaceGsapContainer .languageContainer .languageIcon{
-  display: flex; justify-content: space-between; gap:1.5rem;
+#scroll-section-2 .quietplaceGsapContainer .languageContainer .languageIcon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
   opacity: 0;
   transform: scale(0);
-  color: #fff; 
+  color: #fff;
 }
 
-.leftBracket , .rightBracket {width: 35px}
+.leftBracket,
+.rightBracket {
+  width: 35px;
+}
 
-#scroll-section-2 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
-#scroll-section-2 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
-#scroll-section-2 .quietplaceGsapContainer .languageDec{
-  position: relative;top:25vh; left:8vw; font-size: 1.5rem; color: #fff;
+#scroll-section-2 .languageContainer .leftBracket {
+  position: relative;
+  left: 8vw;
+  opacity: 0;
+}
+#scroll-section-2 .languageContainer .rightBracket {
+  position: relative;
+  left: -8vw;
+  opacity: 0;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageDec {
+  position: relative;
+  top: 25vh;
+  left: 8vw;
+  font-size: 1.5rem;
+  color: #fff;
   line-height: 1.5;
 }
-#scroll-section-2 .quietplaceGsapContainer .languageDec p{
+#scroll-section-2 .quietplaceGsapContainer .languageDec p {
   font-size: 0.9rem;
   opacity: 0;
 }
 
-#scroll-section-2 .quietplaceGsapContainer .languageDec .p1{position: absolute;}
-#scroll-section-2 .quietplaceGsapContainer .languageDec .p2{position: absolute;}
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p1 {
+  position: absolute;
+}
+#scroll-section-2 .quietplaceGsapContainer .languageDec .p2 {
+  position: absolute;
+}
 
 .quietplaceGsapContainer .quietplaceH1 {
   position: relative;
@@ -575,11 +646,11 @@ pointer-events: none;
   left: 70vw;
   font-size: 3rem;
   opacity: 0;
-  color:#fff;
+  color: #fff;
 }
 
-#scroll-section-2 .quietplaceGsapContainer .quietplaceDec{
-  position: relative; 
+#scroll-section-2 .quietplaceGsapContainer .quietplaceDec {
+  position: relative;
   top: 5vh;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -592,7 +663,7 @@ pointer-events: none;
   right: 0;
   bottom: 0;
   /* background-color: #324eef; */
-  background: url('../images/background.jpg');
+  background: url("../images/background.jpg");
   opacity: 0.1;
   pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
   background-attachment: fixed;
@@ -611,9 +682,8 @@ pointer-events: none;
  
 } */
 
-
 .section-2lines {
-  position:-webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 500vh;
@@ -626,34 +696,47 @@ pointer-events: none;
   opacity: 0;
 }
 
-
 .section-2line {
   position: absolute;
   width: 232rem;
   height: 1px;
-  background: rgba(255,255,255,0.1);
-  transform: rotate(-33deg) translateZ(0)
-  
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(-33deg) translateZ(0);
 }
 
-.section-2line.section-2style1 {top: 13vh;}
-.section-2line.section-2style2 {top: 93vh;}
+.section-2line.section-2style1 {
+  top: 13vh;
+}
+.section-2line.section-2style2 {
+  top: 93vh;
+}
 
 /* 섹션 콰이어트랑 이케아 공통부분 아이콘 */
-.languageIcon ul {display:flex;align-items: center;}
-.languageIcon img, .languageIcon svg {width:66px;height:66px;}
+.languageIcon ul {
+  display: flex;
+  align-items: center;
+}
+.languageIcon img,
+.languageIcon svg {
+  width: 66px;
+  height: 66px;
+}
 
 /* #scroll-section-2 margin-top --> 섹션1의 스크롤트리거로인해 도중에 섹션2가 되는 부분때문에 넣음 */
 
-.SortingRight{
-    left: 70vw;
-    width: 335px;
-    height: 100%;
-    position: absolute;
-    top: 15vh;
+.SortingRight {
+  left: 58vw;
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 15vh;
 }
 
-#scroll-section-3{position: relative;opacity: 1; z-index: 20;}
+#scroll-section-3 {
+  position: relative;
+  opacity: 1;
+  z-index: 20;
+}
 #scroll-section-3 .ikeaGsapContainer {
   position: absolute;
   top: 0;
@@ -662,7 +745,7 @@ pointer-events: none;
   right: 0;
 }
 
-#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
+#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer {
   position: absolute;
   top: 0;
   right: 0;
@@ -670,39 +753,54 @@ pointer-events: none;
   align-items: center;
   justify-content: space-between;
 }
-#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer .languageIcon{
-  display: flex; justify-content: space-between; gap:1.5rem;
+#scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer .languageIcon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
   opacity: 0;
   transform: scale(0);
-  color: #fff;  
+  color: #fff;
 }
 
-
-#scroll-section-3 .ikeaLanguageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
-#scroll-section-3 .ikeaLanguageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
-#scroll-section-3 .ikeaGsapContainer .languageDec{
-    height: 100%;
-    width: 100%;
-    text-align: right;
-    position: absolute;
-    top: 145px;
-    left: 0;
-    font-size: 1.5rem;
-    color: #fff;
+#scroll-section-3 .ikeaLanguageContainer .leftBracket {
+  position: relative;
+  left: 8vw;
+  opacity: 0;
 }
-#scroll-section-3 .ikeaGsapContainer .languageDec p{
+#scroll-section-3 .ikeaLanguageContainer .rightBracket {
+  position: relative;
+  left: -8vw;
+  opacity: 0;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec {
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 145px;
+  left: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec p {
   font-size: 0.9rem;
-  opacity: 0; 
+  opacity: 0;
   line-height: 1.5;
 }
-#scroll-section-3 .ikeaGsapContainer .languageDec .p1{position: absolute;}
-#scroll-section-3 .ikeaGsapContainer .languageDec .p2{
+#scroll-section-3 .ikeaGsapContainer .languageDec .p1 {
+  position: absolute;
+  right: 0;
+}
+#scroll-section-3 .ikeaGsapContainer .languageDec .p2 {
   top: 0;
   right: 0;
   position: absolute;
 }
-#scroll-section-3 .ikeaGsapContainer .moreBtnarea{
-  position: absolute; top: 24vh; left: 0vw;}
+#scroll-section-3 .ikeaGsapContainer .moreBtnarea {
+  position: absolute;
+  top: 24vh;
+  left: 9vw;
+}
 .ikeaGsapContainer .ikeaH1 {
   /* 기존 left 70vw */
   position: relative;
@@ -710,24 +808,24 @@ pointer-events: none;
   left: 8vw;
   font-size: 3rem;
   opacity: 0;
-  color:#fff;
+  color: #fff;
 }
-#scroll-section-3 .ikeaGsapContainer .ikeaDec{
-  position: relative; 
+#scroll-section-3 .ikeaGsapContainer .ikeaDec {
+  position: relative;
   top: 5vh;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .section-3lines {
-  position:-webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 500vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -100px; 
+  margin-top: -100px;
   pointer-events: none;
   overflow: hidden;
   opacity: 0;
@@ -737,12 +835,16 @@ pointer-events: none;
   position: absolute;
   width: 232rem;
   height: 1px;
-  background: rgba(255,255,255,0.1);
-  transform: rotate(31deg) translateZ(0)
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(31deg) translateZ(0);
 }
 
-.section-3line.section-3style1 {top: 13vh}
-.section-3line.section-3style2 {top: 93vh}
+.section-3line.section-3style1 {
+  top: 13vh;
+}
+.section-3line.section-3style2 {
+  top: 93vh;
+}
 
 .section-3dim {
   position: absolute;
@@ -750,12 +852,12 @@ pointer-events: none;
   left: -0;
   right: 0;
   bottom: 0;
-  background: url('../images/background.jpg');
+  background: url("../images/background.jpg");
   opacity: 0.1;
   pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
   background-attachment: fixed;
 }
-.section-3blackdim{
+.section-3blackdim {
   position: absolute;
   top: 0;
   left: 0;
@@ -765,26 +867,23 @@ pointer-events: none;
   opacity: 0;
 }
 
-
 /* 이름문구 섹션5 */
 
 #scroll-section-5 {
   position: relative;
   height: 100vh;
   padding: 0;
-  
 }
-.textFlex{
+.textFlex {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-.section-5-dim{
-  position: absolute; 
-  top: 0; 
+.section-5-dim {
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -792,10 +891,8 @@ pointer-events: none;
   opacity: 0;
   width: 100%;
   /* height: 150vh; */
- 
 }
-.strongText{  
-  
+.strongText {
   font-size: 8vw;
   font-weight: 600;
   color: #333;
@@ -803,16 +900,21 @@ pointer-events: none;
   z-index: 999;
 }
 
-#scroll-section-5 .sticky-message {position:relative;}
+#scroll-section-5 .sticky-message {
+  position: relative;
+}
 
 /* 4 이디야 섹션  */
-#scroll-section-4{
-  position: relative; 
+#scroll-section-4 {
+  position: relative;
   /* margin-top: 1800px;  */
   opacity: 1;
   z-index: 20;
 }
-#scroll-section-4 .ediyaGsapContainer .moreBtnarea{top: 20vh; left: -1vw;}
+#scroll-section-4 .ediyaGsapContainer .moreBtnarea {
+  top: 20vh;
+  left: -1vw;
+}
 #scroll-section-4 .ediyaGsapContainer {
   width: 100%;
   position: absolute;
@@ -821,30 +923,52 @@ pointer-events: none;
   bottom: 0;
   right: 0;
 }
-#scroll-section-4 .ediyaGsapContainer .languageContainer{
-  position: relative; top: 20vh; left: 8vw; 
+#scroll-section-4 .ediyaGsapContainer .languageContainer {
+  position: relative;
+  top: 20vh;
+  left: 8vw;
   display: flex;
   align-items: center;
-  
 }
-#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon{
-  display: flex; justify-content: space-between; gap:1.5rem;
+#scroll-section-4 .ediyaGsapContainer .languageContainer .languageIcon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
   opacity: 0;
   transform: scale(0);
-  color: #fff; 
+  color: #fff;
 }
 
-#scroll-section-4 .languageContainer .leftBracket {position: relative; left: 8vw; opacity: 0;}
-#scroll-section-4 .languageContainer .rightBracket {position: relative; left: -8vw; opacity: 0;}
-#scroll-section-4 .ediyaGsapContainer .languageDec{
+#scroll-section-4 .languageContainer .leftBracket {
+  position: relative;
+  left: 8vw;
+  opacity: 0;
+}
+#scroll-section-4 .languageContainer .rightBracket {
+  position: relative;
+  left: -8vw;
+  opacity: 0;
+}
+#scroll-section-4 .ediyaGsapContainer .languageDec {
   width: 100%;
-  position: relative;top:25vh; left:8vw; font-size: 1.5rem; color: #fff;
+  position: relative;
+  top: 25vh;
+  left: 8vw;
+  font-size: 1.5rem;
+  color: #fff;
   line-height: 1.5;
 }
-#scroll-section-4 .ediyaGsapContainer .languageDec p{font-size: 0.9rem;opacity: 0;}
+#scroll-section-4 .ediyaGsapContainer .languageDec p {
+  font-size: 0.9rem;
+  opacity: 0;
+}
 
-#scroll-section-4 .ediyaGsapContainer .languageDec .p1{ position: absolute;}
-#scroll-section-4 .ediyaGsapContainer .languageDec .p2{position: absolute;}
+#scroll-section-4 .ediyaGsapContainer .languageDec .p1 {
+  position: absolute;
+}
+#scroll-section-4 .ediyaGsapContainer .languageDec .p2 {
+  position: absolute;
+}
 
 .ediyaGsapContainer .ediyaH1 {
   position: relative;
@@ -852,11 +976,11 @@ pointer-events: none;
   left: 70vw;
   font-size: 3rem;
   opacity: 0;
-  color:#fff;
+  color: #fff;
 }
 
-#scroll-section-4 .ediyaGsapContainer .ediyaDec{
-  position: relative; 
+#scroll-section-4 .ediyaGsapContainer .ediyaDec {
+  position: relative;
   top: 5vh;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -868,8 +992,8 @@ pointer-events: none;
   left: 0;
   right: 0;
   bottom: 0;
-  
-  background: url('../images/background.jpg');
+
+  background: url("../images/background.jpg");
   opacity: 0.1;
   pointer-events: none; /** 검사도구에 안걸리고 편하게 하기위함*/
   background-attachment: fixed;
@@ -877,7 +1001,7 @@ pointer-events: none;
 }
 
 .section-4lines {
-  position:-webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 500vh;
@@ -890,69 +1014,76 @@ pointer-events: none;
   opacity: 0;
 }
 
-
 .section-4line {
   position: absolute;
   width: 232rem;
   height: 1px;
-  background: rgba(255,255,255,0.1);
-  transform: rotate(-33deg) translateZ(0)
-  
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(-33deg) translateZ(0);
 }
 
-.section-4line.section-4style1 {top: 13vh;}
-.section-4line.section-4style2 {top: 93vh;}
-
+.section-4line.section-4style1 {
+  top: 13vh;
+}
+.section-4line.section-4style2 {
+  top: 93vh;
+}
 
 /* 6 콘택트 섹션  */
 /* #video-canvas-4{opacity: 0;} */
 
-#scroll-section-6{
+#scroll-section-6 {
   /* border: 3px solid red; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.section-6-dim{
-  position: absolute; top: 0;
-  left: 0; right: 0;
+.section-6-dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
   background-color: black;
   opacity: 0;
   z-index: -1;
 }
-.section6DivContanier{
+.section6DivContanier {
   text-align: center;
   color: #fff;
   line-height: 1.5;
   letter-spacing: -0.025rem;
 }
 
-.contactTextBoxTop{
+.contactTextBoxTop {
   position: relative;
   top: -70vh;
-  opacity: .3;
+  opacity: 0.3;
   font-size: 1.8rem;
 }
-.contactTextBoxTop span{font-size: 2.5rem;}
-.contactTextBoxMiddle{
+.contactTextBoxTop span {
+  font-size: 2.5rem;
+}
+.contactTextBoxMiddle {
   position: relative;
   top: -55vh;
-  opacity: .3;
-  font-size: .9rem;
-  
-
+  opacity: 0.3;
+  font-size: 0.9rem;
 }
-.contactTextBoxMiddle span{font-size: 1.3rem;}
-.heajunLogo{
-  opacity: .3;
+.contactTextBoxMiddle span {
+  font-size: 1.3rem;
+}
+.heajunLogo {
+  opacity: 0.3;
   position: relative;
   top: 45vh;
   font-weight: 600;
   font-size: 6rem;
 }
-.heajunLogo span{font-size: 6.5rem;}
+.heajunLogo span {
+  font-size: 6.5rem;
+}
 .contactTextBoxBottom {
   position: relative;
   top: 55vh;
@@ -964,7 +1095,8 @@ pointer-events: none;
   gap: 5rem 2rem;
 }
 
-.contactTextBoxBottom svg, .contactTextBoxBottom img {
+.contactTextBoxBottom svg,
+.contactTextBoxBottom img {
   width: 80px; /* 아이콘 크기 조정 */
   height: 80px; /* 아이콘 크기 조정 */
   /* margin-bottom: 10px;  */
@@ -985,101 +1117,128 @@ pointer-events: none;
   flex-direction: column;
 }
 
-
-
-
-.nameIcons{position: relative; width: 80px; height: 80px;}
+.nameIcons {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 .nameIcons svg path {
   fill: transparent;
   stroke-dasharray: 205.2631;
   stroke-dashoffset: 0;
 }
 /* 휴대폰모양 Hover */
-.nameIcons svg:hover path {animation: nameAnim 1.5s ease-in-out forwards;}
-@keyframes  nameAnim {
+.nameIcons svg:hover path {
+  animation: nameAnim 1.5s ease-in-out forwards;
+}
+@keyframes nameAnim {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 102;
+    stroke-dashoffset: 102;
   }
 
   80% {
-      stroke-dashoffset: 205;
+    stroke-dashoffset: 205;
   }
   100% {
-      stroke-dashoffset: 205.2631;
+    stroke-dashoffset: 205.2631;
   }
 }
 .nameIcon01,
-.nameIcon02{position: absolute; top: 0; left: 0;}
-.nameIcon01{z-index: 1;}
+.nameIcon02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nameIcon01 {
+  z-index: 1;
+}
 
-
-
-.dateIcons{position: relative; width: 80px; height: 80px;}
+.dateIcons {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 .dateIcons svg path {
   fill: transparent;
   stroke-dasharray: 365.0589;
   stroke-dashoffset: 0;
 }
 /* 휴대폰모양 Hover */
-.dateIcons svg:hover path {animation: dateAnim 1.5s ease-in-out forwards;}
-@keyframes  dateAnim {
+.dateIcons svg:hover path {
+  animation: dateAnim 1.5s ease-in-out forwards;
+}
+@keyframes dateAnim {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 180;
+    stroke-dashoffset: 180;
   }
 
   80% {
-      stroke-dashoffset: 340;
+    stroke-dashoffset: 340;
   }
   100% {
-      stroke-dashoffset: 365.0589;
+    stroke-dashoffset: 365.0589;
   }
 }
 .dateIcon01,
-.dateIcon02{position: absolute; top: 0; left: 0;}
-.dateIcon01{z-index: 1;}
+.dateIcon02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dateIcon01 {
+  z-index: 1;
+}
 
-
-
-
-.phonenumberIcons{position: relative; width: 80px; height: 80px;}
+.phonenumberIcons {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 .phonenumberIcons svg path {
   fill: transparent;
-  stroke-dasharray: 226.6350;
+  stroke-dasharray: 226.635;
   stroke-dashoffset: 0;
 }
 /* 휴대폰모양 Hover */
-.phonenumberIcons svg:hover path {animation: phoneNumAnim 1.5s ease-in-out forwards;}
-@keyframes  phoneNumAnim {
+.phonenumberIcons svg:hover path {
+  animation: phoneNumAnim 1.5s ease-in-out forwards;
+}
+@keyframes phoneNumAnim {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 110;
+    stroke-dashoffset: 110;
   }
 
   80% {
-      stroke-dashoffset: 204;
+    stroke-dashoffset: 204;
   }
   100% {
-      stroke-dashoffset: 226.6350;
+    stroke-dashoffset: 226.635;
   }
 }
 .numberIcon01,
-.numberIcon02{position: absolute; top: 0; left: 0;}
-.numberIcon01{z-index: 1;}
+.numberIcon02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.numberIcon01 {
+  z-index: 1;
+}
 
-
-
-
-
-
-.email-icons{position: relative; width: 80px; height: 80px;}
+.email-icons {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 .email-icons svg {
   width: 80px;
   height: 80px;
@@ -1091,188 +1250,357 @@ pointer-events: none;
   stroke-dashoffset: 0;
 }
 /* email Hover */
-.email-icons svg:hover path {animation: eMail01Anim 1.5s ease-in-out forwards;}
-@keyframes  eMail01Anim {
+.email-icons svg:hover path {
+  animation: eMail01Anim 1.5s ease-in-out forwards;
+}
+@keyframes eMail01Anim {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 174.5;
+    stroke-dashoffset: 174.5;
   }
 
   80% {
-      stroke-dashoffset: 349;
+    stroke-dashoffset: 349;
   }
   100% {
-      stroke-dashoffset: 349.008;
+    stroke-dashoffset: 349.008;
   }
 }
 .email-icons01,
-.email-icons02{position: absolute; top: 0; left: 0;}
-.email-icons01{z-index: 1;}
+.email-icons02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.email-icons01 {
+  z-index: 1;
+}
 
-
-
-.gitIcons{position: relative; width: 80px; height: 80px;}
+.gitIcons {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 .gitIcons svg path {
   fill: transparent;
   stroke-dasharray: 365.0589;
   stroke-dashoffset: 0;
 }
 /* 휴대폰모양 Hover */
-.gitIcons svg:hover path {animation: gitAnim 1.5s ease-in-out forwards;}
-@keyframes  gitAnim {
+.gitIcons svg:hover path {
+  animation: gitAnim 1.5s ease-in-out forwards;
+}
+@keyframes gitAnim {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
   40% {
-      stroke-dashoffset: 180;
+    stroke-dashoffset: 180;
   }
 
   80% {
-      stroke-dashoffset: 340;
+    stroke-dashoffset: 340;
   }
   100% {
-      stroke-dashoffset: 365.0589;
+    stroke-dashoffset: 365.0589;
   }
 }
 .gitIcon01,
-.gitIcon02{position: absolute; top: 0; left: 0;}
-.gitIcon01{z-index: 1;}
+.gitIcon02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.gitIcon01 {
+  z-index: 1;
+}
 
-.iconName{margin-top: 10px;}
+.iconName {
+  margin-top: 10px;
+}
 
-
-
-
-
-
-.mouseCanvas{
+.mouseCanvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index:999999;
+  z-index: 999999;
   opacity: 0;
   pointer-events: none;
 }
-.contactTextBoxMiddleMobile{display: none;}
+.contactTextBoxMiddleMobile {
+  display: none;
+}
 
-.pin-spacer {pointer-events: none;}
+.pin-spacer {
+  pointer-events: none;
+}
 
-@media (max-width:1600px){
+@media (max-width: 1600px) {
   .leftBracket,
-  .rightBracket{width: 33px}
+  .rightBracket {
+    width: 33px;
+  }
 
   .languageIcon img,
-  .languageIcon svg{width: 62px; height: 62px;}
+  .languageIcon svg {
+    width: 62px;
+    height: 62px;
+  }
 }
 
-@media (max-width:1450px){
-  .moreBtn{width: 150px; height: 150px;}
+@media (max-width: 1450px) {
+  .moreBtn {
+    width: 150px;
+    height: 150px;
+  }
   .leftBracket,
-  .rightBracket{width: 30px}
-  
-  .languageIcon img, .languageIcon svg{width: 55px; height: 55px;}
+  .rightBracket {
+    width: 30px;
+  }
 
-  #scroll-section-gpt .SortingRight{left: 57vw;}
+  .languageIcon img,
+  .languageIcon svg {
+    width: 55px;
+    height: 55px;
+  }
 
-  .gptGsapContainer .gptH1{top: 55vh; font-size: 2.3rem;}
-  .quietplaceGsapContainer .quietplaceH1{font-size: 2.3rem;top:60vh; left: 65vw;}
-  .ikeaGsapContainer .ikeaH1{top: 55vh; font-size: 2.3rem;}
-  .ediyaGsapContainer .ediyaH1{top: 55vh; font-size: 2.3rem;}
+  #scroll-section-gpt .SortingRight {
+    left: 57vw;
+  }
+  #scroll-section-3 .SortingRight {
+    left: 57vw;
+  }
+
+  .gptGsapContainer .gptH1 {
+    top: 55vh;
+    font-size: 2.3rem;
+  }
+  .quietplaceGsapContainer .quietplaceH1 {
+    font-size: 2.3rem;
+    top: 55vh;
+    left: 65vw;
+  }
+  .ikeaGsapContainer .ikeaH1 {
+    top: 55vh;
+    font-size: 2.3rem;
+  }
+  .ediyaGsapContainer .ediyaH1 {
+    top: 55vh;
+    left: 65vw;
+    font-size: 2.3rem;
+  }
 }
 
-@media (max-width:1350px){
+@media (max-width: 1350px) {
   .leftBracket,
-  .rightBracket{width: 25px}
+  .rightBracket {
+    width: 25px;
+  }
 
-  #scroll-section-gpt .SortingRight{left: 52vw;}
+  #scroll-section-gpt .SortingRight {
+    left: 52vw;
+  }
+  #scroll-section-3 .SortingRight {
+    left: 52vw;
+  }
 
-  .languageIcon img, .languageIcon svg{width: 50px; height: 50px;}
- 
+  .languageIcon img,
+  .languageIcon svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  #scroll-section-gpt .gptGsapContainer .moreBtnarea {
+    left: 15vw;
+  }
+  #scroll-section-3 .ikeaGsapContainer .moreBtnarea {
+    left: 15vw;
+  }
 }
 
- @media (max-width:1200px){
+@media (max-width: 1200px) {
+  #scroll-section-0 h1 {
+    font-size: 5rem;
+  }
 
-  #scroll-section-0 h1{font-size: 5rem;}
-
-  .main-message{font-size: 2.5rem;}
-  #scroll-section-1 .textBox{font-size: 4rem;}
+  .main-message {
+    font-size: 2.5rem;
+  }
+  #scroll-section-1 .textBox {
+    font-size: 4rem;
+  }
 
   .leftBracket,
-  .rightBracket{width: 20px}
-  .languageIcon img, .languageIcon svg{width: 47px; height: 47px;}
+  .rightBracket {
+    width: 20px;
+  }
+  .languageIcon img,
+  .languageIcon svg {
+    width: 47px;
+    height: 47px;
+  }
 
+  #scroll-section-gpt .gptGsapContainer .languageDec .p {
+    font-size: 0.8rem;
+  }
+  .gptGsapContainer .gptH1 {
+    top: 62vh;
+    font-size: 2rem;
+  }
 
-  #scroll-section-gpt .gptGsapContainer .languageDec .p{font-size: 0.8rem;}
-  .gptGsapContainer .gptH1{top: 62vh; font-size: 2rem;}
-  
-  #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 20vh;}
-  #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 25vh;}
-  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer {
+    top: 20vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .languageDec {
+    top: 25vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1 {
     font-size: 2rem;
     left: 62vw;
   }
 
-  #scroll-section-gpt .SortingRight{left: 48vw;}
-  .SortingRight{left: 65vw;}
-  #scroll-section-3 .ikeaGsapContainer .languageDec .p{font-size: 0.8rem;}
-  .ikeaGsapContainer .ikeaH1{top: 62vh; font-size: 2rem;}
+  #scroll-section-gpt .SortingRight {
+    left: 48vw;
+  }
+  #scroll-section-3 .SortingRight {
+    left: 48vw;
+  }
+  #scroll-section-gpt .gptGsapContainer .moreBtnarea {
+    left: 25vw;
+  }
+  #scroll-section-3 .ikeaGsapContainer .moreBtnarea {
+    left: 25vw;
+  }
+  .SortingRight {
+    left: 65vw;
+  }
+  #scroll-section-3 .ikeaGsapContainer .languageDec .p {
+    font-size: 0.8rem;
+  }
+  .ikeaGsapContainer .ikeaH1 {
+    top: 62vh;
+    font-size: 2rem;
+  }
 
-
-
-  #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 20vh;}
-  #scroll-section-4 .ediyaGsapContainer .languageDec{top: 25vh;}
-  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
+  #scroll-section-4 .ediyaGsapContainer .languageContainer {
+    top: 20vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .languageDec {
+    top: 25vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1 {
     font-size: 2rem;
     left: 62vw;
   }
-}  
+}
 
+@media (max-width: 1024px) {
+  #scroll-section-0 .bg {
+    top: 5vh;
+  }
+  #scroll-section-0 h1 {
+    font-size: 4.5rem;
+  }
+  #scroll-section-0 .sticky-elem-canvas canvas {
+    height: 100%;
+  }
 
- @media (max-width:1024px){
-  #scroll-section-0 .bg {top: 5vh;}
-  #scroll-section-0 h1{font-size: 4.5rem;}
-  #scroll-section-0 .sticky-elem-canvas canvas{height: 100%;}
+  .main-message {
+    font-size: 3rem;
+  }
+  .pcContinuing {
+    display: block;
+  }
 
-  .main-message{font-size: 3rem;}
-  .pcContinuing{display: block;}
-  
-  .pcMyIntroduction{display: block;}
-  
-  #scroll-section-1 .textBox{font-size: 5rem;}
+  .pcMyIntroduction {
+    display: block;
+  }
+
+  #scroll-section-1 .textBox {
+    font-size: 5rem;
+  }
 
   .leftBracket,
-  .rightBracket{width: 20px}
+  .rightBracket {
+    width: 20px;
+  }
 
-  .languageIcon img, .languageIcon svg{width: 45px; height: 45px;}
+  .languageIcon img,
+  .languageIcon svg {
+    width: 45px;
+    height: 45px;
+  }
 
-  #scroll-section-gpt .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
+  #scroll-section-gpt .sticky-elem-canvas canvas {
+    top: 55%;
+    height: 100vh;
+  }
 
-  #scroll-section-2 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
-  #scroll-section-2 .quietplaceGsapContainer .languageContainer{top: 15vh;}
-  #scroll-section-2 .quietplaceGsapContainer .languageDec{top: 20vh;}
-  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{top: 68vh;left: 50vw;}
+  #scroll-section-2 .sticky-elem-canvas canvas {
+    top: 55%;
+    left: 59%;
+    height: 100vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer {
+    top: 15vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .languageDec {
+    top: 20vh;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1 {
+    top: 62vh;
+    left: 50vw;
+  }
 
-  #scroll-section-gpt .SortingRight{left: 40vw;}
-  .SortingRight{left:55vw;}
-
-  #scroll-section-3 .sticky-elem-canvas canvas{top: 55%; height: 100vh;}
-  .ikeaGsapContainer .ikeaH1{top: 68vh;}
-  #scroll-section-4 .sticky-elem-canvas canvas{top: 55%;left: 59%;height: 100vh;}
-  #scroll-section-4 .ediyaGsapContainer .languageContainer{top: 15vh;}
-  #scroll-section-4 .ediyaGsapContainer .languageDec{top: 20vh;}
-  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
-    top: 68vh;
+  #scroll-section-gpt .SortingRight {
+    left: 40vw;
+  }
+  #scroll-section-2 .SortingRight {
+    width: 350px;
+  }
+  #scroll-section-3 .SortingRight {
+    left: 38vw;
+  }
+  .SortingRight {
     left: 55vw;
   }
 
-  /* .iconBox04 .email-icons>svg{display: none;} */
-  .contactTextBoxMiddle{font-size: 1.3rem;}
-  .contactTextBoxBottom{gap:0rem; top: 50vh; padding: 0;}
+  #scroll-section-3 .sticky-elem-canvas canvas {
+    top: 55%;
+    height: 100vh;
+  }
+  .ikeaGsapContainer .ikeaH1 {
+    top: 68vh;
+  }
+  #scroll-section-4 .sticky-elem-canvas canvas {
+    top: 55%;
+    left: 59%;
+    height: 100vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .languageContainer {
+    top: 15vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .languageDec {
+    top: 20vh;
+  }
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1 {
+    top: 62vh;
+    left: 50vw;
+  }
 
+  /* .iconBox04 .email-icons>svg{display: none;} */
+  .contactTextBoxMiddle {
+    font-size: 1.3rem;
+  }
+  .contactTextBoxBottom {
+    gap: 0rem;
+    top: 50vh;
+    padding: 0;
+  }
 
   .contactTextBoxBottom .iconBox01,
   .contactTextBoxBottom .iconBox02,
@@ -1284,79 +1612,137 @@ pointer-events: none;
     flex: 0 1 48%;
   }
 
-  .iconBox{margin: 30px 0;}
-}  
+  .iconBox {
+    margin: 30px 0;
+  }
+}
 
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+  #scroll-section-0 .bg {
+    top: 0vh;
+  }
+  #scroll-section-0 h1 {
+    font-size: 2.5rem;
+  }
+  #scroll-section-0 .scolldimPc {
+    display: none;
+  }
+  #scroll-section-0 .scolldimMobile {
+    display: block;
+  }
 
+  .main-message {
+    font-size: 2rem;
+  }
+  .main-message .kr {
+    font-size: 0.8rem;
+  }
+  #scroll-section-1 .textBox {
+    font-size: 2.5rem;
+  }
 
- @media (max-width:768px){
-  .cursor{display: none;}
-  #scroll-section-0 .bg{top: 0vh;}
-  #scroll-section-0 h1{font-size: 2.5rem;}
-  #scroll-section-0 .scolldimPc{ display: none;}
-  #scroll-section-0 .scolldimMobile{display: block;}
+  .pcContinuing {
+    display: none;
+  }
+  .pcMyIntroduction {
+    display: none;
+  }
 
-  .main-message{font-size: 2rem;}
-  .main-message .kr{font-size: .8rem;}
-  #scroll-section-1 .textBox{font-size: 2.5rem;}
+  .mobileContinuing {
+    display: block;
+  }
+  .mobileMyIntroduction {
+    display: block;
+  }
 
-  .pcContinuing{display: none;}
-  .pcMyIntroduction{display: none;}
+  .logodisplayFlexContaner {
+    bottom: 130px;
+  }
 
-  .mobileContinuing{display: block;}
-  .mobileMyIntroduction{display: block;}
-
-
-  .logodisplayFlexContaner{bottom: 130px;}
-
-  .moreBtn {width: 85px;height: 85px;}
-  .moreBtnarea .moreArr svg{width: 30px;height: 40px;}
+  .moreBtn {
+    width: 85px;
+    height: 85px;
+  }
+  .moreBtnarea .moreArr svg {
+    width: 30px;
+    height: 40px;
+  }
   #scroll-section-0 .logoPosContainer .Pos {
     display: flex;
     flex-wrap: wrap;
-    gap:2rem;
+    gap: 2rem;
   }
-    #scroll-section-0 .logoPosContainer .Pos>div {
-      flex: 1 1 35%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  #scroll-section-0 .logoPosContainer .Pos > div {
+    flex: 1 1 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .leftBracket,
-  .rightBracket{width: 18px}
+  .rightBracket {
+    width: 18px;
+  }
   /* 기존 top 50vh */
-  #scroll-section-gpt .gptGsapContainer .moreBtnarea{top:-22vh; left: 74vw;}
-  #scroll-section-2 .quietplaceGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
-  #scroll-section-3 .ikeaGsapContainer .moreBtnarea{top:-22vh; left: 74vw;}
-  #scroll-section-4 .ediyaGsapContainer .moreBtnarea{top: -25vh; left: 5vw;}
+  #scroll-section-gpt .gptGsapContainer .moreBtnarea {
+    top: -22vh;
+    left: 74vw;
+  }
+  #scroll-section-2 .quietplaceGsapContainer .moreBtnarea {
+    top: -25vh;
+    left: 5vw;
+  }
+  #scroll-section-3 .ikeaGsapContainer .moreBtnarea {
+    top: -22vh;
+    left: 74vw;
+  }
+  #scroll-section-4 .ediyaGsapContainer .moreBtnarea {
+    top: -25vh;
+    left: 5vw;
+  }
 
-  #scroll-section-2 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
-  #scroll-section-4 .sticky-elem-canvas canvas{ top: 58%; left: 50%;}
+  #scroll-section-2 .sticky-elem-canvas canvas {
+    top: 58%;
+    left: 50%;
+  }
+  #scroll-section-4 .sticky-elem-canvas canvas {
+    top: 58%;
+    left: 50%;
+  }
 
-
-
-  #scroll-section-gpt .gptGsapContainer .languageDec p{
+  #scroll-section-gpt .gptGsapContainer .languageDec p {
     font-size: 0.9rem;
   }
-   #scroll-section-gpt .gptGsapContainer{
+  #scroll-section-gpt .gptGsapContainer {
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  
-  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer{
+
+  #scroll-section-gpt .gptGsapContainer .gptLanguageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 24vh;left: 0;
+    top: 24vh;
+    left: 0;
   }
 
-  #scroll-section-gpt .sticky-elem-canvas canvas{top: 55%;}
-  #scroll-section-gpt .gptGsapContainer .languageDec .p2{right: auto;}
-  #scroll-section-gpt .gptGsapContainer .languageDec{
+  #scroll-section-gpt .gptGsapContainer .languageDec .p1 {
+    right: auto;
+  }
+
+  #scroll-section-gpt .sticky-elem-canvas canvas {
+    top: 55%;
+  }
+  #scroll-section-gpt .gptGsapContainer .languageDec .p2 {
+    right: auto;
+  }
+  #scroll-section-gpt .gptGsapContainer .languageDec {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -1368,45 +1754,41 @@ pointer-events: none;
   }
   /* .SortingRight{position: static; left: auto;} */
 
-  
-  .gptGsapContainer .gptH1{
+  .gptGsapContainer .gptH1 {
     text-align: center;
     top: 7vh;
     left: 0;
     font-size: 2.3rem;
     line-height: 1.1;
   }
-   .gptGsapContainer .gptH1 .moreBtnarea {
+  .gptGsapContainer .gptH1 .moreBtnarea {
     right: -25vw;
     bottom: -45vh;
   }
 
-
-  #scroll-section-gpt .gptGsapContainer .gptDec{
+  #scroll-section-gpt .gptGsapContainer .gptDec {
     display: none;
     top: 50vh;
     font-size: 0.8rem;
   }
 
-
-
-
-  #scroll-section-2 .quietplaceGsapContainer{
+  #scroll-section-2 .quietplaceGsapContainer {
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  
-  #scroll-section-2 .quietplaceGsapContainer .languageContainer{
+
+  #scroll-section-2 .quietplaceGsapContainer .languageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 24vh;left: 0;
+    top: 24vh;
+    left: 0;
   }
-  
-  #scroll-section-2 .quietplaceGsapContainer .languageDec{
+
+  #scroll-section-2 .quietplaceGsapContainer .languageDec {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -1417,7 +1799,7 @@ pointer-events: none;
     text-align: center;
   }
 
-  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1{
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceH1 {
     text-align: center;
     top: -3vh;
     left: 0vw;
@@ -1429,42 +1811,38 @@ pointer-events: none;
     bottom: -45vh;
   }
 
-  #scroll-section-2 .quietplaceGsapContainer .quietplaceDec{
+  #scroll-section-2 .quietplaceGsapContainer .quietplaceDec {
     display: none;
     top: 50vh;
     font-size: 0.8rem;
   }
 
-
-
-
-
-
-
-
-
-
-  #scroll-section-3 .ikeaGsapContainer .languageDec p{
+  #scroll-section-3 .ikeaGsapContainer .languageDec p {
     font-size: 0.9rem;
   }
-   #scroll-section-3 .ikeaGsapContainer{
+  #scroll-section-3 .ikeaGsapContainer {
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  
-  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer{
+
+  #scroll-section-3 .ikeaGsapContainer .ikeaLanguageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 24vh;left: 0;
+    top: 24vh;
+    left: 0;
   }
 
-  #scroll-section-3 .sticky-elem-canvas canvas{top: 55%;}
-  #scroll-section-3 .ikeaGsapContainer .languageDec .p2{right: auto;}
-  #scroll-section-3 .ikeaGsapContainer .languageDec{
+  #scroll-section-3 .sticky-elem-canvas canvas {
+    top: 55%;
+  }
+  #scroll-section-3 .ikeaGsapContainer .languageDec .p2 {
+    right: auto;
+  }
+  #scroll-section-3 .ikeaGsapContainer .languageDec {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -1474,47 +1852,49 @@ pointer-events: none;
     left: 0;
     text-align: center;
   }
-  .SortingRight{position: static; left: auto;}
+  #scroll-section-3 .ikeaGsapContainer .languageDec .p1 {
+    right: auto;
+  }
+  .SortingRight {
+    position: static;
+    left: auto;
+  }
 
-  
-  .ikeaGsapContainer .ikeaH1{
+  .ikeaGsapContainer .ikeaH1 {
     text-align: center;
     top: 7vh;
     left: 0;
     font-size: 2.3rem;
     line-height: 1.1;
   }
-   .ikeaGsapContainer .ikeaH1 .moreBtnarea {
+  .ikeaGsapContainer .ikeaH1 .moreBtnarea {
     right: -25vw;
     bottom: -45vh;
   }
 
-
-  #scroll-section-3 .ikeaGsapContainer .ikeaDec{
+  #scroll-section-3 .ikeaGsapContainer .ikeaDec {
     display: none;
     top: 50vh;
     font-size: 0.8rem;
   }
 
-
-
-  
-  #scroll-section-4 .ediyaGsapContainer{
+  #scroll-section-4 .ediyaGsapContainer {
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  
-  #scroll-section-4 .ediyaGsapContainer .languageContainer{
+
+  #scroll-section-4 .ediyaGsapContainer .languageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 24vh;left: 0;
+    top: 24vh;
+    left: 0;
   }
-  
-  #scroll-section-4 .ediyaGsapContainer .languageDec{
+
+  #scroll-section-4 .ediyaGsapContainer .languageDec {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -1525,7 +1905,7 @@ pointer-events: none;
     text-align: center;
   }
 
-  #scroll-section-4 .ediyaGsapContainer .ediyaH1{
+  #scroll-section-4 .ediyaGsapContainer .ediyaH1 {
     text-align: center;
     top: -3vh;
     left: 0vw;
@@ -1536,36 +1916,53 @@ pointer-events: none;
     right: 50vw;
     bottom: -45vh;
   }
-  #scroll-section-4 .ediyaGsapContainer .ediyaDec{
+  #scroll-section-4 .ediyaGsapContainer .ediyaDec {
     display: none;
     top: 50vh;
     font-size: 0.8rem;
   }
 
-  .contactTextBoxTop{font-size: .9rem;}
-  .contactTextBoxTop span{font-size: 1.3rem;}
+  .contactTextBoxTop {
+    font-size: 0.9rem;
+  }
+  .contactTextBoxTop span {
+    font-size: 1.3rem;
+  }
 
-  .contactTextBoxMiddlePC{display: none;}
-  .contactTextBoxMiddleMobile{display: block;}
+  .contactTextBoxMiddlePC {
+    display: none;
+  }
+  .contactTextBoxMiddleMobile {
+    display: block;
+  }
 
-  .heajunLogo{top: 50vh; font-size: 2rem;}
-  .heajunLogo span{font-size: 2.5rem;}
-  .contactTextBoxMiddle{font-size: .9rem;}
-  .contactTextBoxMiddleMobileMarginBottom{margin-bottom: 3vh;}
- 
-  .contactTextBoxBottom{
-    font-size: 0.75rem; margin-top: -10vh; top: 60vh; 
-    gap: 2rem; justify-content: center;
+  .heajunLogo {
+    top: 50vh;
+    font-size: 2rem;
+  }
+  .heajunLogo span {
+    font-size: 2.5rem;
+  }
+  .contactTextBoxMiddle {
+    font-size: 0.9rem;
+  }
+  .contactTextBoxMiddleMobileMarginBottom {
+    margin-bottom: 3vh;
+  }
+
+  .contactTextBoxBottom {
+    font-size: 0.75rem;
+    margin-top: -10vh;
+    top: 60vh;
+    gap: 2rem;
+    justify-content: center;
   }
   .contactTextBoxBottom .iconBox01,
   .contactTextBoxBottom .iconBox02,
   .contactTextBoxBottom .iconBox03,
   .contactTextBoxBottom .iconBox04,
   .contactTextBoxBottom .iconBox05,
-  .contactTextBoxBottom .iconBox06{flex: 0 1 40%;}
-
-
-
-
-
-}  
+  .contactTextBoxBottom .iconBox06 {
+    flex: 0 1 40%;
+  }
+}
